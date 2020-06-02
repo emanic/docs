@@ -42,6 +42,7 @@ while getopts "${optspec}" opt; do
 done
 shift "$((OPTIND-1))"
 
+<<<<<<< HEAD
 echo "Building static site..."
 if [ "$1" != "" ]; then
   doc_dir=$(dirname "$1")
@@ -58,11 +59,13 @@ srcOps="$doc_dir""/ops_guide"
 srcRefArch="$doc_dir""/ref_arch"
 srcHistorical="$doc_dir""/historical"
 srcTroubleshooting="$doc_dir""/troubleshooting"
+srcSegmentGuide="$doc_dir""/segment_guide"
 
 # Delete previous build.
 if [ -d "$output_dir" ]
 then
   rm -rf "$output_dir"
+
 fi
 
 # Delete Python virtualenv.
@@ -252,6 +255,38 @@ echo "Commit Troubleshooting files"
 cd "$output_dir"
 git add -A
 git commit -q -m "Commit Troubleshooting"
+
+#
+# SEGMENT GUIDE
+#
+
+# Create a branch.
+git checkout -b segment
+
+# Copy files into place.
+echo "Copy Segment Guide files from ${work_dir} to ${output_dir}"
+cd "$work_dir"
+cp -R "$work_dir""/_files/." "$output_dir"
+cp -R "$srcSegmentGuide""/." "$output_dir"
+ls ${output_dir}
+gsed -i -e '/Name: Welcome/{n;n;n;n;n;N;d}' ${output_dir}/_topic_map.yml
+gsed -i -e '/Name: Concepts/{n;n;n;N;d}' ${output_dir}/_topic_map.yml
+gsed -i -e '/Name: Secure/{n;n;n;N;d}' ${output_dir}/_topic_map.yml
+gsed -i -e '/Name: Scale/{n;n;n;N;d}' ${output_dir}/_topic_map.yml
+gsed -i -e '/Name: Maintain/{n;n;n;N;d}' ${output_dir}/_topic_map.yml
+gsed -i -e '/Name: Troubleshoot/{n;n;n;N;d}' ${output_dir}/_topic_map.yml
+gsed -i -e '/Name: apoctl/{n;n;n;N;d}' ${output_dir}/_topic_map.yml
+gsed -i -e '/Name: Segment Console API/{n;n;n;N;d}' ${output_dir}/_topic_map.yml
+gsed -i -e 's/\.png/\.svg/g' ${output_dir}/concepts/namespaces.adoc
+gsed -i -e 's/image::oidc-auth-app\.png\[]/\[%interactive]\nimage::oidc-auth-app\.svg\[]/g' ${output_dir}/secure/secure-oidc.adoc
+# Fix adoc source files
+python format_fixup_seg.py "$output_dir""_topic_map.yml"
+
+# Commit files.
+echo "Commit Segment Guide files"
+cd "$output_dir"
+git add -A
+git commit -q -m "Commit Segment Guide"
 
 # Generate the static site.
 # asciibinder_pan package -l debug
