@@ -50,6 +50,7 @@ srcOps="$1""ops_guide/."
 srcRefArch="$1""ref_arch/."
 srcHistorical="$1""historical/."
 srcTroubleshooting="$1""troubleshooting/."
+srcSegmentGuide="$1""segment_guide/."
 
 # Delete previous build.
 if [ -d "$dst" ]
@@ -224,11 +225,33 @@ cd "$dst"
 git add -A
 git commit -q -m "Commit Troubleshooting"
 
+#
+# SEGMENT GUIDE
+#
+
+# Create a branch.
+git checkout -b segment
+
+# Copy files into place.
+echo "Copy Segment Guide files"
+cd ..
+cp -R "$srcSegmentGuide" "$dst"
+
+# Fix adoc source files
+#python format_fixup.py "$dst""_topic_map.yml"
+
+# Commit files.
+echo "Commit Segment Guide files"
+cd "$dst"
+git add -A
+git commit -q -m "Commit Segment Guide"
+
+
 # Generate the static site.
 # asciibinder_pan package -l debug
 echo "Generate static site"
 git checkout master
-asciibinder_pan package
+asciibinder_pan package -l debug
 
 cd "_package/main"
 cp -R "../main2/enterprise_edition" "."
