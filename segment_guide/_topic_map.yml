@@ -1,4 +1,10 @@
 ---
+Name: About
+Dir: about
+Topics:
+- Name: About
+  File: about
+---
 Name: Segment Console API
 Dir: segment_console_api
 Topics:
