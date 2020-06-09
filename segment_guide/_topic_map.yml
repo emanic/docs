@@ -1,13 +1,9 @@
 ---
-Name: About Segment
-Dir: about
-Topics:
-- Name: About
-  File: about
----
 Name: Segment Console API
 Dir: segment_console_api
 Topics:
+- Name: Segment Console API
+  File: segment_console_api
 - Name: About the Segment Console API
   File: about
 - Name: Segment Console API reference
