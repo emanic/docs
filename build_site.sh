@@ -212,9 +212,12 @@ git commit -q -m "Commit Historical"
 git checkout -b troubleshooting
 
 # Copy files into place.
-echo "Copy Troubleshooting files"
+echo "We are here" $(pwd)
 cd ..
+echo "Now we are here" $(pwd)
+echo "Copy Troubleshooting files ${srcTroubleshooting} to ${dst}"
 cp -R "$srcTroubleshooting" "$dst"
+ls ${dst}
 
 # Fix adoc source files
 #python format_fixup.py "$dst""_topic_map.yml"
@@ -233,12 +236,20 @@ git commit -q -m "Commit Troubleshooting"
 git checkout -b segment
 
 # Copy files into place.
-echo "Copy Segment Guide files"
+echo "We are here" $(pwd)
 cd ..
+echo "Now we are here" $(pwd)
+echo "Copy Segment Guide files from ${srcSegmentGuide} to ${dst}"
 cp -R "$srcSegmentGuide" "$dst"
+ls ${dst}
 
 # Fix adoc source files
-#python format_fixup.py "$dst""_topic_map.yml"
+python format_fixup_seg.py "$dst""_topic_map.yml"
+#echo "**********REMOVING GRATUITOUS TOP-LEVEL HEADING**********"
+#gsed -i -e '1d' $dst/about/about.adoc
+#echo "**********REMOVING GRATUITOUS SUBTOPICS**********"
+#gsed -i -e '/Name: Segment Console API/{n;n;N;N;d}' $srcSegmentGuide/_topic_map.yml
+
 
 # Commit files.
 echo "Commit Segment Guide files"
