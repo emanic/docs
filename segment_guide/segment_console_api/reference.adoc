@@ -5187,7 +5187,7 @@ Contains the CA that signed the delivered certificate.
 
 Contains a cryptographic token.
 
-====== `type` `enum(Enforcer | Service)`
+====== `type` `enum(Enforcer | Service | ServicePing)`
 
 Type of certificate.
 

@@ -5,6 +5,14 @@ Topics:
 - Name: About
   File: about
 ---
+Name: apoctl
+Dir: apoctl
+Topics:
+- Name: apoctl
+  File: apoctl
+- Name: Usage
+  File: usage
+---
 Name: Segment Console API
 Dir: segment_console_api
 Topics:
