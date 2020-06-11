@@ -1,0 +1,21 @@
+== `api` command
+
+The `api` command allows you to issue raw Segment Console API requests.
+
+=== `all` subcommand
+
+The `all` subcommand prints the list of all existing Segment Console API
+resources handled by `apoctl`. It prints them in one line as it is
+mainly used for auto-completion.
+
+Example:
+
+....
+apoctl api all
+....
+
+To get one resource per line, you can do:
+
+....
+apoctl api all | tr ' ' '\n'
+....

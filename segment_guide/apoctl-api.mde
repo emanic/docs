@@ -1,0 +1,3 @@
+# `api` command
+
+The `api` command allows you to issue raw Segment Console API requests.

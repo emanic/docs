@@ -49,7 +49,7 @@ def insert_header(config, title, src_file):
     save = f.read()
 
   with src_file.open(mode='w') as f:
-    f.write(f'= {title}\n')
+    f.write(f"= {title}\n")
     f.write(":nofooter:\n")
     f.write(":source-highlighter: highlightjs\n")
 

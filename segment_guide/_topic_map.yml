@@ -4,6 +4,8 @@ Dir: about
 Topics:
 - Name: About
   File: about
+- Name: Dummy
+  File: dummy
 ---
 Name: apoctl
 Dir: apoctl
@@ -12,6 +14,16 @@ Topics:
   File: apoctl
 - Name: Usage
   File: usage
+- Name: api command
+  File: api
+- Name: appcred command
+  File: appcred
+- Name: auth command
+  File: auth
+- Name: reports command
+  File: reports
+- Name: stats command
+  File: stats
 ---
 Name: Segment Console API
 Dir: segment_console_api
