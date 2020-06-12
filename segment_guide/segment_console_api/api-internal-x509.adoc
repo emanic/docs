@@ -1,40 +1,39 @@
-## internal/x509
+== internal/x509
 
-### PKIXName
+=== PKIXName
 
 Represents a public key infrastructure X.509 (PKIX) certificate.
 
-#### Attributes
+==== Attributes
 
-##### `commonName` `string`
+===== `commonName` `string`
 
 Represents the Common Name field.
 
-##### `country` `[]string`
+===== `country` `[]string`
 
 Represents the Country field.
 
-##### `locality` `[]string`
+===== `locality` `[]string`
 
 Represents the Locality field.
 
-##### `organization` `[]string`
+===== `organization` `[]string`
 
 Represents the Organization field.
 
-##### `organizationalUnit` `[]string`
+===== `organizationalUnit` `[]string`
 
 Represents the Organizational Unit field.
 
-##### `postalCode` `[]string`
+===== `postalCode` `[]string`
 
 Represents the Postal Code field.
 
-##### `province` `[]string`
+===== `province` `[]string`
 
 Represents the Province field.
 
-##### `streetAddress` `[]string`
+===== `streetAddress` `[]string`
 
 Represents the Street Address field.
-

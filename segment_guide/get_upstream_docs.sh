@@ -98,6 +98,80 @@ echo "Saving integration/automation"
 pandoc api-ref016.md -o api-integration-automation.adoc
 mv api-integration-automation.adoc segment_console_api/api-integration-automation.adoc
 rm api-ref016.md
+echo "Saving internal/token"
+pandoc api-ref017.md -o api-internal-token.adoc
+mv api-internal-token.adoc segment_console_api/api-internal-token.adoc
+rm api-ref017.md
+echo "Saving internal/x509"
+pandoc api-ref018.md -o api-internal-x509.adoc
+mv api-internal-x509.adoc segment_console_api/api-internal-x509.adoc
+rm api-ref018.md
+echo "Saving policy/access"
+pandoc api-ref019.md -o api-policy-access.adoc
+mv api-policy-access.adoc segment_console_api/api-policy-access.adoc
+rm api-ref019.md
+echo "Saving policy/audit"
+pandoc api-ref020.md -o api-policy-audit.adoc
+mv api-policy-audit.adoc segment_console_api/api-policy-audit.adoc
+rm api-ref020.md
+echo "Saving policy/authorization"
+pandoc api-ref021.md -o api-policy-authorization.adoc
+mv api-policy-authorization.adoc segment_console_api/api-policy-authorization.adoc
+rm api-ref021.md
+echo "Saving policy/dns"
+pandoc api-ref022.md -o api-policy-dns.adoc
+mv api-policy-dns.adoc segment_console_api/api-policy-dns.adoc
+rm api-ref022.md
+echo "Saving policy/enforcerconfig"
+pandoc api-ref023.md -o api-policy-enforcerconfig.adoc
+mv api-policy-enforcerconfig.adoc segment_console_api/api-policy-enforcerconfig.adoc
+rm api-ref023.md
+echo "Saving policy/files"
+pandoc api-ref024.md -o api-policy-files.adoc
+mv api-policy-files.adoc segment_console_api/api-policy-files.adoc
+rm api-ref024.md
+echo "Saving policy/hooks"
+pandoc api-ref025.md -o api-policy-hooks.adoc
+mv api-policy-hooks.adoc segment_console_api/api-policy-hooks.adoc
+rm api-ref025.md
+echo "Saving policy/hosts"
+pandoc api-ref026.md -o api-policy-hosts.adoc
+mv api-policy-hosts.adoc segment_console_api/api-policy-hosts.adoc
+rm api-ref026.md
+echo "Saving policy/networking"
+pandoc api-ref027.md -o api-policy-networking.adoc
+mv api-policy-networking.adoc segment_console_api/api-policy-networking.adoc
+rm api-ref027.md
+echo "Saving policy/processingunits"
+pandoc api-ref028.md -o api-policy-processingunits.adoc
+mv api-policy-processingunits.adoc segment_console_api/api-policy-processingunits.adoc
+rm api-ref028.md
+echo "Saving policy/quota"
+pandoc api-ref029.md -o api-policy-quota.adoc
+mv api-policy-quota.adoc segment_console_api/api-policy-quota.adoc
+rm api-ref029.md
+echo "Saving policy/services"
+pandoc api-ref030.md -o api-policy-services.adoc
+mv api-policy-services.adoc segment_console_api/api-policy-services.adoc
+rm api-ref030.md
+echo "Saving policy/ssh"
+pandoc api-ref031.md -o api-policy-ssh.adoc
+mv api-policy-ssh.adoc segment_console_api/api-policy-ssh.adoc
+rm api-ref031.md
+echo "Saving policy/token"
+pandoc api-ref032.md -o api-policy-token.adoc
+mv api-policy-token.adoc segment_console_api/api-policy-token.adoc
+rm api-ref032.md
+echo "Saving visualization/depmaps"
+pandoc api-ref033.md -o api-visualization-depmaps.adoc
+mv api-visualization-depmaps.adoc segment_console_api/api-visualization-depmaps.adoc
+rm api-ref033.md
+echo "Saving visualization/statsquery"
+pandoc api-ref034.md -o api-visualization-statsquery.adoc
+mv api-visualization-statsquery.adoc segment_console_api/api-visualization-statsquery.adoc
+rm api-ref034.md
+
+rm api-ref.md
 
 echo "Getting apoctl usage"
 curl --silent -o apoctl-ref.md -H "Authorization: token ${GITHUB_TOKEN}" "https://raw.githubusercontent.com/aporeto-inc/apoctl/${BRANCH}/docs/apoctl.md"

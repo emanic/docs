@@ -64,3 +64,42 @@ Topics:
   File: api-integration-app
 - Name: integration/automation
   File: api-integration-automation
+- Name: internal/token
+  File: api-internal-token
+- Name: internal/x509
+  File: api-internal-x509
+- Name: policy/access
+  File: api-policy-access
+- Name: policy/audit
+  File: api-policy-audit
+- Name: policy/authorization
+  File: api-policy-authorization
+- Name: policy/dns
+  File: api-policy-dns
+- Name: policy/enforcerconfig
+  File: api-policy-enforcerconfig
+- Name: policy/files
+  File: api-policy-files
+- Name: policy/hooks
+  File: api-policy-hooks
+- Name: policy/hosts
+  File: api-policy-hosts
+- Name: policy/networking
+  File: api-policy-networking
+- Name: policy/processingunits
+  File: api-policy-processingunits
+- Name: policy/quota
+  File: api-policy-quota
+- Name: policy/services
+  File: api-policy-services
+- Name: policy/ssh
+  File: api-policy-ssh
+- Name: policy/token
+  File: api-policy-token
+- Name: visualization/depmaps
+  File: api-visualization-depmaps
+- Name: visualization/statsquery
+  File: api-visualization-statsquery
+
+
+

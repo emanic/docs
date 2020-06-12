@@ -6,30 +6,27 @@
 
 == Usage
 
-`apoctl` is the official command line tool (CLI) to interact with the
-Aporeto control plane.
+`apoctl` is the official command line tool (CLI) to interact with
+Segment Console.
 
 === Concepts
 
 `apoctl` provides the following main commands:
 
-* `api` to interact with the REST API
+* `api` to interact with the Segment Console API
 * `appcred` to manage app credentials
 * `auth` to deal with authentication tokens
 * `aws` to interact with AWS IAM roles
 * `configure` for quick set up
-* `enforcer` to obtain debug information
+* `enforcer` to obtain defender debug information
 * `profiles` to manage multiple profiles
-* `protect` to deploy the enforcer
 * `reports` to generate compliance reports
-* `ssh` to request and view Aporeto SSH certificates
 * `stats` to retrieve statistical data
-* `unprotect` to uninstall the enforcer
 
 Here are the main global flags you can set:
 
-* `--api` or `-A`: defines is the API endpoint
-* `--namespace` or `-n`: defines is the namespace you want to target
+* `--api` or `-A`: defines the URL of the Segment Console API
+* `--namespace` or `-n`: defines the namespace you want to target
 * `--token` or `-t`: defines the token to use to authenticate
 * `--config`: defines the path to a configuration profile to use
 * `--log-level`: defines the level of logging
@@ -51,17 +48,18 @@ APOCTL_LOG_LEVEL
 APOCTL_CONFIG
 ....
 
-The resolution order is as follows from low to hight priority:
+The resolution order is as follows from low to high priority:
 
-* built-in default value
-* value set in a configuration profile
-* value set the environment variables
-* value set using the flags.
+[arabic]
+. built-in default value
+. value set in a configuration profile
+. value set the environment variables
+. value set using the flags.
 
 === Autocompletion
 
 `apoctl` supports autocompletion on `bash` and `zsh`. It will
-autocomplete commands, API resources, attributes and more.
+autocomplete commands, API resources, attributes, and more.
 
 To take advantages of this feature, you must add a command in your shell
 configuration.
@@ -90,14 +88,10 @@ not installed by default.
 
 * If running Bash 3.2 included with macOS:
 +
-....
-  brew install bash-completion
-....
+brew install bash-completion
 * If running Bash 4.1+:
 +
-....
-  brew install bash-completion@2
-....
+brew install bash-completion@2
 
 === Profiles
 
@@ -106,7 +100,7 @@ not installed by default.
 
 A profile is a simple YAML file setting default values for any flags of
 `apoctl`. The most useful one is to set up your default namespace as
-well as an Application Credential to use.
+well as an app credential to use.
 
 All values defined in the profile, can be overridden by an environment
 variable or by setting the flag when you call `apoctl`.
@@ -139,8 +133,8 @@ Profile example:
 
 ....
 $ cat ~/.apoctl/default.yaml
-api: https://{{< ctrl-plane-api-url >}}
-namespace: /mycompany
+api: https://segment.acme.com
+namespace: /acme
 creds: ~/.apoctl/default.creds
 output: yaml
 ....
