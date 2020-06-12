@@ -32,5 +32,35 @@ Topics:
   File: segment_console_api
 - Name: About the Segment Console API
   File: about
-- Name: Segment Console API reference
-  File: reference
+- Name: core
+  File: api-core
+- Name: core/account
+  File: api-core-account
+- Name: core/authentication
+  File: api-core-authentication
+- Name: core/billing
+  File: api-core-billing
+- Name: core/enforcer
+  File: api-core-enforcer
+- Name: core/monitoring
+  File: api-core-monitoring
+- Name: core/namespace
+  File: api-core-namespace
+- Name: core/policy
+  File: api-core-policy
+- Name: core/processingunit
+  File: api-core-processingunit
+- Name: core/tag
+  File: api-core-tag
+- Name: core/workflow
+  File: api-core-workflow
+- Name: debug
+  File: api-debug
+- Name: ext/documentation
+  File: api-ext-documentation
+- Name: integration/apiproxy
+  File: api-integration-apiproxy
+- Name: integration/app
+  File: api-integration-app
+- Name: integration/automation
+  File: api-integration-automation

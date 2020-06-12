@@ -1,0 +1,72 @@
+## policy/dns
+
+### DNSLookupReport
+
+A DNS Lookup report is used to report a DNS lookup that is happening on
+behalf of a processing unit. If the DNS server is on the standard udp port 53
+then enforcer is able to proxy the DNS traffic and make a report. The report
+indicate whether or not the lookup was successful.
+
+#### Example
+
+```json
+{
+  "action": "Accept",
+  "enforcerNamespace": "/my/namespace",
+  "processingUnitID": "xxx-xxx-xxx",
+  "processingUnitNamespace": "/my/namespace",
+  "resolvedName": "www.google.com",
+  "sourceIP": "10.0.0.1",
+  "value": 1
+}
+```
+
+#### Relations
+
+##### `POST /dnslookupreports`
+
+Create a DNS Lookup report.
+
+#### Attributes
+
+##### `action` `enum(Accept | Reject)` [`required`]
+
+Action of the DNS request.
+
+##### `enforcerID` `string`
+
+ID of the enforcer.
+
+##### `enforcerNamespace` `string` [`required`]
+
+Namespace of the enforcer.
+
+##### `processingUnitID` `string` [`required`]
+
+ID of the PU.
+
+##### `processingUnitNamespace` `string` [`required`]
+
+Namespace of the PU.
+
+##### `reason` `string`
+
+This field is only set when the lookup fails. It specifies the reason for the
+failure.
+
+##### `resolvedName` `string` [`required`]
+
+name used for DNS resolution.
+
+##### `sourceIP` `string` [`required`]
+
+Type of the source.
+
+##### `timestamp` `time`
+
+Time and date of the log.
+
+##### `value` `integer` [`required`]
+
+Number of times the client saw this activity.
+
