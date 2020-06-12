@@ -124,82 +124,82 @@ mv usage.adoc apoctl/usage.adoc
 echo "Getting apoctl api command"
 
 curl --silent -o apoctl-api.md -H "Authorization: token ${GITHUB_TOKEN}" \
-  "https://raw.githubusercontent.com/aporeto-inc/apoctl/terms/docs/api.md"
+  "https://raw.githubusercontent.com/aporeto-inc/apoctl/${BRANCH}/docs/api.md"
 
 echo >> apoctl-api.md
 
 curl -sS -H "Authorization: token ${GITHUB_TOKEN}" \
-  "https://raw.githubusercontent.com/aporeto-inc/apoctl/terms/docs/api-all.md" >> apoctl-api.md
+  "https://raw.githubusercontent.com/aporeto-inc/apoctl/${BRANCH}/docs/api-all.md" >> apoctl-api.md
 
 echo >> apoctl-api.md
 
 curl -sS -H "Authorization: token ${GITHUB_TOKEN}" \
-  "https://raw.githubusercontent.com/aporeto-inc/apoctl/terms/docs/api-count.md" >> apoctl-api.md
+  "https://raw.githubusercontent.com/aporeto-inc/apoctl/${BRANCH}/docs/api-count.md" >> apoctl-api.md
 
 echo >> apoctl-api.md
 
 curl -sS -H "Authorization: token ${GITHUB_TOKEN}" \
-  "https://raw.githubusercontent.com/aporeto-inc/apoctl/terms/docs/api-create.md" >> apoctl-api.md
+  "https://raw.githubusercontent.com/aporeto-inc/apoctl/${BRANCH}/docs/api-create.md" >> apoctl-api.md
 
 echo >> apoctl-api.md
 
 curl -sS -H "Authorization: token ${GITHUB_TOKEN}" \
-  "https://raw.githubusercontent.com/aporeto-inc/apoctl/terms/docs/api-delete.md" >> apoctl-api.md
+  "https://raw.githubusercontent.com/aporeto-inc/apoctl/${BRANCH}/docs/api-delete.md" >> apoctl-api.md
 
 echo >> apoctl-api.md
 
 curl -sS -H "Authorization: token ${GITHUB_TOKEN}" \
-  "https://raw.githubusercontent.com/aporeto-inc/apoctl/terms/docs/api-delete-many.md" >> apoctl-api.md
+  "https://raw.githubusercontent.com/aporeto-inc/apoctl/${BRANCH}/docs/api-delete-many.md" >> apoctl-api.md
 
 echo >> apoctl-api.md
 
 curl -sS -H "Authorization: token ${GITHUB_TOKEN}" \
-  "https://raw.githubusercontent.com/aporeto-inc/apoctl/terms/docs/api-describe.md" >> apoctl-api.md
+  "https://raw.githubusercontent.com/aporeto-inc/apoctl/${BRANCH}/docs/api-describe.md" >> apoctl-api.md
 
 echo >> apoctl-api.md
 
 curl -sS -H "Authorization: token ${GITHUB_TOKEN}" \
-  "https://raw.githubusercontent.com/aporeto-inc/apoctl/terms/docs/api-export.md" >> apoctl-api.md
+  "https://raw.githubusercontent.com/aporeto-inc/apoctl/${BRANCH}/docs/api-export.md" >> apoctl-api.md
 
 echo >> apoctl-api.md
 
 curl -sS -H "Authorization: token ${GITHUB_TOKEN}" \
-  "https://raw.githubusercontent.com/aporeto-inc/apoctl/terms/docs/api-get.md" >> apoctl-api.md
+  "https://raw.githubusercontent.com/aporeto-inc/apoctl/${BRANCH}/docs/api-get.md" >> apoctl-api.md
 
 echo >> apoctl-api.md
 
 curl -sS -H "Authorization: token ${GITHUB_TOKEN}" \
-  "https://raw.githubusercontent.com/aporeto-inc/apoctl/terms/docs/api-import.md" >> apoctl-api.md
+  "https://raw.githubusercontent.com/aporeto-inc/apoctl/${BRANCH}/docs/api-import.md" >> apoctl-api.md
 
 echo >> apoctl-api.md
 
 curl -sS -H "Authorization: token ${GITHUB_TOKEN}" \
-  "https://raw.githubusercontent.com/aporeto-inc/apoctl/terms/docs/api-info.md" >> apoctl-api.md
+  "https://raw.githubusercontent.com/aporeto-inc/apoctl/${BRANCH}/docs/api-info.md" >> apoctl-api.md
 
 echo >> apoctl-api.md
 
 curl -sS -H "Authorization: token ${GITHUB_TOKEN}" \
-  "https://raw.githubusercontent.com/aporeto-inc/apoctl/terms/docs/api-list.md" >> apoctl-api.md
+  "https://raw.githubusercontent.com/aporeto-inc/apoctl/${BRANCH}/docs/api-list.md" >> apoctl-api.md
 
 echo >> apoctl-api.md
 
 curl -sS -H "Authorization: token ${GITHUB_TOKEN}" \
-  "https://raw.githubusercontent.com/aporeto-inc/apoctl/terms/docs/api-listen.md" >> apoctl-api.md
+  "https://raw.githubusercontent.com/aporeto-inc/apoctl/${BRANCH}/docs/api-listen.md" >> apoctl-api.md
 
 echo >> apoctl-api.md
 
 curl -sS -H "Authorization: token ${GITHUB_TOKEN}" \
-  "https://raw.githubusercontent.com/aporeto-inc/apoctl/terms/docs/api-search.md" >> apoctl-api.md
+  "https://raw.githubusercontent.com/aporeto-inc/apoctl/${BRANCH}/docs/api-search.md" >> apoctl-api.md
 
 echo >> apoctl-api.md
 
 curl -sS -H "Authorization: token ${GITHUB_TOKEN}" \
-  "https://raw.githubusercontent.com/aporeto-inc/apoctl/terms/docs/api-stub.md" >> apoctl-api.md
+  "https://raw.githubusercontent.com/aporeto-inc/apoctl/${BRANCH}/docs/api-stub.md" >> apoctl-api.md
 
 echo >> apoctl-api.md
 
 curl -sS -H "Authorization: token ${GITHUB_TOKEN}" \
-  "https://raw.githubusercontent.com/aporeto-inc/apoctl/terms/docs/api-update.md" >> apoctl-api.md
+  "https://raw.githubusercontent.com/aporeto-inc/apoctl/${BRANCH}/docs/api-update.md" >> apoctl-api.md
 
 echo >> apoctl-api.md
 
@@ -224,47 +224,47 @@ mv api.adoc apoctl/api.adoc
 echo "Getting apoctl appcred command"
 
 curl --silent -o apoctl-appcred.md -H "Authorization: token ${GITHUB_TOKEN}" \
-  "https://raw.githubusercontent.com/aporeto-inc/apoctl/terms/docs/appcred.md"
+  "https://raw.githubusercontent.com/aporeto-inc/apoctl/${BRANCH}/docs/appcred.md"
 
 echo >> apoctl-appcred.md
 
 curl -sS -H "Authorization: token ${GITHUB_TOKEN}" \
-  "https://raw.githubusercontent.com/aporeto-inc/apoctl/terms/docs/appcred-create.md" >> apoctl-appcred.md
+  "https://raw.githubusercontent.com/aporeto-inc/apoctl/${BRANCH}/docs/appcred-create.md" >> apoctl-appcred.md
 
 echo >> apoctl-appcred.md
 
 curl -sS -H "Authorization: token ${GITHUB_TOKEN}" \
-  "https://raw.githubusercontent.com/aporeto-inc/apoctl/terms/docs/appcred-delete.md" >> apoctl-appcred.md
+  "https://raw.githubusercontent.com/aporeto-inc/apoctl/${BRANCH}/docs/appcred-delete.md" >> apoctl-appcred.md
 
 echo >> apoctl-appcred.md
 
 curl -sS -H "Authorization: token ${GITHUB_TOKEN}" \
-  "https://raw.githubusercontent.com/aporeto-inc/apoctl/terms/docs/appcred-disable.md" >> apoctl-appcred.md
+  "https://raw.githubusercontent.com/aporeto-inc/apoctl/${BRANCH}/docs/appcred-disable.md" >> apoctl-appcred.md
 
 echo >> apoctl-appcred.md
 
 curl -sS -H "Authorization: token ${GITHUB_TOKEN}" \
-  "https://raw.githubusercontent.com/aporeto-inc/apoctl/terms/docs/appcred-enable.md" >> apoctl-appcred.md
+  "https://raw.githubusercontent.com/aporeto-inc/apoctl/${BRANCH}/docs/appcred-enable.md" >> apoctl-appcred.md
 
 echo >> apoctl-appcred.md
 
 curl -sS -H "Authorization: token ${GITHUB_TOKEN}" \
-  "https://raw.githubusercontent.com/aporeto-inc/apoctl/terms/docs/appcred-list.md" >> apoctl-appcred.md
+  "https://raw.githubusercontent.com/aporeto-inc/apoctl/${BRANCH}/docs/appcred-list.md" >> apoctl-appcred.md
 
 echo >> apoctl-appcred.md
 
 curl -sS -H "Authorization: token ${GITHUB_TOKEN}" \
-  "https://raw.githubusercontent.com/aporeto-inc/apoctl/terms/docs/appcred-renew.md" >> apoctl-appcred.md
+  "https://raw.githubusercontent.com/aporeto-inc/apoctl/${BRANCH}/docs/appcred-renew.md" >> apoctl-appcred.md
 
 echo >> apoctl-appcred.md
 
 curl -sS -H "Authorization: token ${GITHUB_TOKEN}" \
-  "https://raw.githubusercontent.com/aporeto-inc/apoctl/terms/docs/appcred-roles.md" >> apoctl-appcred.md
+  "https://raw.githubusercontent.com/aporeto-inc/apoctl/${BRANCH}/docs/appcred-roles.md" >> apoctl-appcred.md
 
 echo >> apoctl-appcred.md
 
 curl -sS -H "Authorization: token ${GITHUB_TOKEN}" \
-  "https://raw.githubusercontent.com/aporeto-inc/apoctl/terms/docs/appcred-subnets.md" >> apoctl-appcred.md
+  "https://raw.githubusercontent.com/aporeto-inc/apoctl/${BRANCH}/docs/appcred-subnets.md" >> apoctl-appcred.md
 
 echo >> apoctl-appcred.md
 
@@ -289,77 +289,77 @@ mv appcred.adoc apoctl/appcred.adoc
 echo "Getting apoctl auth command"
 
 curl --silent -o apoctl-auth.md -H "Authorization: token ${GITHUB_TOKEN}" \
-  "https://raw.githubusercontent.com/aporeto-inc/apoctl/terms/docs/auth.md"
+  "https://raw.githubusercontent.com/aporeto-inc/apoctl/${BRANCH}/docs/auth.md"
 
 echo >> apoctl-auth.md
 
 curl -sS -H "Authorization: token ${GITHUB_TOKEN}" \
-  "https://raw.githubusercontent.com/aporeto-inc/apoctl/terms/docs/auth-aporeto.md" >> apoctl-auth.md
+  "https://raw.githubusercontent.com/aporeto-inc/apoctl/${BRANCH}/docs/auth-aporeto.md" >> apoctl-auth.md
 
 echo >> apoctl-auth.md
 
 curl -sS -H "Authorization: token ${GITHUB_TOKEN}" \
-  "https://raw.githubusercontent.com/aporeto-inc/apoctl/terms/docs/auth-appcred.md" >> apoctl-auth.md
+  "https://raw.githubusercontent.com/aporeto-inc/apoctl/${BRANCH}/docs/auth-appcred.md" >> apoctl-auth.md
 
 echo >> apoctl-auth.md
 
 curl -sS -H "Authorization: token ${GITHUB_TOKEN}" \
-  "https://raw.githubusercontent.com/aporeto-inc/apoctl/terms/docs/auth-awssts.md" >> apoctl-auth.md
+  "https://raw.githubusercontent.com/aporeto-inc/apoctl/${BRANCH}/docs/auth-awssts.md" >> apoctl-auth.md
 
 echo >> apoctl-auth.md
 
 curl -sS -H "Authorization: token ${GITHUB_TOKEN}" \
-  "https://raw.githubusercontent.com/aporeto-inc/apoctl/terms/docs/auth-azure.md" >> apoctl-auth.md
+  "https://raw.githubusercontent.com/aporeto-inc/apoctl/${BRANCH}/docs/auth-azure.md" >> apoctl-auth.md
 
 echo >> apoctl-auth.md
 
 curl -sS -H "Authorization: token ${GITHUB_TOKEN}" \
-  "https://raw.githubusercontent.com/aporeto-inc/apoctl/terms/docs/auth-cert.md" >> apoctl-auth.md
+  "https://raw.githubusercontent.com/aporeto-inc/apoctl/${BRANCH}/docs/auth-cert.md" >> apoctl-auth.md
 
 echo >> apoctl-auth.md
 
 curl -sS -H "Authorization: token ${GITHUB_TOKEN}" \
-  "https://raw.githubusercontent.com/aporeto-inc/apoctl/terms/docs/auth-gcp.md" >> apoctl-auth.md
+  "https://raw.githubusercontent.com/aporeto-inc/apoctl/${BRANCH}/docs/auth-gcp.md" >> apoctl-auth.md
 
 echo >> apoctl-auth.md
 
 curl -sS -H "Authorization: token ${GITHUB_TOKEN}" \
-  "https://raw.githubusercontent.com/aporeto-inc/apoctl/terms/docs/auth-google.md" >> apoctl-auth.md
+  "https://raw.githubusercontent.com/aporeto-inc/apoctl/${BRANCH}/docs/auth-google.md" >> apoctl-auth.md
 
 echo >> apoctl-auth.md
 
 curl -sS -H "Authorization: token ${GITHUB_TOKEN}" \
-  "https://raw.githubusercontent.com/aporeto-inc/apoctl/terms/docs/auth-ldap.md" >> apoctl-auth.md
+  "https://raw.githubusercontent.com/aporeto-inc/apoctl/${BRANCH}/docs/auth-ldap.md" >> apoctl-auth.md
 
 echo >> apoctl-auth.md
 
 curl -sS -H "Authorization: token ${GITHUB_TOKEN}" \
-  "https://raw.githubusercontent.com/aporeto-inc/apoctl/terms/docs/auth-oidc.md" >> apoctl-auth.md
+  "https://raw.githubusercontent.com/aporeto-inc/apoctl/${BRANCH}/docs/auth-oidc.md" >> apoctl-auth.md
 
 echo >> apoctl-auth.md
 
 curl -sS -H "Authorization: token ${GITHUB_TOKEN}" \
-  "https://raw.githubusercontent.com/aporeto-inc/apoctl/terms/docs/auth-pcc.md" >> apoctl-auth.md
+  "https://raw.githubusercontent.com/aporeto-inc/apoctl/${BRANCH}/docs/auth-pcc.md" >> apoctl-auth.md
 
 echo >> apoctl-auth.md
 
 curl -sS -H "Authorization: token ${GITHUB_TOKEN}" \
-  "https://raw.githubusercontent.com/aporeto-inc/apoctl/terms/docs/auth-pcc-token.md" >> apoctl-auth.md
+  "https://raw.githubusercontent.com/aporeto-inc/apoctl/${BRANCH}/docs/auth-pcc-token.md" >> apoctl-auth.md
 
 echo >> apoctl-auth.md
 
 curl -sS -H "Authorization: token ${GITHUB_TOKEN}" \
-  "https://raw.githubusercontent.com/aporeto-inc/apoctl/terms/docs/auth-saml.md" >> apoctl-auth.md
+  "https://raw.githubusercontent.com/aporeto-inc/apoctl/${BRANCH}/docs/auth-saml.md" >> apoctl-auth.md
 
 echo >> apoctl-auth.md
 
 curl -sS -H "Authorization: token ${GITHUB_TOKEN}" \
-  "https://raw.githubusercontent.com/aporeto-inc/apoctl/terms/docs/auth-token.md" >> apoctl-auth.md
+  "https://raw.githubusercontent.com/aporeto-inc/apoctl/${BRANCH}/docs/auth-token.md" >> apoctl-auth.md
 
 echo >> apoctl-auth.md
 
 curl -sS -H "Authorization: token ${GITHUB_TOKEN}" \
-  "https://raw.githubusercontent.com/aporeto-inc/apoctl/terms/docs/auth-verify.md" >> apoctl-auth.md
+  "https://raw.githubusercontent.com/aporeto-inc/apoctl/${BRANCH}/docs/auth-verify.md" >> apoctl-auth.md
 
 echo >> apoctl-auth.md
 
@@ -384,17 +384,17 @@ mv auth.adoc apoctl/auth.adoc
 echo "Getting apoctl stats command"
 
 curl --silent -o apoctl-stats.md -H "Authorization: token ${GITHUB_TOKEN}" \
-  "https://raw.githubusercontent.com/aporeto-inc/apoctl/terms/docs/stats.md"
+  "https://raw.githubusercontent.com/aporeto-inc/apoctl/${BRANCH}/docs/stats.md"
 
 echo >> apoctl-stats.md
 
 curl -sS -H "Authorization: token ${GITHUB_TOKEN}" \
-  "https://raw.githubusercontent.com/aporeto-inc/apoctl/terms/docs/stats-info.md" >> apoctl-stats.md
+  "https://raw.githubusercontent.com/aporeto-inc/apoctl/${BRANCH}/docs/stats-info.md" >> apoctl-stats.md
 
 echo >> apoctl-stats.md
 
 curl -sS -H "Authorization: token ${GITHUB_TOKEN}" \
-  "https://raw.githubusercontent.com/aporeto-inc/apoctl/terms/docs/stats-query.md" >> apoctl-stats.md
+  "https://raw.githubusercontent.com/aporeto-inc/apoctl/${BRANCH}/docs/stats-query.md" >> apoctl-stats.md
 
 echo >> apoctl-stats.md
 
@@ -419,12 +419,12 @@ mv stats.adoc apoctl/stats.adoc
 echo "Getting apoctl reports command"
 
 curl --silent -o apoctl-reports.md -H "Authorization: token ${GITHUB_TOKEN}" \
-  "https://raw.githubusercontent.com/aporeto-inc/apoctl/terms/docs/reports.md"
+  "https://raw.githubusercontent.com/aporeto-inc/apoctl/${BRANCH}/docs/reports.md"
 
 echo >> apoctl-reports.md
 
 curl -sS -H "Authorization: token ${GITHUB_TOKEN}" \
-  "https://raw.githubusercontent.com/aporeto-inc/apoctl/terms/docs/compliance.md" >> apoctl-reports.md
+  "https://raw.githubusercontent.com/aporeto-inc/apoctl/${BRANCH}/docs/compliance.md" >> apoctl-reports.md
 
 echo >> apoctl-reports.md
 
