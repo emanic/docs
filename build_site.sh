@@ -242,14 +242,11 @@ echo "Now we are here" $(pwd)
 echo "Copy Segment Guide files from ${srcSegmentGuide} to ${dst}"
 cp -R "$srcSegmentGuide" "$dst"
 ls ${dst}
-
+gsed -i -e '/Name: About/{n;n;n;n;n;N;d}' ${dst}/_topic_map.yml
+gsed -i -e '/Name: apoctl/{n;n;n;N;d}' ${dst}/_topic_map.yml
+gsed -i -e '/Name: Segment Console API/{n;n;n;N;d}' ${dst}/_topic_map.yml
 # Fix adoc source files
 python format_fixup_seg.py "$dst""_topic_map.yml"
-#echo "**********REMOVING GRATUITOUS TOP-LEVEL HEADING**********"
-#gsed -i -e '1d' $dst/about/about.adoc
-#echo "**********REMOVING GRATUITOUS SUBTOPICS**********"
-#gsed -i -e '/Name: Segment Console API/{n;n;N;N;d}' $srcSegmentGuide/_topic_map.yml
-
 
 # Commit files.
 echo "Commit Segment Guide files"
@@ -262,7 +259,7 @@ git commit -q -m "Commit Segment Guide"
 # asciibinder_pan package -l debug
 echo "Generate static site"
 git checkout master
-asciibinder_pan package -l debug
+asciibinder_pan package
 
 cd "_package/main"
 cp -R "../main2/enterprise_edition" "."

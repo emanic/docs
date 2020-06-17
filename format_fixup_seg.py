@@ -13,13 +13,13 @@ import yaml
 class Config:
   pass
 
-
 def fix_doc_tree(config):
   """
   Constructs a directory that holds all converted files, graphics, and the topic_map.
   """
   # Fix up each ADOC file in the topic map.
   print('Fixing up adoc source files')
+
   for chapter in config.topic_map_yaml:
     directory = pathlib.Path(config.input_dir) / pathlib.Path(chapter['Dir'])
     walk_segment(config, chapter, directory)
@@ -30,6 +30,7 @@ def walk_segment(config, segment, directory, depth=1):
   for article in segment['Topics']:
     if 'Topics' in article:
       nested_dir = pathlib.Path(directory) / pathlib.Path(article['Dir'])
+      print(nested_dir)
       walk_segment(config, article, nested_dir, depth+1)
     else:
       src_file = pathlib.Path(directory).joinpath(article['File'])
