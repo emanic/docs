@@ -30,7 +30,6 @@ def walk_segment(config, segment, directory, depth=1):
   for article in segment['Topics']:
     if 'Topics' in article:
       nested_dir = pathlib.Path(directory) / pathlib.Path(article['Dir'])
-      print(nested_dir)
       walk_segment(config, article, nested_dir, depth+1)
     else:
       src_file = pathlib.Path(directory).joinpath(article['File'])
