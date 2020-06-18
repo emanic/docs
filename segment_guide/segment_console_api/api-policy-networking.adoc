@@ -61,7 +61,7 @@ Namespace tag attached to an entity.
 === ExternalNetwork
 
 An external network represents a random network or IP address that is
-not managed by Aporeto. External networks can be used in network
+not managed by Segment. External networks can be used in network
 policies to allow traffic from or to the declared network or IP, using
 the provided protocol and port (or range of ports). If you want to
 describe the internet (i.e., anywhere), use `0.0.0.0/0` as the address
@@ -421,7 +421,7 @@ Number of flows in the log.
 Infrastructure policies represent the network access rules of the
 underlying infrastructure. They can assist you in analyzing how AWS
 security groups, firewalls, and other access control list (ACL)
-mechanisms may affect Aporeto network policies. Aporeto’s AWS
+mechanisms may affect Segment network policies. Segment’s AWS
 integration app automatically populates AWS security groups.
 
 ==== Example
@@ -776,8 +776,8 @@ will become a fallback for children namespaces.
 
 ===== `logsEnabled` `boolean`
 
-If `true`, the relevant flows are logged and available from the Aporeto
-control plane. Under some advanced scenarios you may wish to set this to
+If `true`, the relevant flows are logged and available from Segment
+Console. Under some advanced scenarios you may wish to set this to
 `false`, such as to save space or improve performance.
 
 ===== `metadata` `[]string` [`creation_only`]

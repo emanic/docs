@@ -2,7 +2,7 @@
 
 === Invoice
 
-Provides access to Aporeto customer invoices.
+Provides access to Segment customer invoices.
 
 ==== Example
 
@@ -71,7 +71,7 @@ Last update date of the object.
 
 === InvoiceRecord
 
-Provides detailed records of invoices for Aporeto customers.
+Provides detailed records of invoices for Segment customers.
 
 ==== Relations
 

@@ -18,7 +18,7 @@ Segment Console.
 * `auth` to deal with authentication tokens
 * `aws` to interact with AWS IAM roles
 * `configure` for quick set up
-* `enforcer` to obtain defender debug information
+* `defender` to obtain defender debug information
 * `profiles` to manage multiple profiles
 * `reports` to generate compliance reports
 * `stats` to retrieve statistical data

@@ -37,11 +37,11 @@ Hash of the claims used to communicate.
 
 ===== `enforcerID` `string` [`required`]
 
-Identifier of the enforcer.
+Identifier of the defender.
 
 ===== `enforcerNamespace` `string` [`required`]
 
-Namespace of the enforcer.
+Namespace of the defender.
 
 ===== `processingUnitID` `string`
 
@@ -70,7 +70,7 @@ Type of the report.
 
 === UserAccessPolicy
 
-The enforcer policy that controls user access.
+The defender policy that controls user access.
 
 ==== Example
 
@@ -99,7 +99,7 @@ down.
 
 ===== `POST /useraccesspolicies`
 
-Creates a new enforcer policy.
+Creates a new defender policy.
 
 ===== `DELETE /useraccesspolicies/:id`
 
@@ -186,7 +186,7 @@ Contains the list of normalized tags of the entities.
 
 ===== `object` `[][]string`
 
-Contains the tag expression matching the enforcers the subject is
+Contains the tag expression matching the defenders the subject is
 allowed to connect to.
 
 ===== `propagate` `boolean`

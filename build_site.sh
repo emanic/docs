@@ -236,9 +236,7 @@ git commit -q -m "Commit Troubleshooting"
 git checkout -b segment
 
 # Copy files into place.
-echo "We are here" $(pwd)
 cd ..
-echo "Now we are here" $(pwd)
 echo "Copy Segment Guide files from ${srcSegmentGuide} to ${dst}"
 cp -R "$srcSegmentGuide" "$dst"
 ls ${dst}
@@ -259,7 +257,7 @@ git commit -q -m "Commit Segment Guide"
 # asciibinder_pan package -l debug
 echo "Generate static site"
 git checkout master
-asciibinder_pan package
+asciibinder_pan package -l debug
 
 cd "_package/main"
 cp -R "../main2/enterprise_edition" "."

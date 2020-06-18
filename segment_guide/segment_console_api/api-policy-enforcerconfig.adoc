@@ -2,10 +2,10 @@
 
 === EnforcerProfile
 
-Allows you to create reusable configuration profiles for your enforcers.
-Enforcer profiles contain various startup information that can (for
-some) be updated live. Enforcer profiles are assigned to enforcers using
-an enforcer profile mapping.
+Allows you to create reusable configuration profiles for your defenders.
+Defender profiles contain various startup information that can (for
+some) be updated live. Defender profiles are assigned to defenders using
+a defender profile mapping.
 
 ==== Example
 
@@ -25,7 +25,7 @@ an enforcer profile mapping.
 
 ===== `GET /enforcerprofiles`
 
-Retrieves the list of enforcer profiles.
+Retrieves the list of defender profiles.
 
 Parameters:
 
@@ -36,11 +36,11 @@ down.
 
 ===== `POST /enforcerprofiles`
 
-Creates a new enforcer profile.
+Creates a new defender profile.
 
 ===== `DELETE /enforcerprofiles/:id`
 
-Deletes the enforcer profile with the given ID.
+Deletes the defender profile with the given ID.
 
 Parameters:
 
@@ -49,7 +49,7 @@ an or.
 
 ===== `GET /enforcerprofiles/:id`
 
-Retrieves the enforcer profile with the given ID.
+Retrieves the defender profile with the given ID.
 
 Parameters:
 
@@ -58,16 +58,16 @@ down.
 
 ===== `PUT /enforcerprofiles/:id`
 
-Updates the enforcer profile with the given ID.
+Updates the defender profile with the given ID.
 
 ===== `GET /enforcerprofilemappingpolicies/:id/enforcerprofiles`
 
-Returns the list of enforcer profiles that an enforcer profile mapping
+Returns the list of defender profiles that a defender profile mapping
 matches.
 
 ===== `GET /enforcers/:id/enforcerprofiles`
 
-Returns the enforcer profile that must be used by an enforcer.
+Returns the defender profile that must be used by a defender.
 
 ==== Attributes
 
@@ -100,7 +100,7 @@ interfaces.
 
 Ignore any networks specified here and do not even report any flows.
 This can be useful for excluding localhost loopback traffic, ignoring
-traffic to the Kubernetes API, and using Aporeto for SSH only.
+traffic to the Kubernetes API, and using Segment for SSH only.
 
 ===== `ignoreExpression` `[][]string`
 
@@ -112,7 +112,7 @@ third-party agents.
 
 _This attribute is deprecated_.
 
-This field is kept for backward compatibility for enforcers <= 3.5.
+This field is kept for backward compatibility for defenders <= 3.5.
 
 Default value:
 
@@ -125,7 +125,7 @@ Default value:
 
 _This attribute is deprecated_.
 
-This field is kept for backward compatibility for enforcers <= 3.5.
+This field is kept for backward compatibility for defenders <= 3.5.
 
 ===== `metadata` `[]string` [`creation_only`]
 
@@ -136,7 +136,7 @@ the `@' prefix, and should only be used by external systems.
 
 _This attribute is deprecated_.
 
-This field is kept for backward compatibility for enforcers <= 3.5.
+This field is kept for backward compatibility for defenders <= 3.5.
 
 Default value:
 
@@ -167,15 +167,15 @@ Defines if the object is protected.
 
 ===== `targetNetworks` `[]string`
 
-If empty, the enforcer auto-discovers the TCP networks. Auto-discovery
+If empty, the defender auto-discovers the TCP networks. Auto-discovery
 works best in Kubernetes and OpenShift deployments. You may need to
 manually specify the TCP networks if middle boxes exist that do not
 comply with https://tools.ietf.org/html/rfc7413[TCP Fast Open RFC 7413].
 
 ===== `targetUDPNetworks` `[]string`
 
-If empty, Aporeto enforces all UDP networks. This works best when all
-UDP networks have enforcers. If some UDP networks do not have enforcers,
+If empty, Segment enforces all UDP networks. This works best when all
+UDP networks have defenders. If some UDP networks do not have defenders,
 you may need to manually specify the UDP networks that should be
 enforced.
 
@@ -190,7 +190,7 @@ Last update date of the object.
 
 === EnforcerProfileMappingPolicy
 
-Allows you to map an enforcer profile to one or more enforcers. The
+Allows you to map a defender profile to one or more defenders. The
 mapping can also be propagated down to the child namespace.
 
 ==== Example
@@ -228,7 +228,7 @@ mapping can also be propagated down to the child namespace.
 
 ===== `GET /enforcerprofilemappingpolicies`
 
-Retrieves the list of enforcer profile mappings.
+Retrieves the list of defender profile mappings.
 
 Parameters:
 
@@ -239,7 +239,7 @@ down.
 
 ===== `POST /enforcerprofilemappingpolicies`
 
-Creates a new enforcer profile mappings.
+Creates a new defender profile mappings.
 
 ===== `DELETE /enforcerprofilemappingpolicies/:id`
 
@@ -260,12 +260,12 @@ Updates the mapping with the given ID.
 
 ===== `GET /enforcerprofilemappingpolicies/:id/enforcerprofiles`
 
-Returns the list of enforcer profiles that an enforcer profile mapping
+Returns the list of defender profiles that a defender profile mapping
 matches.
 
 ===== `GET /enforcerprofilemappingpolicies/:id/enforcers`
 
-Returns the list of enforcers affected by an enforcer profile mapping.
+Returns the list of defenders affected by a defender profile mapping.
 
 ==== Attributes
 
@@ -318,7 +318,7 @@ Contains the list of normalized tags of the entities.
 
 ===== `object` `[][]string`
 
-The tag or tag expression that identifies the enforcer profile to be
+The tag or tag expression that identifies the defender profile to be
 mapped.
 
 ===== `propagate` `boolean`
@@ -331,7 +331,7 @@ Defines if the object is protected.
 
 ===== `subject` `[][]string`
 
-The tag or tag expression that identifies the enforcers that should
+The tag or tag expression that identifies the defenders that should
 implement the mapped profile.
 
 ===== `updateTime` `time` [`autogenerated`,`read_only`]
@@ -356,7 +356,7 @@ it should return.
 ===== `GET /enforcers/:id/trustedcas`
 
 Returns the list of certificate authorities that should be trusted by
-this enforcer.
+this defender.
 
 Parameters:
 
@@ -399,9 +399,9 @@ Type of the certificate.
 
 === TrustedNamespace
 
-This objects allows to declare trust between namespaces that
+This object allows you to declare trust between namespaces that are
 cryptographically isolated. The namespaces can be local or served by
-different Aporeto controller.
+different Segment Console controllers.
 
 ==== Example
 

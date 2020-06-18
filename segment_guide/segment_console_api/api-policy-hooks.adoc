@@ -229,7 +229,7 @@ Last update date of the object.
 
 === RemoteProcessor
 
-Hook to integrate an Aporeto service.
+Hook to integrate a Segment service.
 
 ==== Example
 

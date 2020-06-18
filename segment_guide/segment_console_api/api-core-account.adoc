@@ -198,7 +198,7 @@ Contains the activation token.
 
 === PasswordReset
 
-Used to reset an Aporeto account password.
+Used to reset a Segment account password.
 
 ==== Example
 

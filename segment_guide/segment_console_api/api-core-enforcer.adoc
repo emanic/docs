@@ -782,11 +782,11 @@ Default value:
 
 ===== `enforcerID` `string` [`required`]
 
-Identifier of the enforcer sending the report.
+Identifier of the defender sending the report.
 
 ===== `enforcerNamespace` `string` [`required`]
 
-Namespace of the enforcer sending the report.
+Namespace of the defender sending the report.
 
 ===== `externalNetworkConnections` `integer`
 
@@ -837,9 +837,9 @@ Default value:
 
 === Enforcer
 
-Contains all parameters associated with a registered enforcer. The
-object is mainly maintained by the enforcers themselves. Users can read
-the object in order to understand the current status of the enforcers.
+Contains all parameters associated with a registered defender. The
+object is mainly maintained by the defenders themselves. Users can read
+the object in order to understand the current status of the defenders.
 
 ==== Example
 
@@ -881,7 +881,7 @@ ZDGRs55xuoeLDJ/ZRFf9bI+IaCUd1YrfYcHIl3G87Av+r49YVwqRDT0VDV7uLgqn
 
 ===== `GET /enforcers`
 
-Retrieves the list of enforcers.
+Retrieves the list of defenders.
 
 Parameters:
 
@@ -890,11 +890,11 @@ an or.
 
 ===== `POST /enforcers`
 
-Creates a new enforcer.
+Creates a new defender.
 
 ===== `DELETE /enforcers/:id`
 
-Deletes the enforcer with the given ID.
+Deletes the defender with the given ID.
 
 Parameters:
 
@@ -903,28 +903,28 @@ an or.
 
 ===== `GET /enforcers/:id`
 
-Retrieves the enforcer with the given ID.
+Retrieves the defender with the given ID.
 
 ===== `PUT /enforcers/:id`
 
-Updates the enforcer with the given ID.
+Updates the defender with the given ID.
 
 ===== `GET /auditprofilemappingpolicies/:id/enforcers`
 
-Returns the list of enforcers that are affected by this mapping.
+Returns the list of defenders that are affected by this mapping.
 
 ===== `GET /enforcerprofilemappingpolicies/:id/enforcers`
 
-Returns the list of enforcers affected by an enforcer profile mapping.
+Returns the list of defenders affected by a defender profile mapping.
 
 ===== `GET /hostservicemappingpolicies/:id/enforcers`
 
-Returns the list of enforcers that are affected by this mapping.
+Returns the list of defenders that are affected by this mapping.
 
 ===== `GET /enforcers/:id/auditprofiles`
 
 Returns a list of the audit profiles that must be applied to this
-enforcer.
+defender.
 
 ===== `GET /enforcers/:id/debugbundles`
 
@@ -936,54 +936,54 @@ Uploads a debug bundle.
 
 ===== `GET /enforcers/:id/enforcerprofiles`
 
-Returns the enforcer profile that must be used by an enforcer.
+Returns the defender profile that must be used by a defender.
 
 ===== `POST /enforcers/:id/enforcerrefreshes`
 
-Sends a Enforcer Refresh command.
+Sends a defender refresh command.
 
 ===== `GET /enforcers/:id/hostservices`
 
 Returns a list of the host services policies that apply to this
-enforcer.
+defender.
 
 Parameters:
 
 * `appliedServices` (`boolean`): Valid when retrieved for a given
-enforcer and returns the applied services.
+defender and returns the applied services.
 * `setServices` (`boolean`): Instructs the backend to cache the services
 that were resolved. services.
 
 ===== `GET /enforcers/:id/poke`
 
-Sends a poke empty object. This is used to ensure an enforcer is up and
+Sends a poke empty object. This is used to ensure a defender is up and
 running.
 
 Parameters:
 
 * `cpuload` (`float`): Deprecated.
 * `enforcementStatus` (`enum(Failed | Inactive | Active)`): If set,
-changes the enforcement status of the enforcer alongside with the poke.
+changes the enforcement status of the defender alongside with the poke.
 * `forceFullPoke` (`boolean`): If set, it will trigger a full poke
 (slower).
 * `memory` (`integer`): Deprecated.
 * `processes` (`integer`): Deprecated.
-* `sessionClose` (`boolean`): If set, terminates a session for an
-enforcer.
-* `sessionID` (`string`): If set, sends the current session ID of an
-enforcer.
+* `sessionClose` (`boolean`): If set, terminates a session for a
+defender.
+* `sessionID` (`string`): If set, sends the current session ID of a
+defender.
 * `status` (`enum(Registered | Connected | Disconnected)`): If set,
-changes the status of the enforcer alongside with the poke.
+changes the status of the defender alongside with the poke.
 * `ts` (`time`): time of report. If not set, local server time will be
 used.
-* `version` (`string`): If set, version of the current running enforcer.
+* `version` (`string`): If set, version of the current running defender.
 * `zhash` (`integer`): Can be set to help backend target the correct
-shard where the enforcer is stored.
+shard where the defender is stored.
 
 ===== `GET /enforcers/:id/trustedcas`
 
 Returns the list of certificate authorities that should be trusted by
-this enforcer.
+this defender.
 
 Parameters:
 
@@ -994,7 +994,7 @@ Parameters:
 ===== `FQDN` `string` [`required`,`creation_only`]
 
 Contains the fully qualified domain name (FQDN) of the server where the
-enforcer is running.
+defender is running.
 
 ===== `ID` `string` [`identifier`,`autogenerated`,`read_only`]
 
@@ -1010,29 +1010,29 @@ List of tags attached to an entity.
 
 ===== `certificate` `string` [`autogenerated`,`read_only`]
 
-The certificate of the enforcer.
+The certificate of the defender.
 
 ===== `certificateRequest` `string`
 
 If not empty during a create or update operation, the provided
-certificate signing request (CSR) will be validated and signed by the
-control plane, providing a renewed certificate.
+certificate signing request (CSR) will be validated and signed by
+Segment Console, providing a renewed certificate.
 
 ===== `collectInfo` `boolean`
 
-Indicates to the enforcer whether or not it needs to collect
+Indicates to the defender whether or not it needs to collect
 information.
 
 ===== `collectedInfo` `map[string]string`
 
 _This attribute is deprecated_.
 
-Represents the latest information collected by the enforcer.
+Represents the latest information collected by the defender.
 
 ===== `controller` `string` [`autogenerated`,`read_only`]
 
-The control plane identifier managing this object. This property is
-mostly useful when federating multiple control planes.
+The Segment Console identifier managing this object. This property is
+mostly useful when federating multiple Segment Consoles.
 
 ===== `createTime` `time` [`autogenerated`,`read_only`]
 
@@ -1040,7 +1040,7 @@ Creation date of the object.
 
 ===== `currentVersion` `string`
 
-The version number of the installed enforcer binary.
+The version number of the installed defender binary.
 
 ===== `description` `string` [`max_length=1024`]
 
@@ -1071,12 +1071,12 @@ The time and date of the last heartbeat.
 
 ===== `localCA` `string` [`autogenerated`]
 
-Contains the initial chain of trust for the enforcer. This value is only
-given when you retrieve a single enforcer.
+Contains the initial chain of trust for the defender. This value is only
+given when you retrieve a single defender.
 
 ===== `logLevel` `enum(Info | Debug | Warn | Error | Trace)`
 
-Log level of the enforcer.
+Log level of the defender.
 
 Default value:
 
@@ -1099,7 +1099,7 @@ Default value:
 
 ===== `machineID` `string`
 
-A unique identifier for every machine as detected by the enforcer. It is
+A unique identifier for every machine as detected by the defender. It is
 based on hardware information such as the SMBIOS UUID, MAC addresses of
 interfaces, or cloud provider IDs.
 
@@ -1122,7 +1122,7 @@ Contains the list of normalized tags of the entities.
 
 ===== `operationalStatus` `enum(Registered | Connected | Disconnected | Initialized)`
 
-The status of the enforcer.
+The status of the defender.
 
 Default value:
 
@@ -1142,21 +1142,21 @@ is signed by the private certificate authority.
 
 ===== `startTime` `time`
 
-The time and date on which this enforcer was started. The enforcer
+The time and date on which this defender was started. The defender
 reports this and the value is preserved across disconnects.
 
 ===== `subnets` `[]string`
 
-Local subnets of this enforcer.
+Local subnets of this defender.
 
 ===== `unreachable` `boolean` [`autogenerated`,`read_only`]
 
-The Aporeto control plane sets this value to `true` if it hasn’t heard
-from the enforcer in the last five minutes.
+Segment Console sets this value to `true` if it hasn’t heard from the
+defender in the last five minutes.
 
 ===== `updateAvailable` `boolean`
 
-If `true`, the enforcer version is outdated and should be updated.
+If `true`, the defender version is outdated and should be updated.
 
 ===== `updateTime` `time` [`autogenerated`,`read_only`]
 
@@ -1164,8 +1164,8 @@ Last update date of the object.
 
 === EnforcerLog
 
-An enforcer log represents the log collected by an enforcer. Each
-enforcer log can have partial or complete data. The collectionID is used
+A defender log represents the log collected by an defender. Each
+defender log can have partial or complete data. The collectionID is used
 to aggregate the multipart data into one.
 
 ==== Example
@@ -1214,7 +1214,7 @@ List of tags attached to an entity.
 
 ===== `collectionID` `string` [`required`]
 
-CollectionID is the ID of the enforcer log. CollectionID is used to
+CollectionID is the ID of the defender log. CollectionID is used to
 aggregate the multipart data.
 
 ===== `createTime` `time` [`autogenerated`,`read_only`]
@@ -1223,11 +1223,11 @@ Creation date of the object.
 
 ===== `data` `string`
 
-Represents the data collected by the enforcer.
+Represents the data collected by the defender.
 
 ===== `enforcerID` `string` [`required`]
 
-ID of the enforcer.
+ID of the defender.
 
 ===== `namespace` `string` [`autogenerated`,`read_only`]
 
@@ -1255,7 +1255,7 @@ Last update date of the object.
 
 === EnforcerReport
 
-Post a new enforcer statistics report.
+Post a new defender statistics report.
 
 ==== Example
 
@@ -1276,33 +1276,33 @@ Post a new enforcer statistics report.
 
 ===== `POST /enforcerreports`
 
-Create a enforcer statistics report.
+Create a defender statistics report.
 
 ==== Attributes
 
 ===== `CPULoad` `float`
 
-Total CPU utilization of the enforcer as a percentage of vCPUs.
+Total CPU utilization of the defender as a percentage of vCPUs.
 
 ===== `ID` `string` [`required`]
 
-ID of the enforcer.
+ID of the defender.
 
 ===== `memory` `integer`
 
-Total resident memory used by the enforcer in bytes.
+Total resident memory used by the defender in bytes.
 
 ===== `name` `string` [`required`]
 
-Name of the enforcer.
+Name of the defender.
 
 ===== `namespace` `string` [`required`]
 
-Namespace of the enforcer.
+Namespace of the defender.
 
 ===== `processes` `integer`
 
-Number of active processes of the enforcer.
+Number of active processes of the defender.
 
 ===== `timestamp` `time` [`required`]
 
@@ -1310,7 +1310,7 @@ Date of the report.
 
 === EnforcerTraceReport
 
-Post a new enforcer trace that determines how packets are.
+Post a new defender trace that determines how packets are.
 
 ==== Example
 
@@ -1328,17 +1328,17 @@ Post a new enforcer trace that determines how packets are.
 
 ===== `POST /enforcertracereports`
 
-Create an enforcer trace report.
+Create a defender trace report.
 
 ==== Attributes
 
 ===== `enforcerID` `string` [`required`]
 
-ID of the enforcer where the trace was collected.
+ID of the defender where the trace was collected.
 
 ===== `enforcerNamespace` `string` [`required`]
 
-Namespace of the enforcer where the trace was collected.
+Namespace of the defender where the trace was collected.
 
 ===== `namespace` `string` [`required`]
 
@@ -1409,11 +1409,11 @@ Set to `true` if the packet was encrypted.
 
 ===== `enforcerID` `string` [`required`]
 
-Identifier of the enforcer sending the report.
+Identifier of the defender sending the report.
 
 ===== `enforcerNamespace` `string` [`required`]
 
-Namespace of the enforcer sending the report.
+Namespace of the defender sending the report.
 
 ===== `event` `enum(Received | Transmitted | Dropped)` [`required`]
 
@@ -1557,15 +1557,15 @@ Creation date of the object.
 
 ===== `enforcerID` `string` [`required`]
 
-ID of the enforcer.
+ID of the defender.
 
 ===== `enforcerNamespace` `string` [`required`]
 
-Namespace of the enforcer.
+Namespace of the defender.
 
 ===== `enforcerVersion` `string`
 
-Semantic version of the enforcer.
+Semantic version of the defender.
 
 ===== `error` `string`
 
@@ -1677,7 +1677,7 @@ Last update date of the object.
 
 === PingRequest
 
-Initiates a ping request for enforcer debugging.
+Initiates a ping request for defender debugging.
 
 ==== Example
 
@@ -1818,12 +1818,12 @@ Represents the tracing mode to apply to a processing unit.
 
 ===== `IPTables` `boolean`
 
-Instructs the enforcers to provide an iptables trace for a processing
+Instructs the defenders to provide an iptables trace for a processing
 unit.
 
 ===== `applicationConnections` `boolean`
 
-Instructs the enforcer to send records for all application-initiated
+Instructs the defender to send records for all application-initiated
 connections.
 
 ===== `interval` `string`
@@ -1841,12 +1841,12 @@ Default value:
 
 ===== `networkConnections` `boolean`
 
-Instructs the enforcer to send records for all network-initiated
+Instructs the defender to send records for all network-initiated
 connections.
 
 === TraceRecord
 
-Represents a single trace record from the enforcer.
+Represents a single trace record from the defender.
 
 ==== Example
 

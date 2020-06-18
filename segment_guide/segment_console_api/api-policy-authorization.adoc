@@ -365,7 +365,7 @@ Represents an app credential.
 
 ===== `APIURL` `string`
 
-The URL of the Aporeto API.
+The URL of the Segment Console API.
 
 ===== `ID` `string`
 

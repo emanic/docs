@@ -2,10 +2,10 @@
 
 === DNSLookupReport
 
-A DNS Lookup report is used to report a DNS lookup that is happening on
-behalf of a processing unit. If the DNS server is on the standard udp
-port 53 then enforcer is able to proxy the DNS traffic and make a
-report. The report indicate whether or not the lookup was successful.
+A DNS lookup report is used to report a DNS lookup that is happening on
+behalf of a processing unit. If the DNS server is on the standard UDP
+port 53 then the defender can proxy the DNS traffic and make a report.
+The report indicate whether or not the lookup was successful.
 
 ==== Example
 
@@ -36,11 +36,11 @@ Action of the DNS request.
 
 ===== `enforcerID` `string`
 
-ID of the enforcer.
+ID of the defender.
 
 ===== `enforcerNamespace` `string` [`required`]
 
-Namespace of the enforcer.
+Namespace of the defender.
 
 ===== `processingUnitID` `string` [`required`]
 

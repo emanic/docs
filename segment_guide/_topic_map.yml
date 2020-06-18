@@ -7,6 +7,14 @@ Topics:
 - Name: Dummy
   File: dummy
 ---
+Name: Concepts
+Dir: concepts
+Topics:
+- Name: Concepts
+  File: concepts
+- Name: Dummy
+  File: dummy
+---
 Name: apoctl
 Dir: apoctl
 Topics:
