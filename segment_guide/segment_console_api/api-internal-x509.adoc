@@ -6,34 +6,50 @@ Represents a public key infrastructure X.509 (PKIX) certificate.
 
 ==== Attributes
 
-===== `commonName` `string`
+===== `commonName`
+
+Type: `string`
 
 Represents the Common Name field.
 
-===== `country` `[]string`
+===== `country`
+
+Type: `[]string`
 
 Represents the Country field.
 
-===== `locality` `[]string`
+===== `locality`
+
+Type: `[]string`
 
 Represents the Locality field.
 
-===== `organization` `[]string`
+===== `organization`
+
+Type: `[]string`
 
 Represents the Organization field.
 
-===== `organizationalUnit` `[]string`
+===== `organizationalUnit`
+
+Type: `[]string`
 
 Represents the Organizational Unit field.
 
-===== `postalCode` `[]string`
+===== `postalCode`
+
+Type: `[]string`
 
 Represents the Postal Code field.
 
-===== `province` `[]string`
+===== `province`
+
+Type: `[]string`
 
 Represents the Province field.
 
-===== `streetAddress` `[]string`
+===== `streetAddress`
+
+Type: `[]string`
 
 Represents the Street Address field.

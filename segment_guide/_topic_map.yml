@@ -1,9 +1,9 @@
 ---
-Name: About
-Dir: about
+Name: Welcome
+Dir: welcome
 Topics:
-- Name: About
-  File: about
+- Name: Welcome
+  File: welcome
 - Name: Dummy
   File: dummy
 ---
@@ -14,6 +14,16 @@ Topics:
   File: concepts
 - Name: Dummy
   File: dummy
+---
+Name: Troubleshoot
+Dir: troubleshoot
+Topics:
+- Name: Troubleshoot
+  File: troubleshoot
+- Name: Segment Console
+  File: console
+- Name: Defender
+  File: defender
 ---
 Name: apoctl
 Dir: apoctl
@@ -28,6 +38,8 @@ Topics:
   File: appcred
 - Name: auth command
   File: auth
+- Name: defender command
+  File: defender
 - Name: reports command
   File: reports
 - Name: stats command

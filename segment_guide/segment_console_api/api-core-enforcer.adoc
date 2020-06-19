@@ -90,7 +90,9 @@ Create a counter report.
 
 ==== Attributes
 
-===== `AckInUnknownState` `integer`
+===== `AckInUnknownState`
+
+Type: `integer`
 
 Counter for sending FIN ACK received in unknown connection state.
 
@@ -101,7 +103,9 @@ Default value:
 0
 ----
 
-===== `AckInvalidFormat` `integer`
+===== `AckInvalidFormat`
+
+Type: `integer`
 
 Counter for ACK packet dropped because of invalid format.
 
@@ -112,7 +116,9 @@ Default value:
 0
 ----
 
-===== `AckRejected` `integer`
+===== `AckRejected`
+
+Type: `integer`
 
 Counter for ACK packets rejected as per policy.
 
@@ -123,7 +129,9 @@ Default value:
 0
 ----
 
-===== `AckSigValidationFailed` `integer`
+===== `AckSigValidationFailed`
+
+Type: `integer`
 
 Counter for ACK packet dropped because signature validation failed.
 
@@ -134,7 +142,9 @@ Default value:
 0
 ----
 
-===== `AckTCPNoTCPAuthOption` `integer`
+===== `AckTCPNoTCPAuthOption`
+
+Type: `integer`
 
 Counter for TCP authentication option not found.
 
@@ -145,7 +155,9 @@ Default value:
 0
 ----
 
-===== `ConnectionsProcessed` `integer`
+===== `ConnectionsProcessed`
+
+Type: `integer`
 
 Counter for connections processed.
 
@@ -156,7 +168,9 @@ Default value:
 0
 ----
 
-===== `ContextIDNotFound` `integer`
+===== `ContextIDNotFound`
+
+Type: `integer`
 
 Counter for unable to find ContextID.
 
@@ -167,7 +181,9 @@ Default value:
 0
 ----
 
-===== `DroppedExternalService` `integer`
+===== `DroppedExternalService`
+
+Type: `integer`
 
 Counter for no ACLs found for external services. Dropping application
 SYN packet.
@@ -179,7 +195,9 @@ Default value:
 0
 ----
 
-===== `InvalidConnState` `integer`
+===== `InvalidConnState`
+
+Type: `integer`
 
 Counter for invalid connection state.
 
@@ -190,7 +208,9 @@ Default value:
 0
 ----
 
-===== `InvalidNetState` `integer`
+===== `InvalidNetState`
+
+Type: `integer`
 
 Counter for invalid net state.
 
@@ -201,7 +221,9 @@ Default value:
 0
 ----
 
-===== `InvalidProtocol` `integer`
+===== `InvalidProtocol`
+
+Type: `integer`
 
 Counter for invalid protocol.
 
@@ -212,7 +234,9 @@ Default value:
 0
 ----
 
-===== `InvalidSynAck` `integer`
+===== `InvalidSynAck`
+
+Type: `integer`
 
 Counter for processing unit is already dead - drop SYN ACK packet.
 
@@ -223,7 +247,9 @@ Default value:
 0
 ----
 
-===== `MarkNotFound` `integer`
+===== `MarkNotFound`
+
+Type: `integer`
 
 Counter for processing unit mark not found.
 
@@ -234,7 +260,9 @@ Default value:
 0
 ----
 
-===== `NetSynNotSeen` `integer`
+===== `NetSynNotSeen`
+
+Type: `integer`
 
 Counter for network SYN packet was not seen.
 
@@ -245,7 +273,9 @@ Default value:
 0
 ----
 
-===== `NoConnFound` `integer`
+===== `NoConnFound`
+
+Type: `integer`
 
 Counter for no context or connection found.
 
@@ -256,7 +286,9 @@ Default value:
 0
 ----
 
-===== `NonPUTraffic` `integer`
+===== `NonPUTraffic`
+
+Type: `integer`
 
 Counter for traffic that belongs to a non-processing unit process.
 
@@ -267,7 +299,9 @@ Default value:
 0
 ----
 
-===== `OutOfOrderSynAck` `integer`
+===== `OutOfOrderSynAck`
+
+Type: `integer`
 
 Counter for SYN ACK for flow with processed FIN ACK.
 
@@ -278,7 +312,9 @@ Default value:
 0
 ----
 
-===== `PortNotFound` `integer`
+===== `PortNotFound`
+
+Type: `integer`
 
 Counter for port not found.
 
@@ -289,7 +325,9 @@ Default value:
 0
 ----
 
-===== `RejectPacket` `integer`
+===== `RejectPacket`
+
+Type: `integer`
 
 Counter for reject the packet as per policy.
 
@@ -300,7 +338,9 @@ Default value:
 0
 ----
 
-===== `ServicePostprocessorFailed` `integer`
+===== `ServicePostprocessorFailed`
+
+Type: `integer`
 
 Counter for post service processing failed for network packet.
 
@@ -311,7 +351,9 @@ Default value:
 0
 ----
 
-===== `ServicePreprocessorFailed` `integer`
+===== `ServicePreprocessorFailed`
+
+Type: `integer`
 
 Counter for network packets that failed preprocessing.
 
@@ -322,7 +364,9 @@ Default value:
 0
 ----
 
-===== `SynAckBadClaims` `integer`
+===== `SynAckBadClaims`
+
+Type: `integer`
 
 Counter for SYN ACK packet dropped because of bad claims.
 
@@ -333,7 +377,9 @@ Default value:
 0
 ----
 
-===== `SynAckClaimsMisMatch` `integer`
+===== `SynAckClaimsMisMatch`
+
+Type: `integer`
 
 Counter for SYN ACK packet dropped because of encryption mismatch.
 
@@ -344,7 +390,9 @@ Default value:
 0
 ----
 
-===== `SynAckDroppedExternalService` `integer`
+===== `SynAckDroppedExternalService`
+
+Type: `integer`
 
 Counter for SYN ACK from external service dropped.
 
@@ -355,7 +403,9 @@ Default value:
 0
 ----
 
-===== `SynAckInvalidFormat` `integer`
+===== `SynAckInvalidFormat`
+
+Type: `integer`
 
 Counter for SYN ACK packet dropped because of invalid format.
 
@@ -366,7 +416,9 @@ Default value:
 0
 ----
 
-===== `SynAckMissingClaims` `integer`
+===== `SynAckMissingClaims`
+
+Type: `integer`
 
 Counter for SYN ACK packet dropped because of no claims.
 
@@ -377,7 +429,9 @@ Default value:
 0
 ----
 
-===== `SynAckMissingToken` `integer`
+===== `SynAckMissingToken`
+
+Type: `integer`
 
 Counter for SYN ACK packet dropped because of missing token.
 
@@ -388,7 +442,9 @@ Default value:
 0
 ----
 
-===== `SynAckNoTCPAuthOption` `integer`
+===== `SynAckNoTCPAuthOption`
+
+Type: `integer`
 
 Counter for TCP authentication option not found.
 
@@ -399,7 +455,9 @@ Default value:
 0
 ----
 
-===== `SynAckRejected` `integer`
+===== `SynAckRejected`
+
+Type: `integer`
 
 Counter for dropping because of reject rule on transmitter.
 
@@ -410,7 +468,9 @@ Default value:
 0
 ----
 
-===== `SynDroppedInvalidFormat` `integer`
+===== `SynDroppedInvalidFormat`
+
+Type: `integer`
 
 Counter for SYN packet dropped because of invalid format.
 
@@ -421,7 +481,9 @@ Default value:
 0
 ----
 
-===== `SynDroppedInvalidToken` `integer`
+===== `SynDroppedInvalidToken`
+
+Type: `integer`
 
 Counter for SYN packet dropped because of invalid token.
 
@@ -432,7 +494,9 @@ Default value:
 0
 ----
 
-===== `SynDroppedNoClaims` `integer`
+===== `SynDroppedNoClaims`
+
+Type: `integer`
 
 Counter for SYN packet dropped because of no claims.
 
@@ -443,7 +507,9 @@ Default value:
 0
 ----
 
-===== `SynDroppedTCPOption` `integer`
+===== `SynDroppedTCPOption`
+
+Type: `integer`
 
 Counter for TCP authentication option not found.
 
@@ -454,7 +520,9 @@ Default value:
 0
 ----
 
-===== `SynRejectPacket` `integer`
+===== `SynRejectPacket`
+
+Type: `integer`
 
 Counter for SYN packet dropped due to policy.
 
@@ -465,7 +533,9 @@ Default value:
 0
 ----
 
-===== `SynUnexpectedPacket` `integer`
+===== `SynUnexpectedPacket`
+
+Type: `integer`
 
 Counter for received SYN packet from unknown processing unit.
 
@@ -476,7 +546,9 @@ Default value:
 0
 ----
 
-===== `TCPAuthNotFound` `integer`
+===== `TCPAuthNotFound`
+
+Type: `integer`
 
 Counter for TCP authentication option not found.
 
@@ -487,7 +559,9 @@ Default value:
 0
 ----
 
-===== `UDPAckInvalidSignature` `integer`
+===== `UDPAckInvalidSignature`
+
+Type: `integer`
 
 Counter for UDP ACK packet dropped due to an invalid signature.
 
@@ -498,7 +572,9 @@ Default value:
 0
 ----
 
-===== `UDPConnectionsProcessed` `integer`
+===== `UDPConnectionsProcessed`
+
+Type: `integer`
 
 Counter for number of processed UDP connections.
 
@@ -509,7 +585,9 @@ Default value:
 0
 ----
 
-===== `UDPDropContextNotFound` `integer`
+===== `UDPDropContextNotFound`
+
+Type: `integer`
 
 Counter for dropped UDP data packets with no context.
 
@@ -520,7 +598,9 @@ Default value:
 0
 ----
 
-===== `UDPDropFin` `integer`
+===== `UDPDropFin`
+
+Type: `integer`
 
 Counter for dropped UDP FIN handshake packets.
 
@@ -531,7 +611,9 @@ Default value:
 0
 ----
 
-===== `UDPDropInNfQueue` `integer`
+===== `UDPDropInNfQueue`
+
+Type: `integer`
 
 Counter for dropped UDP in NfQueue.
 
@@ -542,7 +624,9 @@ Default value:
 0
 ----
 
-===== `UDPDropNoConnection` `integer`
+===== `UDPDropNoConnection`
+
+Type: `integer`
 
 Counter for dropped UDP data packets with no connection.
 
@@ -553,7 +637,9 @@ Default value:
 0
 ----
 
-===== `UDPDropPacket` `integer`
+===== `UDPDropPacket`
+
+Type: `integer`
 
 Counter for dropped UDP data packets.
 
@@ -564,7 +650,9 @@ Default value:
 0
 ----
 
-===== `UDPDropQueueFull` `integer`
+===== `UDPDropQueueFull`
+
+Type: `integer`
 
 Counter for dropped UDP Queue Full.
 
@@ -575,7 +663,9 @@ Default value:
 0
 ----
 
-===== `UDPDropSynAck` `integer`
+===== `UDPDropSynAck`
+
+Type: `integer`
 
 Counter for dropped UDP SYN ACK handshake packets.
 
@@ -586,7 +676,9 @@ Default value:
 0
 ----
 
-===== `UDPInvalidNetState` `integer`
+===== `UDPInvalidNetState`
+
+Type: `integer`
 
 Counter for UDP packets received in invalid network state.
 
@@ -597,7 +689,9 @@ Default value:
 0
 ----
 
-===== `UDPPostProcessingFailed` `integer`
+===== `UDPPostProcessingFailed`
+
+Type: `integer`
 
 Counter for UDP packets failing postprocessing.
 
@@ -608,7 +702,9 @@ Default value:
 0
 ----
 
-===== `UDPPreProcessingFailed` `integer`
+===== `UDPPreProcessingFailed`
+
+Type: `integer`
 
 Counter for UDP packets failing preprocessing.
 
@@ -619,7 +715,9 @@ Default value:
 0
 ----
 
-===== `UDPRejected` `integer`
+===== `UDPRejected`
+
+Type: `integer`
 
 Counter for UDP packets dropped due to policy.
 
@@ -630,7 +728,9 @@ Default value:
 0
 ----
 
-===== `UDPSynAckDropBadClaims` `integer`
+===== `UDPSynAckDropBadClaims`
+
+Type: `integer`
 
 Counter for UDP SYN ACK packets dropped due to bad claims.
 
@@ -641,7 +741,9 @@ Default value:
 0
 ----
 
-===== `UDPSynAckMissingClaims` `integer`
+===== `UDPSynAckMissingClaims`
+
+Type: `integer`
 
 Counter for UDP SYN ACK packets dropped due to missing claims.
 
@@ -652,7 +754,9 @@ Default value:
 0
 ----
 
-===== `UDPSynAckPolicy` `integer`
+===== `UDPSynAckPolicy`
+
+Type: `integer`
 
 Counter for UDP SYN ACK packets dropped due to bad claims.
 
@@ -663,7 +767,9 @@ Default value:
 0
 ----
 
-===== `UDPSynDrop` `integer`
+===== `UDPSynDrop`
+
+Type: `integer`
 
 Counter for dropped UDP SYN transmits.
 
@@ -674,7 +780,9 @@ Default value:
 0
 ----
 
-===== `UDPSynDropPolicy` `integer`
+===== `UDPSynDropPolicy`
+
+Type: `integer`
 
 Counter for dropped UDP SYN policy.
 
@@ -685,7 +793,9 @@ Default value:
 0
 ----
 
-===== `UDPSynInvalidToken` `integer`
+===== `UDPSynInvalidToken`
+
+Type: `integer`
 
 Counter for dropped UDP FIN handshake packets.
 
@@ -696,7 +806,9 @@ Default value:
 0
 ----
 
-===== `UDPSynMissingClaims` `integer`
+===== `UDPSynMissingClaims`
+
+Type: `integer`
 
 Counter for UDP SYN packet dropped due to missing claims.
 
@@ -707,7 +819,9 @@ Default value:
 0
 ----
 
-===== `UnknownError` `integer`
+===== `UnknownError`
+
+Type: `integer`
 
 Counter for unknown error.
 
@@ -718,7 +832,9 @@ Default value:
 0
 ----
 
-===== `connectionsAnalyzed` `integer`
+===== `connectionsAnalyzed`
+
+Type: `integer`
 
 Non-zero counter indicates analyzed connections for unencrypted,
 encrypted, and packets from endpoint applications with the TCP Fast Open
@@ -731,7 +847,9 @@ Default value:
 0
 ----
 
-===== `connectionsDropped` `integer`
+===== `connectionsDropped`
+
+Type: `integer`
 
 Non-zero counter indicates dropped connections because of invalid state,
 non-processing unit traffic, or out of order packets.
@@ -743,7 +861,9 @@ Default value:
 0
 ----
 
-===== `connectionsExpired` `integer`
+===== `connectionsExpired`
+
+Type: `integer`
 
 Non-zero counter indicates expired connections because of response not
 being received within a certain amount of time after the request is
@@ -756,7 +876,9 @@ Default value:
 0
 ----
 
-===== `droppedPackets` `integer`
+===== `droppedPackets`
+
+Type: `integer`
 
 Non-zero counter indicates dropped packets that did not hit any of our
 iptables rules and queue drops.
@@ -768,7 +890,9 @@ Default value:
 0
 ----
 
-===== `encryptionFailures` `integer`
+===== `encryptionFailures`
+
+Type: `integer`
 
 Non-zero counter indicates encryption processing failures of data
 packets.
@@ -780,15 +904,21 @@ Default value:
 0
 ----
 
-===== `enforcerID` `string` [`required`]
+===== `enforcerID` [`required`]
+
+Type: `string`
 
 Identifier of the defender sending the report.
 
-===== `enforcerNamespace` `string` [`required`]
+===== `enforcerNamespace` [`required`]
+
+Type: `string`
 
 Namespace of the defender sending the report.
 
-===== `externalNetworkConnections` `integer`
+===== `externalNetworkConnections`
+
+Type: `integer`
 
 Non-zero counter indicates connections going to and from external
 networks. These may be drops or allowed counters.
@@ -800,7 +930,9 @@ Default value:
 0
 ----
 
-===== `policyDrops` `integer`
+===== `policyDrops`
+
+Type: `integer`
 
 Non-zero counter indicates packets dropped due to a reject policy.
 
@@ -811,19 +943,27 @@ Default value:
 0
 ----
 
-===== `processingUnitID` `string`
+===== `processingUnitID`
+
+Type: `string`
 
 PUID is the ID of the processing unit reporting the counter.
 
-===== `processingUnitNamespace` `string`
+===== `processingUnitNamespace`
+
+Type: `string`
 
 Namespace of the processing unit reporting the counter.
 
-===== `timestamp` `time`
+===== `timestamp`
+
+Type: `time`
 
 Timestamp is the date of the report.
 
-===== `tokenDrops` `integer`
+===== `tokenDrops`
+
+Type: `integer`
 
 Non-zero counter indicates packets rejected due to anything related to
 token creation/parsing failures.
@@ -991,62 +1131,88 @@ Parameters:
 
 ==== Attributes
 
-===== `FQDN` `string` [`required`,`creation_only`]
+===== `FQDN` [`required`,`creation_only`]
+
+Type: `string`
 
 Contains the fully qualified domain name (FQDN) of the server where the
 defender is running.
 
-===== `ID` `string` [`identifier`,`autogenerated`,`read_only`]
+===== `ID` [`identifier`,`autogenerated`,`read_only`]
+
+Type: `string`
 
 Identifier of the object.
 
-===== `annotations` `map[string][]string`
+===== `annotations`
+
+Type: `map[string][]string`
 
 Stores additional information about an entity.
 
-===== `associatedTags` `[]string`
+===== `associatedTags`
+
+Type: `[]string`
 
 List of tags attached to an entity.
 
-===== `certificate` `string` [`autogenerated`,`read_only`]
+===== `certificate` [`autogenerated`,`read_only`]
+
+Type: `string`
 
 The certificate of the defender.
 
-===== `certificateRequest` `string`
+===== `certificateRequest`
+
+Type: `string`
 
 If not empty during a create or update operation, the provided
 certificate signing request (CSR) will be validated and signed by
 Segment Console, providing a renewed certificate.
 
-===== `collectInfo` `boolean`
+===== `collectInfo`
+
+Type: `boolean`
 
 Indicates to the defender whether or not it needs to collect
 information.
 
-===== `collectedInfo` `map[string]string`
+===== `collectedInfo`
 
 _This attribute is deprecated_.
 
+Type: `map[string]string`
+
 Represents the latest information collected by the defender.
 
-===== `controller` `string` [`autogenerated`,`read_only`]
+===== `controller` [`autogenerated`,`read_only`]
+
+Type: `string`
 
 The Segment Console identifier managing this object. This property is
 mostly useful when federating multiple Segment Consoles.
 
-===== `createTime` `time` [`autogenerated`,`read_only`]
+===== `createTime` [`autogenerated`,`read_only`]
+
+Type: `time`
 
 Creation date of the object.
 
-===== `currentVersion` `string`
+===== `currentVersion`
+
+Type: `string`
 
 The version number of the installed defender binary.
 
-===== `description` `string` [`max_length=1024`]
+===== `description` [`max_length=1024`]
+
+Type: `string`
 
 Description of the object.
 
-===== `enforcementStatus` `enum(Inactive | Active | Failed)`
+===== `enforcementStatus`
+
+Type: `enum(Inactive | Active | Failed)`
 
 Status of the enforcement for host services.
 
@@ -1057,24 +1223,34 @@ Default value:
 "Inactive"
 ----
 
-===== `lastCollectionID` `string`
+===== `lastCollectionID`
+
+Type: `string`
 
 Identifies the last collection.
 
-===== `lastCollectionTime` `time`
+===== `lastCollectionTime`
+
+Type: `time`
 
 Identifies when the information was collected.
 
-===== `lastSyncTime` `time`
+===== `lastSyncTime`
+
+Type: `time`
 
 The time and date of the last heartbeat.
 
-===== `localCA` `string` [`autogenerated`]
+===== `localCA` [`autogenerated`]
+
+Type: `string`
 
 Contains the initial chain of trust for the defender. This value is only
 given when you retrieve a single defender.
 
-===== `logLevel` `enum(Info | Debug | Warn | Error | Trace)`
+===== `logLevel`
+
+Type: `enum(Info | Debug | Warn | Error | Trace)`
 
 Log level of the defender.
 
@@ -1085,7 +1261,9 @@ Default value:
 "Info"
 ----
 
-===== `logLevelDuration` `string`
+===== `logLevelDuration`
+
+Type: `string`
 
 Determines the duration of which the log level will be active, using
 https://golang.org/pkg/time/#example_Duration[Golang duration syntax].
@@ -1097,30 +1275,42 @@ Default value:
 "10s"
 ----
 
-===== `machineID` `string`
+===== `machineID`
+
+Type: `string`
 
 A unique identifier for every machine as detected by the defender. It is
 based on hardware information such as the SMBIOS UUID, MAC addresses of
 interfaces, or cloud provider IDs.
 
-===== `metadata` `[]string` [`creation_only`]
+===== `metadata` [`creation_only`]
+
+Type: `[]string`
 
 Contains tags that can only be set during creation, must all start with
 the `@' prefix, and should only be used by external systems.
 
-===== `name` `string` [`required`,`max_length=256`]
+===== `name` [`required`,`max_length=256`]
+
+Type: `string`
 
 Name of the entity.
 
-===== `namespace` `string` [`autogenerated`,`read_only`]
+===== `namespace` [`autogenerated`,`read_only`]
+
+Type: `string`
 
 Namespace tag attached to an entity.
 
-===== `normalizedTags` `[]string` [`autogenerated`,`read_only`]
+===== `normalizedTags` [`autogenerated`,`read_only`]
+
+Type: `[]string`
 
 Contains the list of normalized tags of the entities.
 
-===== `operationalStatus` `enum(Registered | Connected | Disconnected | Initialized)`
+===== `operationalStatus`
+
+Type: `enum(Registered | Connected | Disconnected | Initialized)`
 
 The status of the defender.
 
@@ -1131,34 +1321,48 @@ Default value:
 "Registered"
 ----
 
-===== `protected` `boolean`
+===== `protected`
+
+Type: `boolean`
 
 Defines if the object is protected.
 
-===== `publicToken` `string` [`autogenerated`,`read_only`]
+===== `publicToken` [`autogenerated`,`read_only`]
+
+Type: `string`
 
 The public token of the server that will be included in the datapath and
 is signed by the private certificate authority.
 
-===== `startTime` `time`
+===== `startTime`
+
+Type: `time`
 
 The time and date on which this defender was started. The defender
 reports this and the value is preserved across disconnects.
 
-===== `subnets` `[]string`
+===== `subnets`
+
+Type: `[]string`
 
 Local subnets of this defender.
 
-===== `unreachable` `boolean` [`autogenerated`,`read_only`]
+===== `unreachable` [`autogenerated`,`read_only`]
+
+Type: `boolean`
 
 Segment Console sets this value to `true` if it hasn’t heard from the
 defender in the last five minutes.
 
-===== `updateAvailable` `boolean`
+===== `updateAvailable`
+
+Type: `boolean`
 
 If `true`, the defender version is outdated and should be updated.
 
-===== `updateTime` `time` [`autogenerated`,`read_only`]
+===== `updateTime` [`autogenerated`,`read_only`]
+
+Type: `time`
 
 Last update date of the object.
 
@@ -1200,56 +1404,82 @@ Retrieves the enforcerlog with the given ID.
 
 ==== Attributes
 
-===== `ID` `string` [`identifier`,`autogenerated`,`read_only`]
+===== `ID` [`identifier`,`autogenerated`,`read_only`]
+
+Type: `string`
 
 Identifier of the object.
 
-===== `annotations` `map[string][]string`
+===== `annotations`
+
+Type: `map[string][]string`
 
 Stores additional information about an entity.
 
-===== `associatedTags` `[]string`
+===== `associatedTags`
+
+Type: `[]string`
 
 List of tags attached to an entity.
 
-===== `collectionID` `string` [`required`]
+===== `collectionID` [`required`]
+
+Type: `string`
 
 CollectionID is the ID of the defender log. CollectionID is used to
 aggregate the multipart data.
 
-===== `createTime` `time` [`autogenerated`,`read_only`]
+===== `createTime` [`autogenerated`,`read_only`]
+
+Type: `time`
 
 Creation date of the object.
 
-===== `data` `string`
+===== `data`
+
+Type: `string`
 
 Represents the data collected by the defender.
 
-===== `enforcerID` `string` [`required`]
+===== `enforcerID` [`required`]
+
+Type: `string`
 
 ID of the defender.
 
-===== `namespace` `string` [`autogenerated`,`read_only`]
+===== `namespace` [`autogenerated`,`read_only`]
+
+Type: `string`
 
 Namespace tag attached to an entity.
 
-===== `normalizedTags` `[]string` [`autogenerated`,`read_only`]
+===== `normalizedTags` [`autogenerated`,`read_only`]
+
+Type: `[]string`
 
 Contains the list of normalized tags of the entities.
 
-===== `page` `integer`
+===== `page`
+
+Type: `integer`
 
 Number assigned to each log in the increasing order.
 
-===== `protected` `boolean`
+===== `protected`
+
+Type: `boolean`
 
 Defines if the object is protected.
 
-===== `title` `string`
+===== `title`
+
+Type: `string`
 
 Title of the log.
 
-===== `updateTime` `time` [`autogenerated`,`read_only`]
+===== `updateTime` [`autogenerated`,`read_only`]
+
+Type: `time`
 
 Last update date of the object.
 
@@ -1280,31 +1510,45 @@ Create a defender statistics report.
 
 ==== Attributes
 
-===== `CPULoad` `float`
+===== `CPULoad`
+
+Type: `float`
 
 Total CPU utilization of the defender as a percentage of vCPUs.
 
-===== `ID` `string` [`required`]
+===== `ID` [`required`]
+
+Type: `string`
 
 ID of the defender.
 
-===== `memory` `integer`
+===== `memory`
+
+Type: `integer`
 
 Total resident memory used by the defender in bytes.
 
-===== `name` `string` [`required`]
+===== `name` [`required`]
+
+Type: `string`
 
 Name of the defender.
 
-===== `namespace` `string` [`required`]
+===== `namespace` [`required`]
+
+Type: `string`
 
 Namespace of the defender.
 
-===== `processes` `integer`
+===== `processes`
+
+Type: `integer`
 
 Number of active processes of the defender.
 
-===== `timestamp` `time` [`required`]
+===== `timestamp` [`required`]
+
+Type: `time`
 
 Date of the report.
 
@@ -1332,19 +1576,27 @@ Create a defender trace report.
 
 ==== Attributes
 
-===== `enforcerID` `string` [`required`]
+===== `enforcerID` [`required`]
+
+Type: `string`
 
 ID of the defender where the trace was collected.
 
-===== `enforcerNamespace` `string` [`required`]
+===== `enforcerNamespace` [`required`]
+
+Type: `string`
 
 Namespace of the defender where the trace was collected.
 
-===== `namespace` `string` [`required`]
+===== `namespace` [`required`]
+
+Type: `string`
 
 Namespace of the processing unit where the trace was collected.
 
-===== `puID` `string` [`required`]
+===== `puID` [`required`]
+
+Type: `string`
 
 ID of the processing unit where the trace was collected.
 
@@ -1382,64 +1634,94 @@ Create a packet trace report.
 
 ==== Attributes
 
-===== `TCPFlags` `integer`
+===== `TCPFlags`
+
+Type: `integer`
 
 Flags are the TCP flags of the packet.
 
-===== `claims` `[]string`
+===== `claims`
+
+Type: `[]string`
 
 Claims is the list of claims detected for the packet.
 
-===== `destinationIP` `string`
+===== `destinationIP`
+
+Type: `string`
 
 The destination IP address of the packet.
 
-===== `destinationPort` `integer` [`max_value=65536.000000`]
+===== `destinationPort` [`max_value=65536.000000`]
+
+Type: `integer`
 
 The destination port of a TCP or UDP packet.
 
-===== `dropReason` `string`
+===== `dropReason`
+
+Type: `string`
 
 If `event` is set to `Dropped`, contains the reason that the packet was
 dropped. Otherwise empty.
 
-===== `encrypt` `boolean`
+===== `encrypt`
+
+Type: `boolean`
 
 Set to `true` if the packet was encrypted.
 
-===== `enforcerID` `string` [`required`]
+===== `enforcerID` [`required`]
+
+Type: `string`
 
 Identifier of the defender sending the report.
 
-===== `enforcerNamespace` `string` [`required`]
+===== `enforcerNamespace` [`required`]
+
+Type: `string`
 
 Namespace of the defender sending the report.
 
-===== `event` `enum(Received | Transmitted | Dropped)` [`required`]
+===== `event` [`required`]
+
+Type: `enum(Received | Transmitted | Dropped)`
 
 The event that triggered the report.
 
-===== `mark` `integer`
+===== `mark`
+
+Type: `integer`
 
 Mark is the mark value of the packet.
 
-===== `namespace` `string` [`required`]
+===== `namespace` [`required`]
+
+Type: `string`
 
 Namespace of the processing unit reporting the packet.
 
-===== `packetID` `integer`
+===== `packetID`
+
+Type: `integer`
 
 The ID of the IP header of the reported packet.
 
-===== `protocol` `integer` [`max_value=255.000000`]
+===== `protocol` [`max_value=255.000000`]
+
+Type: `integer`
 
 Protocol number.
 
-===== `puID` `string`
+===== `puID`
+
+Type: `string`
 
 The ID of the processing unit reporting the packet.
 
-===== `rawPacket` `string`
+===== `rawPacket`
+
+Type: `string`
 
 The first 64 bytes of the packet.
 
@@ -1450,19 +1732,27 @@ Default value:
 "abcd"
 ----
 
-===== `sourceIP` `string`
+===== `sourceIP`
+
+Type: `string`
 
 The source IP address of the packet.
 
-===== `sourcePort` `integer` [`max_value=65536.000000`]
+===== `sourcePort` [`max_value=65536.000000`]
+
+Type: `integer`
 
 The source port of the packet.
 
-===== `timestamp` `time` [`required`]
+===== `timestamp` [`required`]
+
+Type: `time`
 
 The time-date stamp of the report.
 
-===== `triremePacket` `boolean`
+===== `triremePacket`
+
+Type: `boolean`
 
 Set to `true` if the packet arrived with the Trireme options (default).
 
@@ -1479,11 +1769,15 @@ Represents a pair of ping probes.
 
 ==== Attributes
 
-===== `request` link:#pingprobe[`pingprobe`]
+===== `request`
+
+Type: link:#pingprobe[`pingprobe`]
 
 Contains the request probe information.
 
-===== `response` link:#pingprobe[`pingprobe`]
+===== `response`
+
+Type: link:#pingprobe[`pingprobe`]
 
 Contains the response probe information.
 
@@ -1523,155 +1817,231 @@ Create a ping probe.
 
 ==== Attributes
 
-===== `ACLPolicyAction` `string`
+===== `ACLPolicyAction`
+
+Type: `string`
 
 Action of the ACL policy.
 
-===== `ACLPolicyID` `string`
+===== `ACLPolicyID`
+
+Type: `string`
 
 ID of the ACL policy.
 
-===== `ID` `string` [`identifier`,`autogenerated`,`read_only`]
+===== `ID` [`identifier`,`autogenerated`,`read_only`]
+
+Type: `string`
 
 Identifier of the object.
 
-===== `RTT` `string`
+===== `RTT`
+
+Type: `string`
 
 Time taken for a single request-response to complete.
 
-===== `applicationListening` `boolean`
+===== `applicationListening`
+
+Type: `boolean`
 
 If true, application responded to the request.
 
-===== `claims` `[]string`
+===== `claims`
+
+Type: `[]string`
 
 Claims of the processing unit.
 
-===== `claimsType` `enum(Transmitted | Received)`
+===== `claimsType`
+
+Type: `enum(Transmitted | Received)`
 
 Type of claims reported.
 
-===== `createTime` `time` [`autogenerated`,`read_only`]
+===== `createTime` [`autogenerated`,`read_only`]
+
+Type: `time`
 
 Creation date of the object.
 
-===== `enforcerID` `string` [`required`]
+===== `enforcerID` [`required`]
+
+Type: `string`
 
 ID of the defender.
 
-===== `enforcerNamespace` `string` [`required`]
+===== `enforcerNamespace` [`required`]
+
+Type: `string`
 
 Namespace of the defender.
 
-===== `enforcerVersion` `string`
+===== `enforcerVersion`
+
+Type: `string`
 
 Semantic version of the defender.
 
-===== `error` `string`
+===== `error`
+
+Type: `string`
 
 A non-empty error indicates a failure.
 
-===== `excludedNetworks` `boolean`
+===== `excludedNetworks`
+
+Type: `boolean`
 
 If true, destination IP is in `excludedNetworks`.
 
-===== `fourTuple` `string`
+===== `fourTuple`
+
+Type: `string`
 
 Four tuple in the format sip:dip:spt:dpt.
 
-===== `isServer` `boolean`
+===== `isServer`
+
+Type: `boolean`
 
 If true, the report was generated by the server.
 
-===== `iterationIndex` `integer`
+===== `iterationIndex`
+
+Type: `integer`
 
 Holds the iteration number this probe is attached to.
 
-===== `namespace` `string` [`autogenerated`,`read_only`]
+===== `namespace` [`autogenerated`,`read_only`]
+
+Type: `string`
 
 Namespace tag attached to an entity.
 
-===== `payloadSize` `integer`
+===== `payloadSize`
+
+Type: `integer`
 
 Size of the payload attached to the packet.
 
-===== `peerCertExpiry` `string`
+===== `peerCertExpiry`
+
+Type: `string`
 
 Represents the expiry of the peer certificate.
 
-===== `peerCertIssuer` `string`
+===== `peerCertIssuer`
+
+Type: `string`
 
 Represents the issuer of the peer certificate.
 
-===== `peerCertSubject` `string`
+===== `peerCertSubject`
+
+Type: `string`
 
 Represents the subject of the peer certificate.
 
-===== `pingID` `string` [`required`]
+===== `pingID` [`required`]
+
+Type: `string`
 
 PingID unique to a single ping control.
 
-===== `policyAction` `string`
+===== `policyAction`
+
+Type: `string`
 
 Action of the policy.
 
-===== `policyID` `string`
+===== `policyID`
+
+Type: `string`
 
 ID of the policy.
 
-===== `policyNamespace` `string`
+===== `policyNamespace`
+
+Type: `string`
 
 ID of the policy.
 
-===== `processingUnitID` `string`
+===== `processingUnitID`
+
+Type: `string`
 
 ID of the reporting processing unit.
 
-===== `protocol` `integer`
+===== `protocol`
+
+Type: `integer`
 
 Protocol used for the communication.
 
-===== `remoteController` `string`
+===== `remoteController`
+
+Type: `string`
 
 Controller of the remote endpoint.
 
-===== `remoteEndpointType` `enum(ProcessingUnit | External)`
+===== `remoteEndpointType`
+
+Type: `enum(ProcessingUnit | External)`
 
 Represents the remote endpoint type.
 
-===== `remoteNamespace` `string`
+===== `remoteNamespace`
+
+Type: `string`
 
 Namespace of the remote processing unit.
 
-===== `remoteNamespaceType` `enum(Plain | Hash)`
+===== `remoteNamespaceType`
+
+Type: `enum(Plain | Hash)`
 
 Type of the namespace reported.
 
-===== `remoteProcessingUnitID` `string`
+===== `remoteProcessingUnitID`
+
+Type: `string`
 
 ID of the remote processing unit.
 
-===== `seqNum` `integer`
+===== `seqNum`
+
+Type: `integer`
 
 Sequence number of the TCP packet. number.
 
-===== `serviceID` `string`
+===== `serviceID`
+
+Type: `string`
 
 ID of the service If the service type is a proxy.
 
-===== `serviceType` `string` [`autogenerated`,`read_only`]
+===== `serviceType` [`autogenerated`,`read_only`]
+
+Type: `string`
 
 Type of the service.
 
-===== `targetTCPNetworks` `boolean`
+===== `targetTCPNetworks`
+
+Type: `boolean`
 
 If true, destination IP is in `targetTCPNetworks`.
 
-===== `type` `enum(Request | Response)`
+===== `type`
+
+Type: `enum(Request | Response)`
 
 Type of the report.
 
-===== `updateTime` `time` [`autogenerated`,`read_only`]
+===== `updateTime` [`autogenerated`,`read_only`]
+
+Type: `time`
 
 Last update date of the object.
 
@@ -1697,7 +2067,9 @@ Initiate a new the ping request.
 
 ==== Attributes
 
-===== `iterations` `integer` [`min_value=1.000000`,`max_value=20.000000`]
+===== `iterations` [`min_value=1.000000`,`max_value=20.000000`]
+
+Type: `integer`
 
 Number of probes that will be triggered.
 
@@ -1708,11 +2080,15 @@ Default value:
 1
 ----
 
-===== `pingID` `string` [`autogenerated`,`read_only`]
+===== `pingID` [`autogenerated`,`read_only`]
+
+Type: `string`
 
 Unique ID generated for each ping request.
 
-===== `refreshID` `string` [`required`]
+===== `refreshID` [`required`]
+
+Type: `string`
 
 Contains the refresh ID set by processing unit refresh event.
 
@@ -1733,42 +2109,60 @@ an or.
 
 ==== Attributes
 
-===== `ID` `string` [`identifier`,`autogenerated`,`read_only`]
+===== `ID` [`identifier`,`autogenerated`,`read_only`]
+
+Type: `string`
 
 Identifier of the object.
 
-===== `createTime` `time` [`autogenerated`,`read_only`]
+===== `createTime` [`autogenerated`,`read_only`]
+
+Type: `time`
 
 Creation date of the object.
 
-===== `errors` `[]string` [`autogenerated`,`read_only`]
+===== `errors` [`autogenerated`,`read_only`]
+
+Type: `[]string`
 
 May contain a list of errors that have happened during the collection.
 
-===== `namespace` `string` [`autogenerated`,`read_only`]
+===== `namespace` [`autogenerated`,`read_only`]
+
+Type: `string`
 
 Namespace tag attached to an entity.
 
-===== `pingID` `string` [`autogenerated`,`read_only`]
+===== `pingID` [`autogenerated`,`read_only`]
+
+Type: `string`
 
 Contains the Ping ID.
 
-===== `pingPairs` link:#pingpair[`[]pingpair`]
+===== `pingPairs`
+
+Type: link:#pingpair[`[]pingpair`]
 
 Contains the result of aggregated ping pairs.
 
-===== `refreshID` `string` [`autogenerated`,`read_only`]
+===== `refreshID` [`autogenerated`,`read_only`]
+
+Type: `string`
 
 Contains the refresh ID set by processing unit refresh event.
 
-===== `remoteProbes` link:#remotepingprobe[`[]remotepingprobe`]
+===== `remoteProbes`
+
+Type: link:#remotepingprobe[`[]remotepingprobe`]
 
 Contains information about missing probes in the result. This field will
 be populated in the ping probe is managed by a remote controller
 (federation) or is stored in a namespace you don’t have any permissions
 on.
 
-===== `updateTime` `time` [`autogenerated`,`read_only`]
+===== `updateTime` [`autogenerated`,`read_only`]
+
+Type: `time`
 
 Last update date of the object.
 
@@ -1779,21 +2173,29 @@ different set of permissions.
 
 ==== Attributes
 
-===== `controllerID` `string` [`autogenerated`,`read_only`]
+===== `controllerID` [`autogenerated`,`read_only`]
+
+Type: `string`
 
 The controller ID that manages the ping report.
 
-===== `namespace` `string` [`autogenerated`,`read_only`]
+===== `namespace` [`autogenerated`,`read_only`]
+
+Type: `string`
 
 The namespace where the ping report is stored. Only applicable when the
 remote controller is empty.
 
-===== `namespaceType` `enum(Plain | Hash)` [`autogenerated`,`read_only`]
+===== `namespaceType` [`autogenerated`,`read_only`]
+
+Type: `enum(Plain | Hash)`
 
 Type of the namespace reported. It can be hash or plain, depending on
 various factors.
 
-===== `probeID` `string` [`autogenerated`,`read_only`]
+===== `probeID` [`autogenerated`,`read_only`]
+
+Type: `string`
 
 The ID of the probe. Only applicable when the remote controller is
 empty.
@@ -1816,17 +2218,23 @@ Represents the tracing mode to apply to a processing unit.
 
 ==== Attributes
 
-===== `IPTables` `boolean`
+===== `IPTables`
+
+Type: `boolean`
 
 Instructs the defenders to provide an iptables trace for a processing
 unit.
 
-===== `applicationConnections` `boolean`
+===== `applicationConnections`
+
+Type: `boolean`
 
 Instructs the defender to send records for all application-initiated
 connections.
 
-===== `interval` `string`
+===== `interval`
+
+Type: `string`
 
 Determines the length of the time interval that the trace must be
 enabled, using https://golang.org/pkg/time/#example_Duration[Golang
@@ -1839,7 +2247,9 @@ Default value:
 "10s"
 ----
 
-===== `networkConnections` `boolean`
+===== `networkConnections`
+
+Type: `boolean`
 
 Instructs the defender to send records for all network-initiated
 connections.
@@ -1872,58 +2282,86 @@ Represents a single trace record from the defender.
 
 ==== Attributes
 
-===== `TTL` `integer` [`required`,`max_value=255.000000`]
+===== `TTL` [`required`,`max_value=255.000000`]
+
+Type: `integer`
 
 The time to live (TTL) value of the packet.
 
-===== `chain` `string` [`required`]
+===== `chain` [`required`]
+
+Type: `string`
 
 Chain that the trace was collected from.
 
-===== `destinationIP` `string` [`required`]
+===== `destinationIP` [`required`]
+
+Type: `string`
 
 The destination IP.
 
-===== `destinationInterface` `string`
+===== `destinationInterface`
+
+Type: `string`
 
 The destination interface of the packet.
 
-===== `destinationPort` `integer` [`required`,`min_value=1.000000`,`max_value=65536.000000`]
+===== `destinationPort` [`required`,`min_value=1.000000`,`max_value=65536.000000`]
+
+Type: `integer`
 
 The destination UPD or TCP port of the packet.
 
-===== `length` `integer` [`required`,`max_value=65536.000000`]
+===== `length` [`required`,`max_value=65536.000000`]
+
+Type: `integer`
 
 Length of the observed packet.
 
-===== `packetID` `integer` [`required`]
+===== `packetID` [`required`]
+
+Type: `integer`
 
 The IP packet header ID.
 
-===== `protocol` `integer` [`required`,`max_value=65536.000000`]
+===== `protocol` [`required`,`max_value=65536.000000`]
+
+Type: `integer`
 
 The protocol of the packet.
 
-===== `ruleID` `integer` [`required`]
+===== `ruleID` [`required`]
+
+Type: `integer`
 
 Priority index of the iptables entry that was hit.
 
-===== `sourceIP` `string` [`required`]
+===== `sourceIP` [`required`]
+
+Type: `string`
 
 Source IP of the packet.
 
-===== `sourceInterface` `string`
+===== `sourceInterface`
+
+Type: `string`
 
 Source interface of the packet.
 
-===== `sourcePort` `integer` [`required`,`min_value=1.000000`,`max_value=65536.000000`]
+===== `sourcePort` [`required`,`min_value=1.000000`,`max_value=65536.000000`]
+
+Type: `integer`
 
 Source TCP or UDP port of the packet.
 
-===== `tableName` `string` [`required`]
+===== `tableName` [`required`]
+
+Type: `string`
 
 The iptables name that the trace collected.
 
-===== `timestamp` `time` [`required`]
+===== `timestamp` [`required`]
+
+Type: `time`
 
 The time-date stamp of the report.

@@ -240,7 +240,9 @@ cd ..
 echo "Copy Segment Guide files from ${srcSegmentGuide} to ${dst}"
 cp -R "$srcSegmentGuide" "$dst"
 ls ${dst}
-gsed -i -e '/Name: About/{n;n;n;n;n;N;d}' ${dst}/_topic_map.yml
+gsed -i -e '/Name: Welcome/{n;n;n;n;n;N;d}' ${dst}/_topic_map.yml
+gsed -i -e '/Name: Concepts/{n;n;n;n;n;N;d}' ${dst}/_topic_map.yml
+gsed -i -e '/Name: Troubleshoot/{n;n;n;N;d}' ${dst}/_topic_map.yml
 gsed -i -e '/Name: apoctl/{n;n;n;N;d}' ${dst}/_topic_map.yml
 gsed -i -e '/Name: Segment Console API/{n;n;n;N;d}' ${dst}/_topic_map.yml
 # Fix adoc source files

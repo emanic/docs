@@ -30,43 +30,63 @@ Create a DNS Lookup report.
 
 ==== Attributes
 
-===== `action` `enum(Accept | Reject)` [`required`]
+===== `action` [`required`]
+
+Type: `enum(Accept | Reject)`
 
 Action of the DNS request.
 
-===== `enforcerID` `string`
+===== `enforcerID`
+
+Type: `string`
 
 ID of the defender.
 
-===== `enforcerNamespace` `string` [`required`]
+===== `enforcerNamespace` [`required`]
+
+Type: `string`
 
 Namespace of the defender.
 
-===== `processingUnitID` `string` [`required`]
+===== `processingUnitID` [`required`]
+
+Type: `string`
 
 ID of the PU.
 
-===== `processingUnitNamespace` `string` [`required`]
+===== `processingUnitNamespace` [`required`]
+
+Type: `string`
 
 Namespace of the PU.
 
-===== `reason` `string`
+===== `reason`
+
+Type: `string`
 
 This field is only set when the lookup fails. It specifies the reason
 for the failure.
 
-===== `resolvedName` `string` [`required`]
+===== `resolvedName` [`required`]
+
+Type: `string`
 
 name used for DNS resolution.
 
-===== `sourceIP` `string` [`required`]
+===== `sourceIP` [`required`]
+
+Type: `string`
 
 Type of the source.
 
-===== `timestamp` `time`
+===== `timestamp`
+
+Type: `time`
 
 Time and date of the log.
 
-===== `value` `integer` [`required`]
+===== `value` [`required`]
+
+Type: `integer`
 
 Number of times the client saw this activity.

@@ -42,19 +42,27 @@ Mandatory Parameters
 
 ==== Attributes
 
-===== `edges` link:#graphedge[`map[string]graphedge`] [`read_only`]
+===== `edges` [`read_only`]
+
+Type: link:#graphedge[`map[string]graphedge`]
 
 The edges of the map.
 
-===== `groups` link:#graphgroup[`map[string]graphgroup`] [`read_only`]
+===== `groups` [`read_only`]
+
+Type: link:#graphgroup[`map[string]graphgroup`]
 
 Provides information about the group values.
 
-===== `nodes` link:#graphnode[`map[string]graphnode`] [`read_only`]
+===== `nodes` [`read_only`]
+
+Type: link:#graphnode[`map[string]graphnode`]
 
 Refers to the nodes of the map.
 
-===== `viewSuggestions` `[]string` [`read_only`]
+===== `viewSuggestions` [`read_only`]
+
+Type: `[]string`
 
 Provides suggested views based on relevant tags.
 
@@ -103,72 +111,108 @@ Mandatory Parameters
 
 ==== Attributes
 
-===== `acceptedFlows` `boolean`
+===== `acceptedFlows`
+
+Type: `boolean`
 
 Number of accepted flows in the edge.
 
-===== `destinationController` `string`
+===== `destinationController`
+
+Type: `string`
 
 Name of the remote destination controller if different than the current
 one.
 
-===== `destinationID` `string`
+===== `destinationID`
+
+Type: `string`
 
 ID of the destination `GraphNode` of the edge.
 
-===== `destinationType` `enum(ProcessingUnit | ExternalNetwork | Namespace | Node | RemoteController)`
+===== `destinationType`
+
+Type:
+`enum(ProcessingUnit | ExternalNetwork | Namespace | Node | RemoteController)`
 
 Type of the destination `GraphNode` of the edge.
 
-===== `encrypted` `boolean`
+===== `encrypted`
+
+Type: `boolean`
 
 The number of encrypted flows in the edge.
 
-===== `firstSeen` `time`
+===== `firstSeen`
+
+Type: `time`
 
 Contains the date when the edge was first seen.
 
-===== `flowID` `string`
+===== `flowID`
+
+Type: `string`
 
 Identifier of the edge.
 
-===== `lastSeen` `time`
+===== `lastSeen`
+
+Type: `time`
 
 Contains the date when the edge was last seen.
 
-===== `namespace` `string`
+===== `namespace`
+
+Type: `string`
 
 Namespace of the object that reported the flow.
 
-===== `observedAcceptedFlows` `boolean`
+===== `observedAcceptedFlows`
+
+Type: `boolean`
 
 Number of accepted observed flows.
 
-===== `observedEncrypted` `boolean`
+===== `observedEncrypted`
+
+Type: `boolean`
 
 Number of encrypted observed flows.
 
-===== `observedRejectedFlows` `boolean`
+===== `observedRejectedFlows`
+
+Type: `boolean`
 
 Number of rejected observed flows.
 
-===== `rejectedFlows` `boolean`
+===== `rejectedFlows`
+
+Type: `boolean`
 
 Number of rejected flows in the edge.
 
-===== `remoteNamespace` `string`
+===== `remoteNamespace`
+
+Type: `string`
 
 Namespace of the object that was targeted by the flow.
 
-===== `sourceController` `string`
+===== `sourceController`
+
+Type: `string`
 
 Name of the remote source controller if different than the current one.
 
-===== `sourceID` `string`
+===== `sourceID`
+
+Type: `string`
 
 ID of the source `GraphNode` of the edge.
 
-===== `sourceType` `enum(ProcessingUnit | ExternalNetwork | Namespace | Node | RemoteController)`
+===== `sourceType`
+
+Type:
+`enum(ProcessingUnit | ExternalNetwork | Namespace | Node | RemoteController)`
 
 Type of the source `GraphNode` of the edge.
 
@@ -178,23 +222,33 @@ Represents an group of nodes from the dependency map.
 
 ==== Attributes
 
-===== `ID` `string`
+===== `ID`
+
+Type: `string`
 
 Identifier of the group.
 
-===== `color` `string`
+===== `color`
+
+Type: `string`
 
 Color to use for the group.
 
-===== `match` `[][]string`
+===== `match`
+
+Type: `[][]string`
 
 List of tags that were used to create this group.
 
-===== `name` `string`
+===== `name`
+
+Type: `string`
 
 Name of the group.
 
-===== `parentID` `string`
+===== `parentID`
+
+Type: `string`
 
 ID of the parent group, if any.
 
@@ -239,55 +293,82 @@ Mandatory Parameters
 
 ==== Attributes
 
-===== `ID` `string`
+===== `ID`
+
+Type: `string`
 
 Identifier of object represented by the node.
 
-===== `enforcementStatus` `string`
+===== `enforcementStatus`
+
+Type: `string`
 
 Enforcement status of processing unit represented by the node.
 
-===== `firstSeen` `time`
+===== `firstSeen`
+
+Type: `time`
 
 Contains the date when the edge was first seen.
 
-===== `groupID` `string`
+===== `groupID`
+
+Type: `string`
 
 ID of the group the node is eventually part of.
 
-===== `images` `[]string`
+===== `images`
+
+Type: `[]string`
 
 List of images.
 
-===== `lastSeen` `time`
+===== `lastSeen`
+
+Type: `time`
 
 Contains the date when the edge was last seen.
 
-===== `name` `string`
+===== `name`
+
+Type: `string`
 
 Name of object represented by the node.
 
-===== `namespace` `string`
+===== `namespace`
+
+Type: `string`
 
 Namespace of object represented by the node.
 
-===== `status` `string`
+===== `status`
+
+Type: `string`
 
 Status of object represented by the node.
 
-===== `tags` `[]string`
+===== `tags`
+
+Type: `[]string`
 
 Tags of object represented by the node.
 
-===== `type` `enum(Docker | ExternalNetwork | Volume | Claim | Node | Namespace | RemoteController)`
+===== `type`
+
+Type:
+`enum(Docker | ExternalNetwork | Volume | Claim | Node | Namespace | RemoteController)`
 
 Type of object represented by the node.
 
-===== `unreachable` `boolean`
+===== `unreachable`
+
+Type: `boolean`
 
 If `true` the node is marked as unreachable.
 
-===== `vulnerabilityLevel` `string`
+===== `vulnerabilityLevel`
+
+Type: `string`
 
 Tags of object represented by the node.
 
@@ -311,15 +392,21 @@ Mandatory Parameters
 
 ==== Attributes
 
-===== `IP` `string` [`autogenerated`,`read_only`]
+===== `IP` [`autogenerated`,`read_only`]
+
+Type: `string`
 
 The IP address.
 
-===== `error` `string` [`autogenerated`,`read_only`]
+===== `error` [`autogenerated`,`read_only`]
+
+Type: `string`
 
 Error that occurred during resolution.
 
-===== `records` `map[string]string` [`autogenerated`,`read_only`]
+===== `records` [`autogenerated`,`read_only`]
+
+Type: `map[string]string`
 
 List of DNS records associated with the IP address.
 
@@ -357,18 +444,24 @@ Parameters:
 
 ==== Attributes
 
-===== `PUIdentity` `[]string`
+===== `PUIdentity`
+
+Type: `[]string`
 
 The set of tags that a future-activated processing unit will have for
 which the user wants to evaluate policies and understand its
 connectivity options.
 
-===== `dependencyMap` link:#dependencymap[`dependencymap`]
+===== `dependencyMap`
+
+Type: link:#dependencymap[`dependencymap`]
 
 Contains the output of the policy evaluation. It is the same type of
 dependency map as created by other APIs.
 
-===== `policyType` `enum(Authorization | Infrastructure | Combined)`
+===== `policyType`
+
+Type: `enum(Authorization | Infrastructure | Combined)`
 
 Identifies the type of policy that should be analyzed: `Authorization`
 (default), `Infrastructure`, or `Combined`.
@@ -380,7 +473,9 @@ Default value:
 "Authorization"
 ----
 
-===== `selectors` `[][]string`
+===== `selectors`
+
+Type: `[][]string`
 
 Contains the tag expression that a processing unit must match in order
 to evaluate policy for it.
@@ -417,6 +512,8 @@ Mandatory Parameters
 
 ==== Attributes
 
-===== `networkAccessPolicies` link:#networkaccesspolicy[`[]networkaccesspolicy`]
+===== `networkAccessPolicies`
+
+Type: link:#networkaccesspolicy[`[]networkaccesspolicy`]
 
 List of suggested network policies.
