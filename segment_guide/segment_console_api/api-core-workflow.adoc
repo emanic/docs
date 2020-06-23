@@ -193,7 +193,7 @@ Defines if the object is protected.
 
 ===== `steps`
 
-Type: link:#uistep[`[]uistep`]
+Type: link:#uistep[`uistep`]
 
 Contains all the steps with parameters to follow for the recipe.
 
@@ -479,7 +479,7 @@ Name of the step.
 
 ===== `parameters`
 
-Type: link:#uiparameter[`[]uiparameter`]
+Type: link:#uiparameter[`uiparameter`]
 
 List of parameters for this step.
 
@@ -503,7 +503,7 @@ Contains the list of errors.
 
 ===== `parameters`
 
-Type: link:#uiparameter[`[]uiparameter`]
+Type: link:#uiparameter[`uiparameter`]
 
 List of parameters to validate.
 

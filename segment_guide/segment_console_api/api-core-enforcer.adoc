@@ -2141,7 +2141,7 @@ Contains the Ping ID.
 
 ===== `pingPairs`
 
-Type: link:#pingpair[`[]pingpair`]
+Type: link:#pingpair[`pingpair`]
 
 Contains the result of aggregated ping pairs.
 
@@ -2153,7 +2153,7 @@ Contains the refresh ID set by processing unit refresh event.
 
 ===== `remoteProbes`
 
-Type: link:#remotepingprobe[`[]remotepingprobe`]
+Type: link:#remotepingprobe[`remotepingprobe`]
 
 Contains information about missing probes in the result. This field will
 be populated in the ping probe is managed by a remote controller

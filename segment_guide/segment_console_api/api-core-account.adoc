@@ -160,7 +160,7 @@ Type: `boolean`
 Set to `true` to renew the local certificate authority of the account
 namespace.
 
-===== `name` [`required`,`creation_only`,`format=^[^\*\=]*$`]
+===== `name` [`required`,`creation_only`,`+format=^[^\*\=]*$+`]
 
 Type: `string`
 

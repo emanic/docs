@@ -7,9 +7,16 @@
 
 === Overview
 
-Segment provides a REST API to allow programmatic manipulation of the
-Console. Everything the web client or apoctl do is done through the
-Segment Console API.
+Segment Console exposes a RESTful API.
+Clients of the Segment Console API include the Segment Console web interface and apoctl.
+
+This section provides information about how to access the API, as well as full reference documentation.
+
+We also provide an open-source Golang SDK in the following GitHub repositories.
+
+- link:https://github.com/PaloAltoNetworks/gaia[gaia]: contains the model
+- link:https://github.com/PaloAltoNetworks/manipulate[manipulate]: a library that performs create, read, update, and delete (CRUD) operations
+
 
 === Object types
 

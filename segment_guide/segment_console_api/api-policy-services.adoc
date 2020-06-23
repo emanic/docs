@@ -171,7 +171,7 @@ Description of the object.
 
 ===== `endpoints`
 
-Type: link:#endpoint[`[]endpoint`]
+Type: link:#endpoint[`endpoint`]
 
 A list of API endpoints that are exposed for the service.
 
@@ -370,7 +370,7 @@ Type: `string`
 
 This is an advanced setting. Optional OIDC callback URL. If you don’t
 set it, Segment will autodiscover it. It will be
-`https://<hosts[0]|IPs[0]>/aporeto/oidc/callback`.
+`+https://<hosts[0]|IPs[0]>/aporeto/oidc/callback+`.
 
 ===== `OIDCClientID`
 
@@ -468,7 +468,7 @@ Default value:
 
 ===== `claimsToHTTPHeaderMappings`
 
-Type: link:#claimmapping[`[]claimmapping`]
+Type: link:#claimmapping[`claimmapping`]
 
 Defines a list of mappings between claims and HTTP headers. When these
 mappings are defined, the defender will copy the values of the claims to
@@ -494,7 +494,7 @@ Defines if the property is disabled.
 
 ===== `endpoints` [`read_only`]
 
-Type: link:#endpoint[`[]endpoint`]
+Type: link:#endpoint[`endpoint`]
 
 Resolves the API endpoints that the service is exposing. Only valid
 during policy rendering.

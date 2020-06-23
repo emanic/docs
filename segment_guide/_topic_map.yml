@@ -15,6 +15,14 @@ Topics:
 - Name: Dummy
   File: dummy
 ---
+Name: Monitor
+Dir: monitor
+Topics:
+- Name: Monitor
+  File: monitor
+- Name: Dummy
+  File: dummy
+---
 Name: Troubleshoot
 Dir: troubleshoot
 Topics:
@@ -40,6 +48,8 @@ Topics:
   File: auth
 - Name: defender command
   File: defender
+- Name: oam command
+  File: oam
 - Name: reports command
   File: reports
 - Name: stats command

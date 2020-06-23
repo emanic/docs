@@ -5,22 +5,25 @@
 
 == Defender
 
-If you think the system is misbehaving:
+=== Overview
 
-* error in the web UI like 5xx codes, Endpoint doesn’t exists or general
-slow response time
-* if you got some alerts from the monitoring stack (if deployed)
-* if the health check endpoint is returning degraded or offline sub
-systems
+If you suspect an issue in Segment Console, check the following.
 
-=== General state of the platform with the `apostate` command
+* *Web interface*: slow response times, `endpoint doesn't exist` errors,
+or HTTP errors in the 500 series.
+* *Health check endpoint*: returns degraded or offline subsystems.
+* *Monitoring tools*: if you have deployed Segment Console across
+multiple nodes and deployed the monitoring tools, check for alerts.
 
-`apostate` will check:
+=== Performing a general check
 
-* The licensing state
-* The health of the services
-* Perform some sanity check to see if api and web interface are
-reachable
+The `apostate` command checks the following:
+
+* Licensing status
+* Health of the services
+* Whether the Segment Console API and web interface are reachable
+
+A sample response follows.
 
 [source,console]
 ----
@@ -67,7 +70,7 @@ Check Aporeto control plane alerts
 If `Aporeto control plane services` are showing some down or degraded
 you can display their state with `wtf` command (described below).
 
-=== State of mongodb database
+=== Checking MongoDB
 
 `mgos status` should return something like:
 
@@ -215,7 +218,7 @@ If the pod is stuck and retry in loop to perform for instance:
 You may have a network issue when the node is trying to add itself as
 member to the cluster via its peer.
 
-=== General watch for failures
+=== Checking for service failures
 
 The command `wtf` will look for every services that restarted and print
 the reason of the restart as well as the last logs. Example:
@@ -243,7 +246,7 @@ level=info ts=2020-04-18T14:39:10.185981357Z caller=loki.go:149 msg=initialising
 level=error ts=2020-04-18T14:39:10.186129553Z caller=main.go:66 msg="error initialising loki" err="error initialising module: table-manager: retention period should now be a multiple of periodic table duration"
 ----
 
-=== Check the load of the platform
+=== Checking resource usage
 
 Either using the monitoring or by issuing:
 

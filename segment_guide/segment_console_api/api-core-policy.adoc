@@ -373,37 +373,37 @@ Defines set of actions that must be enforced when a dependency is met.
 
 ===== `auditProfiles`
 
-Type: link:#auditprofile[`[]auditprofile`]
+Type: link:#auditprofile[`auditprofile`]
 
 Provides the audit profiles that must be applied.
 
 ===== `enforcerProfiles`
 
-Type: link:#enforcerprofile[`[]enforcerprofile`]
+Type: link:#enforcerprofile[`enforcerprofile`]
 
 Provides information about the defender profile.
 
 ===== `externalNetworks`
 
-Type: link:#externalnetwork[`[]externalnetwork`]
+Type: link:#externalnetwork[`externalnetwork`]
 
 Provides the external network that the policy targets.
 
 ===== `filePaths`
 
-Type: link:#filepath[`[]filepath`]
+Type: link:#filepath[`filepath`]
 
 Provides the file paths that the policy targets.
 
 ===== `hostServices`
 
-Type: link:#hostservice[`[]hostservice`]
+Type: link:#hostservice[`hostservice`]
 
 Provides the list of host services that must be instantiated.
 
 ===== `isolationProfiles`
 
-Type: link:#isolationprofile[`[]isolationprofile`]
+Type: link:#isolationprofile[`isolationprofile`]
 
 Provides the isolation profiles of the rule.
 
@@ -415,7 +415,7 @@ Name of the entity.
 
 ===== `namespaces`
 
-Type: link:#namespace[`[]namespace`]
+Type: link:#namespace[`namespace`]
 
 The namespace that the policy targets.
 
@@ -446,7 +446,7 @@ objects.
 
 ===== `services`
 
-Type: link:#service[`[]service`]
+Type: link:#service[`service`]
 
 Provides the services of this policy rule.
 
@@ -662,7 +662,7 @@ authorizer API.
 
 ===== `dependendServices`
 
-Type: link:#service[`[]service`]
+Type: link:#service[`service`]
 
 The list of services that this processing unit depends on.
 
@@ -674,7 +674,7 @@ Lists all the egress policies attached to processing unit.
 
 ===== `exposedServices`
 
-Type: link:#service[`[]service`]
+Type: link:#service[`service`]
 
 The list of services that this processing unit is implementing.
 

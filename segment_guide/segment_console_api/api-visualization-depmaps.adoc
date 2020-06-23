@@ -44,19 +44,19 @@ Mandatory Parameters
 
 ===== `edges` [`read_only`]
 
-Type: link:#graphedge[`map[string]graphedge`]
+Type: link:#graphedge[`+map[string]graphedge+`]
 
 The edges of the map.
 
 ===== `groups` [`read_only`]
 
-Type: link:#graphgroup[`map[string]graphgroup`]
+Type: link:#graphgroup[`+map[string]graphgroup+`]
 
 Provides information about the group values.
 
 ===== `nodes` [`read_only`]
 
-Type: link:#graphnode[`map[string]graphnode`]
+Type: link:#graphnode[`+map[string]graphnode+`]
 
 Refers to the nodes of the map.
 
@@ -514,6 +514,6 @@ Mandatory Parameters
 
 ===== `networkAccessPolicies`
 
-Type: link:#networkaccesspolicy[`[]networkaccesspolicy`]
+Type: link:#networkaccesspolicy[`networkaccesspolicy`]
 
 List of suggested network policies.

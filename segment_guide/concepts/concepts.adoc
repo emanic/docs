@@ -63,20 +63,20 @@ Segment.
 
 Tag names are categorized and prefixed based on their origin.
 
-[width="100%",cols="<10%,<67%,<23%",options="header",]
-|===
-|Prefix |Description |Example
-|`$` |*Attribute based tag*: auto-generated, based on object attributes.
-|`$name=nginx`
+//[width="100%",cols="<10%,<67%,<23%",options="header",]
+//|===
+//|Prefix |Description |Example
+//|`$` |*Attribute based tag*: auto-generated, based on object attributes.
+//|`$name=nginx`
 
-|`@` |*Metadata Tag*: can only be added at the creation.
-|`@sys:image=nginx`
+//|`@` |*Metadata Tag*: can only be added at the creation.
+//|`@sys:image=nginx`
 
-|`@auth` |*Auth Tag*: derived from an auth token claim
-|`@auth:account=mycompany`
+//|`@auth` |*Auth Tag*: derived from an auth token claim
+//|`@auth:account=mycompany`
 
-| |*User Defined*: defined by a user |`role=frontend`
-|===
+//| |*User Defined*: defined by a user |`role=frontend`
+//|===
 
 ==== Tag expressions
 
@@ -159,7 +159,7 @@ Requires configuration:
 * LDAP
 * SAML
 
-image:authentication-pcc.png[Authentication Sources]
+image::authentication-pcc.png[Authentication Sources]
 
 Segment Console will use identification bits from any of these third
 party providers (referred to as *realms*) to verify the requester is who
@@ -294,14 +294,14 @@ The following API authorization makes the user, coming with a token for
 the account ``company'', an administrator on the namespace
 `/mynamespace` and all the child namespaces.
 
-[cols="<,<",options="header",]
-|===
-|field |description
-|subject |`@auth:realm=vince` and `@auth:account=company`
-|object |`@auth:role=namespace.administrator`
-|namespace |`/acme`
-|propagate |`true`
-|===
+//[cols="<,<",options="header",]
+//|===
+//|field |description
+//|subject |`@auth:realm=vince` and `@auth:account=company`
+//|object |`@auth:role=namespace.administrator`
+//|namespace |`/acme`
+//|propagate |`true`
+//|===
 
 `@auth:realm=vince` indicates that the token is coming from an Aporeto
 account.
@@ -312,13 +312,13 @@ The following API authorization makes the user, coming with a token from
 AWS that has the role `segment`, a Defender on the namespace
 `/acme/app/gitlab` only.
 
-[cols="<,<",options="header",]
-|===
-|field |description
-|subject |`@auth:realm=awssecuritytoken` and `@auth:rolename=segment`
-|object |`@auth:role=enforcer`
-|namespace |`/acme/app/gitlab`
-|===
+//[cols="<,<",options="header",]
+//|===
+//|field |description
+//|subject |`@auth:realm=awssecuritytoken` and `@auth:rolename=segment`
+//|object |`@auth:role=enforcer`
+//|namespace |`/acme/app/gitlab`
+//|===
 
 === Defender
 
@@ -329,7 +329,7 @@ as any other client does, and it is bound to API authorizations. The
 role of the Defender agent is to protect any unit of computation called
 *processing units*.
 
-image:enforcer-policy-pcc.png[Segment Console, Defender,
+image::enforcer-policy-pcc.png[Segment Console, Defender,
 processing units]
 
 The Defender can protect traffic between two processing units at
@@ -354,7 +354,7 @@ authorization information on every API call. In this case, it can
 perform per API endpoint authorization between processing units as well
 as between users and processing units.
 
-image:enforcer-tcp-pcc.png[Enforcement]
+image::enforcer-tcp-pcc.png[Enforcement]
 
 The content of traffic is never visible to Segment Console or the
 Defender. The Defender’s role is to allow or drop the connection
@@ -388,7 +388,7 @@ process with its PID, a host with its hostname, a pod with its
 namespace, and so on. This set of predictable tags can be used to write
 network policies.
 
-image:pus.png[Processing units]
+image::pus.png[Processing units]
 
 === External networks
 

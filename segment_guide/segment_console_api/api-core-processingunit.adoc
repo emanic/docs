@@ -559,7 +559,7 @@ The Docker UUID or service PID.
 
 ===== `networkServices`
 
-Type: link:#processingunitservice[`[]processingunitservice`]
+Type: link:#processingunitservice[`processingunitservice`]
 
 The list of services that this processing unit has declared that it will
 be listening to, either in its activation command or by exposing the

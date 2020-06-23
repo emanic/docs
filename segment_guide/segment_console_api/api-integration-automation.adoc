@@ -308,7 +308,7 @@ Contains the computed parameters.
 
 ===== `steps`
 
-Type: link:#uistep[`[]uistep`]
+Type: link:#uistep[`uistep`]
 
 Contains all the steps with parameters.
 
