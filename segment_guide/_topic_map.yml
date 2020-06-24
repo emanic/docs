@@ -15,13 +15,17 @@ Topics:
 - Name: Dummy
   File: dummy
 ---
-Name: Monitor
-Dir: monitor
+Name: Maintain
+Dir: maintain
 Topics:
+- Name: Maintain
+  File: maintain
+- Name: Back up
+  File: backup
 - Name: Monitor
   File: monitor
-- Name: Dummy
-  File: dummy
+- Name: Maintenance mode
+  File: maintenance-mode
 ---
 Name: Troubleshoot
 Dir: troubleshoot
