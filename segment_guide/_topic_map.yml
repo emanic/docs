@@ -15,6 +15,18 @@ Topics:
 - Name: Dummy
   File: dummy
 ---
+Name: Scale
+Dir: scale
+Topics:
+- Name: Scale
+  File: scale
+- Name: Deploy Segment Console across multiple nodes
+  File: scale-migrate
+- Name: Autoscale nodes and pods
+  File: scale-nodes-pods
+- Name: Add Segment Consoles
+  File: scale-add-consoles
+---
 Name: Maintain
 Dir: maintain
 Topics:

@@ -12,7 +12,7 @@ authentication. An example query follows.
 
 [source,console]
 ----
-curl https://api.aporeto.company.tld/healthchecks\?quiet\=true | jq
+curl https://segment.acme.com/healthchecks\?quiet\=true | jq
 ----
 
 Example response:
@@ -117,7 +117,7 @@ installation as explained below: To enable the monitoring stack:
 
 [source,console]
 ----
-set_value global.public.monitoring https://monitoring.aporeto.company.tld override
+set_value global.public.monitoring https://monitoring.segment.acme.com override
 ----
 
 This will deploy Prometheus to scrape service data and serve it through
@@ -140,7 +140,7 @@ metrics and perform Prometheus federation:
 
 [source,console]
 ----
-set_value global.public.metrics https://tracing.mycompany.tld override
+set_value global.public.metrics https://tracing.segment.acme.com override
 ----
 
 To enable tracing facility (optional):
@@ -161,7 +161,7 @@ To enable metrics proxy (optional):
 
 [source,console]
 ----
-set_value global.public.metrics https://metrics.aporeto.company.tld override
+set_value global.public.metrics https://metrics.segment.acme.com override
 ----
 
 This will create service that you can use to pull metrics from outside
@@ -263,63 +263,63 @@ snap -u grafana --force
 Using the metrics gathered some alerts are defined to check the health
 of Segment Console and report issues.
 
-//[width="100%",cols="22%,32%,46%",options="header",]
-//|===
-//|Alert |Description |What do to
-//|Node autoscale daily report |Daily report of node scaling |N/A
+[width="100%",cols="22%,32%,46%",options="header",]
+|===
+|Alert |Description |What do to
+|Node autoscale daily report |Daily report of node scaling |N/A
 
-//|Service autoscale daily report |Daily report of service scaling |N/A
+|Service autoscale daily report |Daily report of service scaling |N/A
 
-//|Service autoscaled limit |Alert when a service reach it’s scaling
-//limits |Check resource usages
+|Service autoscaled limit |Alert when a service reach it’s scaling
+limits |Check resource usages
 
-//|API response time increased |When the response time increased on an API
-//|Nothing if it’s transient otherwise check resource contention
+|API response time increased |When the response time increased on an API
+|Nothing if it’s transient otherwise check resource contention
 
-//|API response time degraded |When the global response time is getting
-//too high |Nothing if it’s transient otherwise check resource contention
+|API response time degraded |When the global response time is getting
+too high |Nothing if it’s transient otherwise check resource contention
 
-//|Service restarted |When a service restarts |Check the service logs via
-//Grafana,Explore,Loki
+|Service restarted |When a service restarts |Check the service logs via
+Grafana,Explore,Loki
 
-//|Error 5xx detected |When a service reports an error 5xx |Check the
-//service logs via Grafana,Explore,Loki
+|Error 5xx detected |When a service reports an error 5xx |Check the
+service logs via Grafana,Explore,Loki
 
-//|Crash detected |When a service is crashing |Check the service logs via
-//Grafana,Explore,Loki
+|Crash detected |When a service is crashing |Check the service logs via
+Grafana,Explore,Loki
 
-//|MongoDB node not responding |When a database node is not responding
-//|Check status of you Kubernetes cluster and pods
+|MongoDB node not responding |When a database node is not responding
+|Check status of you Kubernetes cluster and pods
 
-//|MongoDB cluster degraded |When the database cluster is degraded |Check
-//status of you Kubernetes cluster and pods, use `mgos status` from voila
+|MongoDB cluster degraded |When the database cluster is degraded |Check
+status of you Kubernetes cluster and pods, use `mgos status` from voila
 
-//|MongoDB replication lag is too slow |When the database is having hard
-//time to replicate data |Check the resource contention on Mongodb Nodes
+|MongoDB replication lag is too slow |When the database is having hard
+time to replicate data |Check the resource contention on Mongodb Nodes
 
-//|Storage capacity is running low |when the storage is running low
-//|Expand the storage
+|Storage capacity is running low |when the storage is running low
+|Expand the storage
 
-//|Certificate about to expire |When the public facing cert is about to
-//expire |Renew your cert
+|Certificate about to expire |When the public facing cert is about to
+expire |Renew your cert
 
-//|Service is not running |When a service is not starting |Check the state
-//of the pod in Kubernetes (`k describe pod <podname>`)
+|Service is not running |When a service is not starting |Check the state
+of the pod in Kubernetes (`k describe pod <podname>`)
 
-//|Infra service stopped responding |When an infra service is not
-//responding |Check the state of the pod in Kubernetes
-//(`k describe pod <podname>`)
+|Infra service stopped responding |When an infra service is not
+responding |Check the state of the pod in Kubernetes
+(`k describe pod <podname>`)
 
-//|Backend service stopped responding |When a backend service is not
-//responding |Check the state of the pod in Kubernetes
-//(`k describe pod <podname>`)
+|Backend service stopped responding |When a backend service is not
+responding |Check the state of the pod in Kubernetes
+(`k describe pod <podname>`)
 
-//|High Node CPU Usage |When the CPU usage on node is too high |Might
-//Require to scale up your environment if it persist
+|High Node CPU Usage |When the CPU usage on node is too high |Might
+Require to scale up your environment if it persist
 
-//|High Node Memory Usage |When the memory usage on nodes is too high
-//|Might Require to scale up your environment if it persist
-//|===
+|High Node Memory Usage |When the memory usage on nodes is too high
+|Might Require to scale up your environment if it persist
+|===
 
 Through the `/healthchecks` API you can get a summary of the current
 firing alerts:
@@ -510,7 +510,7 @@ http_requests_total{code="200",endpoint="health",instance="10.64.241.42:1080",jo
 http_requests_total{code="200",endpoint="health",instance="10.64.241.42:1080",job="health-cactuar",method="PUT",namespace="default",pod="cactuar-5cdddc64c7-sfwp8",service="cactuar",type="aporeto",url="/appcredentials/:id",prometheus="default/aporeto",prometheus_replica="prometheus-aporeto-0"} 25 1579736744156
 ----
 
-Example of Prometheus configuration used to scrape data from the Aporeto
+Example of Prometheus configuration used to scrape data from the Segment
 Prometheus instance:
 
 [source,yaml]

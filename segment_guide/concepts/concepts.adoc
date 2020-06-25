@@ -63,20 +63,20 @@ Segment.
 
 Tag names are categorized and prefixed based on their origin.
 
-//[width="100%",cols="<10%,<67%,<23%",options="header",]
-//|===
-//|Prefix |Description |Example
-//|`$` |*Attribute based tag*: auto-generated, based on object attributes.
-//|`$name=nginx`
+[width="100%",cols="<10%,<67%,<23%",options="header",]
+|===
+|Prefix |Description |Example
+|`$` |*Attribute based tag*: auto-generated, based on object attributes.
+|`$name=nginx`
 
-//|`@` |*Metadata Tag*: can only be added at the creation.
-//|`@sys:image=nginx`
+|`@` |*Metadata Tag*: can only be added at the creation.
+|`@sys:image=nginx`
 
-//|`@auth` |*Auth Tag*: derived from an auth token claim
-//|`@auth:account=mycompany`
+|`@auth` |*Auth Tag*: derived from an auth token claim
+|`@auth:account=mycompany`
 
-//| |*User Defined*: defined by a user |`role=frontend`
-//|===
+| |*User Defined*: defined by a user |`role=frontend`
+|===
 
 ==== Tag expressions
 
@@ -139,132 +139,7 @@ https://tools.ietf.org/html/rfc7519[JSON Web Tokens (JWT)]. JWTs are an
 open, industry standard method for representing claims securely between
 two parties. These tokens are issued by Segment Console as long as it
 can verify the provenance. The token is used with almost all API
-requests to Segment Console. Segment Console supports various sources of
-authentication.
-
-Supported authentication schemes out of the box:
-
-* Company account administrator (username and password)
-* Aporeto app credentials (X.509 certificates)
-* https://docs.aws.amazon.com/STS/latest/APIReference/Welcome.html[AWS
-security token]
-* https://cloud.google.com/compute/docs/instances/verifying-instance-identity[Google
-Instance Identity Token]
-* https://docs.microsoft.com/en-us/azure/active-directory/develop/security-tokens[Azure
-security token]
-
-Requires configuration:
-
-* https://openid.net/connect/[OIDC providers]
-* LDAP
-* SAML
-
-image::authentication-pcc.png[Authentication Sources]
-
-Segment Console will use identification bits from any of these third
-party providers (referred to as *realms*) to verify the requester is who
-he claims to be. If the verification succeeds, Segment issues a signed
-JWT containing the verified claims.
-
-For all subsequent requests, when the caller bearing the token makes any
-API calls to Segment Console, it knows it can trust the claims and can
-start verifying the call is authorized.
-
-Example of issued tokens:
-
-* Company account administration
-
-[source,json]
-----
-    {
-      "data": {
-        "account": "acme",
-        "email": "fgottlieb@acme.com",
-        "id": "5c770dca5feaa30001e9a3d8",
-          "organization": "acme",
-          "realm": "vince"
-       },
-     "exp": 1555520079,
-     "iat": 1555515879,
-     "iss": "https://{{< ctrl-plane-api-url >}}",
-     "realm": "Vince",
-     "sub": "acme"
-    }
-----
-
-* AWS
-
-[source,json]
-----
-    {
-     "aud": "https://{{< ctrl-plane-api-url >}}",
-     "data": {
-       "account": "1234567890",
-       "arn": "arn:aws:sts::1234567890:assumed-role/aporeto/i-0def01b1b215bbd1",
-       "organization": "1234567890",
-       "partition": "aws",
-       "realm": "awssecuritytoken",
-       "resource": "assumed-role/aporeto/i-deadbeef12345",
-       "resourcetype": "assumed-role",
-       "rolename": "aporeto",
-       "rolesessionname": "i-deadbeef12345",
-       "service": "sts",
-       "userid": "DJSANFFGHJDSGHDGJ:i-deadbeef12345"
-     },
-     "exp": 1542747287,
-     "iat": 1542657287,
-     "iss": "midgard.https://segment.acme.com",
-     "realm": "AWSSecurityToken",
-     "sub": "arn:aws:sts::1234567890:assumed-role/aporeto/i-deadbeef12345"
-    }
-----
-
-* GCP
-
-[source,json]
-----
-    {
-     "aud": "https://{{< ctrl-plane-api-url >}}",
-     "data": {
-       "email": "1234567890-compute@developer.gserviceaccount.com",
-       "instanceid": "6214533999523912251",
-       "instancename": "myinstance",
-       "organization": "myproject",
-       "projectid": "myproject",
-       "projectnumber": "6115181755542",
-       "realm": "gcpidentitytoken",
-       "zone": "us-central1-c"
-     },
-     "exp": 1545185071,
-     "iat": 1545095071,
-     "iss": "https://segment.acme.com",
-     "realm": "GCPIdentityToken",
-     "sub": "myproject"
-    }
-----
-
-* OIDC
-
-[source,json]
-----
-    {
-     "data": {
-       "account": "acme",
-       "aud": "md6GgsAZz58xseExGoIEyKqhS0Xu5lsi",
-       "id": "acme",
-       "iss": "https://dev-byp7k6-2.auth0.com/",
-       "organization": "acme",
-       "provider": "Auth0",
-       "realm": "oidc",
-       "sub": "auth0|5cb138ec3fb74710869425df"
-     },
-     "exp": 1555602493,
-     "iat": 1555512493,
-     "iss": "https://segment.acme.com",
-     "realm": "OIDC",
-     "sub": "acme"
-    }
-----
+requests to Segment Console.
 
 === Authorization
 
@@ -294,14 +169,14 @@ The following API authorization makes the user, coming with a token for
 the account ``company'', an administrator on the namespace
 `/mynamespace` and all the child namespaces.
 
-//[cols="<,<",options="header",]
-//|===
-//|field |description
-//|subject |`@auth:realm=vince` and `@auth:account=company`
-//|object |`@auth:role=namespace.administrator`
-//|namespace |`/acme`
-//|propagate |`true`
-//|===
+[cols="<,<",options="header",]
+|===
+|field |description
+|subject |`@auth:realm=vince` and `@auth:account=company`
+|object |`@auth:role=namespace.administrator`
+|namespace |`/acme`
+|propagate |`true`
+|===
 
 `@auth:realm=vince` indicates that the token is coming from an Aporeto
 account.
@@ -312,13 +187,13 @@ The following API authorization makes the user, coming with a token from
 AWS that has the role `segment`, a Defender on the namespace
 `/acme/app/gitlab` only.
 
-//[cols="<,<",options="header",]
-//|===
-//|field |description
-//|subject |`@auth:realm=awssecuritytoken` and `@auth:rolename=segment`
-//|object |`@auth:role=enforcer`
-//|namespace |`/acme/app/gitlab`
-//|===
+[cols="<,<",options="header",]
+|===
+|field |description
+|subject |`@auth:realm=awssecuritytoken` and `@auth:rolename=segment`
+|object |`@auth:role=enforcer`
+|namespace |`/acme/app/gitlab`
+|===
 
 === Defender
 
@@ -329,8 +204,7 @@ as any other client does, and it is bound to API authorizations. The
 role of the Defender agent is to protect any unit of computation called
 *processing units*.
 
-image::enforcer-policy-pcc.png[Segment Console, Defender,
-processing units]
+image::enforcer-policy-pcc.png[Protection diagram]
 
 The Defender can protect traffic between two processing units at
 different layers of the network stack. At layer 3, it automatically adds
