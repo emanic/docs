@@ -241,12 +241,13 @@ echo "Copy Segment Guide files from ${srcSegmentGuide} to ${dst}"
 cp -R "$srcSegmentGuide" "$dst"
 ls ${dst}
 gsed -i -e '/Name: Welcome/{n;n;n;n;n;N;d}' ${dst}/_topic_map.yml
-gsed -i -e '/Name: Concepts/{n;n;n;n;n;N;d}' ${dst}/_topic_map.yml
+gsed -i -e '/Name: Concepts/{n;n;n;N;d}' ${dst}/_topic_map.yml
 gsed -i -e '/Name: Scale/{n;n;n;N;d}' ${dst}/_topic_map.yml
 gsed -i -e '/Name: Maintain/{n;n;n;N;d}' ${dst}/_topic_map.yml
 gsed -i -e '/Name: Troubleshoot/{n;n;n;N;d}' ${dst}/_topic_map.yml
 gsed -i -e '/Name: apoctl/{n;n;n;N;d}' ${dst}/_topic_map.yml
 gsed -i -e '/Name: Segment Console API/{n;n;n;N;d}' ${dst}/_topic_map.yml
+gsed -i -e 's/\.png/\.svg/g' ${dst}/concepts/namespaces.adoc
 # Fix adoc source files
 python format_fixup_seg.py "$dst""_topic_map.yml"
 

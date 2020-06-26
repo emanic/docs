@@ -12,8 +12,10 @@ Dir: concepts
 Topics:
 - Name: Concepts
   File: concepts
-- Name: Dummy
-  File: dummy
+- Name: Basic concepts
+  File: basic-concepts
+- Name: Namespaces
+  File: namespaces
 ---
 Name: Scale
 Dir: scale
@@ -26,6 +28,8 @@ Topics:
   File: scale-nodes-pods
 - Name: Add Segment Consoles
   File: scale-add-consoles
+- Name: Deploy Segment Console across multiple regions (deprecated)
+  File: scale-multi-region
 ---
 Name: Maintain
 Dir: maintain
