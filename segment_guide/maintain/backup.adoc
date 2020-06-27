@@ -7,16 +7,15 @@
 
 === Enabling backups
 
-The `voila` installer container comes with a set of tools including some
-for backup/restore:
+If you have deployed the multi-container Segment Console, you can enable
+backups using Voila. This provides you with access to the following
+tools.
 
-* `backup`: This is a tool to trigger backup operation on InfluxDB and
-MongoDB databases.
-* `restore`: This is a tool to perform backup restore operation on
-InfluxDB and MongoDB databases.
+* `backup`: to trigger a backup of the InfluxDB and MongoDB databases
+* `restore`: to restore the InfluxDB and MongoDB databases
 
-If you did not enable backups when you created your Voila environment,
-use the following command to enable them.
+From an activated Voila environment, issue the following command to
+enable backups.
 
 [source,console]
 ----

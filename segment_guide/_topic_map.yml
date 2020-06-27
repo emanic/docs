@@ -12,10 +12,34 @@ Dir: concepts
 Topics:
 - Name: Concepts
   File: concepts
-- Name: Basic concepts
-  File: basic-concepts
+- Name: Segment Console
+  File: concepts-console
+- Name: Tags and identity
+  File: concepts-tags
+- Name: Authentication
+  File: concepts-authn
+- Name: Authorization
+  File: concepts-authz
+- Name: Defender
+  File: concepts-def
+- Name: Processing units
+  File: concepts-pus
 - Name: Namespaces
   File: namespaces
+---
+Name: Secure
+Dir: secure
+Topics:
+- Name: Secure
+  File: secure
+- Name: About network policies
+  File: secure-about
+- Name: Blocking malicious IPs
+  File: secure-malips
+- Name: Allowing access to web servers
+  File: secure-web-server
+- Name: Authenticating users with OIDC
+  File: secure-oidc
 ---
 Name: Scale
 Dir: scale

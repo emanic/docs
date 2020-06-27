@@ -66,7 +66,7 @@ following diagram illustrates an example multi-tenant scheme, achieved
 by adding `/acme/team-a` and `/acme/team-b` namespaces to the simple
 namespace scheme.
 
-image::ns-multi-tenant.png[width=900]
+image::ns-multi-tenant.png[]
 
 Each operator uses their own set of credentials to log in and no longer
 need to access the root `/acme` namespace.
