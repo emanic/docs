@@ -42,7 +42,6 @@ while getopts "${optspec}" opt; do
 done
 shift "$((OPTIND-1))"
 
-<<<<<<< HEAD
 echo "Building static site..."
 if [ "$1" != "" ]; then
   doc_dir=$(dirname "$1")
@@ -262,6 +261,9 @@ git commit -q -m "Commit Troubleshooting"
 
 # Create a branch.
 git checkout -b segment
+
+# Delete all files.
+clear_output_dir
 
 # Copy files into place.
 echo "Copy Segment Guide files from ${work_dir} to ${output_dir}"
