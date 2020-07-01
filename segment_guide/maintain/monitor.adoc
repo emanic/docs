@@ -247,7 +247,10 @@ By default there is no data persistency on the dashboards, if you want
 to perform some persistent changes, you can enable the persistency by
 adding storage to Grafana with:
 
-* `set_value storage.class <sc> grafana override`
+[source,console]
+----
+set_value storage.class <sc> grafana override
+----
 
 Where `<sc>` is the storage class of your Kubernetes cluster.
 

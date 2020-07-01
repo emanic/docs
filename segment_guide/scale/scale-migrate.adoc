@@ -144,13 +144,13 @@ Segment Console.
 
 [arabic]
 . Retrieve the cluster credentials. A couple of examples follow.
-* GKE
+* *GKE*
 +
 [source,console]
 ----
 gcloud container clusters get-credentials <cluster-name> --zone <region> --project <project>
 ----
-* EKS
+* *EKS*
 +
 [source,console]
 ----

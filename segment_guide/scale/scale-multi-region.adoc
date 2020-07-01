@@ -31,10 +31,8 @@ from the failover cluster and automations may execute twice.
 ** 53/tcp
 * Voila installed on a VM or workstation
 
-____
-WARNING: If your Kubernetes clusters are on EKS, you must deactivate
+IMPORTANT: If your Kubernetes clusters are on EKS, you must deactivate
 SNAT.
-____
 
 === Context
 
@@ -191,10 +189,8 @@ mv ~/.kube/kubeconfig-merged ~/.kube/config
 
 === Create your Voila environment
 
-____
 NOTE: If you have already deployed Segment Console on the first cluster,
 that’s fine.
-____
 
 Follow the documentation like any regular deployment but do not
 configure anything yet.
@@ -212,10 +208,8 @@ single Voila environment.
 To start we will create all the needed zones. From the voila
 environment, create a new zone with the with the `mz` command.
 
-____
 TIP: `mz` allows you to manage multiple clusters from a single Voila
 environment.
-____
 
 Add a `passive` zone.
 
@@ -233,11 +227,9 @@ Is should return something like the following.
 * Adding new zone passive... Ok
 ----
 
-____
 TIP: Each Kubernetes cluster must have a unique name. To avoid conflict
 with a pre-existing `aporeto-svcs` cluster, we use
 `aporeto-svcs-passive`.
-____
 
 Create another one for `arbiter`.
 
@@ -272,10 +264,8 @@ Use the `mz list-zones` command to check the zones.
 * Aporeto Zone: 0
 ----
 
-____
 TIP: When adding new zones the default Kubernetes context/namespace
 becomes the `default` zone.
-____
 
 The zones can be used in several ways.
 
@@ -317,10 +307,8 @@ To further debug and diagnose cluster problems, use 'kubectl cluster-info dump'.
 If not, then make sure your Kubernetes context and namespaces are
 correct.
 
-____
 TIP: The zone that was created first becomes the `default`. In our case,
 this is the `active` cluster.
-____
 
 === Verify that pod-to-pod communication is allowed
 
@@ -380,10 +368,8 @@ set_value global.rateLimiting.enabled true
 set_value global.autoscaling.enabled true
 ----
 
-____
 NOTE: Skip that part if you already have a Segment Console running on
 the `default` zone.
-____
 
 Do the same for `passive` cluster but not for `arbiter`. Example to
 create the storage class everywhere.
@@ -405,18 +391,14 @@ set_value shard.storage.class standard mongodb-shard override
 set_value shard.storage.size 1 mongodb-shard override
 ----
 
-____
 NOTE: For EKS it’s `gp2`.
-____
 
 Do *not* run `upconf` yet.
 
 === Configure the MongoDB databases
 
-____
 NOTE: In the following commands if your `active` Kubernetes namespace is
 not `aporeto-svcs-active` then replace it with the correct one.
-____
 
 Configure the `passive` MongoDB instances.
 
@@ -459,10 +441,8 @@ export N=1
 Use the following commands to configure the shards in the `default`
 zone.
 
-____
 NOTE: If you already have a running Segment Console on the default zone,
 skip this.
-____
 
 [source,console]
 ----
@@ -1014,10 +994,8 @@ mongodb-shard-data-0-2.mongodb-shard-data-0.aporeto-svcs-passive:27018 SECONDARY
 mongodb-shard-data-0-0.mongodb-shard-data-0.aporeto-arbiter:27018 ARBITER
 ----
 
-____
 NOTE: Arbiters are valid only for data nodes, this is why we didn’t add
-any arbiter for the nodes. For the node that’s a regular ReplicaSet.
-____
+any arbiter for the nodes. For the node that’s a regular `ReplicaSet`.
 
 === Deploy Segment Console
 
@@ -1155,10 +1133,8 @@ mongodb-shard-data-0-2.mongodb-shard-data-0.aporeto-svcs-passive:27018 SECONDARY
 We can see that the `default` active MongoDB instances are not reachable
 and that primaries switched to the `passive` zone.
 
-____
 NOTE: The `mgos status` from the `default` active zone will hang, that’s
 normal.
-____
 
 Now you can put back the pod CIDR to the firewall allowed list and issue
 `mgos status` again from `default` (active ) or `passive` zone:

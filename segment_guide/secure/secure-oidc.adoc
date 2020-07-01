@@ -3,7 +3,7 @@
 // YOU MUST SUBMIT A PR AGAINST THE UPSTREAM REPO.
 // THE UPSTREAM REPO IS CURRENTLY PRIVATE.
 
-== Blocking malicious IPs
+== Authenticating users with OIDC
 
 === Overview
 
@@ -95,11 +95,9 @@ While OIDC is a standard, each identity provider provides a different
 web interface. This section guides you through the setup at a high
 level.
 
-
 NOTE: Many identity providers orient their offerings towards developers.
 Good news! With Segment, you won’t need to write any code to integrate
 with the identity provider.
-
 
 * *Web application*: Identity providers often support a variety of
 application types. If prompted, select web application.
@@ -171,9 +169,7 @@ issuing the following command.
 curl $IDP_URL/.well-known/openid-configuration
 ----
 +
-____
 TIP: If you don’t have curl installed, try replacing `curl` with `wget`.
-____
 +
 It should return the JSON details of the OIDC configuration.
 
@@ -255,10 +251,8 @@ the user’s ID token using Segment’s tag syntax. Some examples follow.
 |`hd` |`example.com` |`hd=example.com`
 |===
 +
-____
 TIP: You can include multiple tags connected by AND or OR to form a
 logical expression.
-____
 . Click *Next*.
 . In the *Tags* tab, provide a tag for this HTTP Resource definition.
 For example, `res:name=hello-server`
@@ -296,7 +290,6 @@ balancer uses to connect to the application. Cannot be the same as the
 behalf of the application. Typically 443. It cannot be the same as the
 *Listening Port*.
 +
-____
 WARNING: In Kubernetes/OpenShift deployments, ensure that the Kubernetes
 service in front of the container exposes the port specified in *Public
 Port*. You can use the following command to view the service YAML:
@@ -304,7 +297,6 @@ Port*. You can use the following command to view the service YAML:
 identical to the value in the *Public Application Port*. If not, modify
 it to match and save your changes to update the Kubernetes service
 definition.
-____
 . In the *Authorizations* tab:
 * *HTTP Resource Selector*: type the tag that you set in
 link:#defining-the-http-resource[Defining the HTTP resource]. Example:
@@ -329,10 +321,8 @@ names of the additional scopes, pressing ENTER after each one. For
 example, if the identity provider supports refresh tokens and you would
 like to enable this feature, also include the `offline_access` scope.
 +
-____
 NOTE: Request only scopes that return claims as strings, arrays, or
 booleans. Segment ignores claims in other formats.
-____
 * *Advanced* you can configure Segment to pass claims from the ID token
 to the target application via the HTTP header (optional).
 . In the *Tags* tab, type a tag that identifies this service. For

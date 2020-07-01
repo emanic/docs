@@ -19,10 +19,8 @@ through the process using two example Segment Consoles.
 Annette and Bob both work for Acme, Inc. Both Segment Consoles use
 `acme` as the account name and `/acme` as their root namespace.
 
-____
 NOTE: Though the examples use `xip.io` addresses, we do not recommend
 these in production environments.
-____
 
 === Prerequisites
 
@@ -76,12 +74,10 @@ tab, denied due to `token (The token was invalid.)`.
 +
 image::fed-initial.gif[width=800]
 
-____
 NOTE: Observe the `$controller` tags in the metadata of the `nginx` and
 `centos` images. These identify the Segment Console that they belong to.
 We’ll use these later on to enable communications between the Segment
 Consoles.
-____
 
 === Configuring Segment Consoles to trust each other
 

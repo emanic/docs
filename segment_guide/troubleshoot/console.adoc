@@ -3,7 +3,7 @@
 // YOU MUST SUBMIT A PR AGAINST THE UPSTREAM REPO.
 // THE UPSTREAM REPO IS CURRENTLY PRIVATE.
 
-== Defender
+== Segment Console
 
 === Overview
 
@@ -100,13 +100,13 @@ mongodb-shard-data-0-2.mongodb-shard-data-0.default:27018 SECONDARY
 
 Valid values for config and data shard pod are:
 
-* PRIMARY (where the write are happening)
-* SECONDARY (where the data replication is made)
+* `PRIMARY` (where the write are happening)
+* `SECONDARY` (where the data replication is made)
 
 Other state can be:
 
-* STARTUP/STARTUP2: The pod is starting
-* RECOVERING: The pod is resyncing data
+* `STARTUP/STARTUP2`: The pod is starting
+* `RECOVERING`: The pod is resyncing data
 
 If a pod has been down for too long and seems stuck on recovering for at
 least 12h, check the logs with
@@ -139,9 +139,9 @@ and enter a recovering phase that should then transition to SECONDARY.
 
 Error state can be:
 
-* UNKNOWN: It means the member is not longer communicating with the
+* `UNKNOWN`: It means the member is not longer communicating with the
 cluster (ungraceful shutdown)
-* DOWN: The pod has been shutdown (graceful shutdown)
+* `DOWN`: The pod has been shutdown (graceful shutdown)
 
 In case of errors you need to check the state of the pod with
 `k get pod -ltype=database`

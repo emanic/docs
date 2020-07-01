@@ -3,7 +3,7 @@
 // YOU MUST SUBMIT A PR AGAINST THE UPSTREAM REPO.
 // THE UPSTREAM REPO IS CURRENTLY PRIVATE.
 
-== Blocking malicious IPs
+== Allowing access to web servers
 
 === About allowing access to web servers
 

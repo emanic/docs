@@ -17,7 +17,7 @@ analysis.
 apoctl defender collect <information> <defender-id>
 ....
 
-Here `information` can be any of the following.
+Replace `<information>` with any of the following.
 
 * `logs`
 * `counters`
@@ -91,9 +91,8 @@ apoctl defender download <defender-id>
 
 === Viewing the data
 
-The bundle downloaded by `apoctl` will be a GZIP whose contents will be
-encoded. To uncompress and decode the contents, you may use the
-`enforcerbundle` tool.
+`apoctl` returns an encoded GZIP file. Use the `enforcerbundle` tool to
+uncompress and decode the contents.
 
 ....
 enforcerbundle --in <bundle.tar.gz> --out <output-folder>
