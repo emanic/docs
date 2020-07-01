@@ -95,11 +95,11 @@ While OIDC is a standard, each identity provider provides a different
 web interface. This section guides you through the setup at a high
 level.
 
-____
+
 NOTE: Many identity providers orient their offerings towards developers.
 Good news! With Segment, you won’t need to write any code to integrate
 with the identity provider.
-____
+
 
 * *Web application*: Identity providers often support a variety of
 application types. If prompted, select web application.
