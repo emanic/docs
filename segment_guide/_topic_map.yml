@@ -7,14 +7,6 @@ Topics:
 - Name: Dummy
   File: dummy
 ---
-Name: Get started
-Dir: start
-Topics:
-- Name: Get started
-  File: start
-- Name: Install Segment Console
-  File: install-console
----
 Name: Concepts
 Dir: concepts
 Topics:
@@ -34,6 +26,14 @@ Topics:
   File: concepts-pus
 - Name: Namespaces
   File: namespaces
+---
+Name: Get started
+Dir: start
+Topics:
+- Name: Get started
+  File: start
+- Name: Install Segment Console
+  File: install-console
 ---
 Name: Secure
 Dir: secure
