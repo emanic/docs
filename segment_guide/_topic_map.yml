@@ -35,6 +35,14 @@ Topics:
 - Name: Install Segment Console
   File: install-console
 ---
+Name: Configure
+Dir: configure
+Topics:
+- Name: Configure
+  File: configure
+- Name: Using trusted certificates
+  File: trusted-certs
+---
 Name: Secure
 Dir: secure
 Topics:
@@ -60,8 +68,6 @@ Topics:
   File: scale-nodes-pods
 - Name: Add Segment Consoles
   File: scale-add-consoles
-- Name: Deploy Segment Console across multiple regions (deprecated)
-  File: scale-multi-region
 ---
 Name: Maintain
 Dir: maintain

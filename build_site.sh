@@ -242,6 +242,8 @@ cp -R "$srcSegmentGuide" "$dst"
 ls ${dst}
 gsed -i -e '/Name: Welcome/{n;n;n;n;n;N;d}' ${dst}/_topic_map.yml
 gsed -i -e '/Name: Concepts/{n;n;n;N;d}' ${dst}/_topic_map.yml
+gsed -i -e '/Name: Get started/{n;n;n;N;d}' ${dst}/_topic_map.yml
+gsed -i -e '/Name: Configure/{n;n;n;N;d}' ${dst}/_topic_map.yml
 gsed -i -e '/Name: Secure/{n;n;n;N;d}' ${dst}/_topic_map.yml
 gsed -i -e '/Name: Scale/{n;n;n;N;d}' ${dst}/_topic_map.yml
 gsed -i -e '/Name: Maintain/{n;n;n;N;d}' ${dst}/_topic_map.yml
