@@ -4,8 +4,8 @@ Dir: welcome
 Topics:
 - Name: Welcome
   File: welcome
-- Name: Dummy
-  File: dummy
+- Name: About Segment
+  File: about
 ---
 Name: Concepts
 Dir: concepts
