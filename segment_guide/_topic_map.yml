@@ -34,6 +34,10 @@ Topics:
   File: start
 - Name: Install Segment Console
   File: install-console
+- Name: Install apoctl
+  File: install-apoctl
+- Name: Create namespaces
+  File: create-ns
 ---
 Name: Configure
 Dir: configure
@@ -188,6 +192,13 @@ Topics:
   File: api-visualization-depmaps
 - Name: visualization/statsquery
   File: api-visualization-statsquery
-
+---
+Name: Release notes
+Dir: release-notes
+Topics:
+- Name: Release notes
+  File: release-notes
+- Name: Segment 20.07
+  File: notes-20-07
 
 

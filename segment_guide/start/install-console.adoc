@@ -62,12 +62,12 @@ helm install console aporeto/console \
         -n segment
 ----
 . Use the following command to save the public IP of Segment Console to
-an environment variable named `CONSOLE_LB`.
+an environment variable named `CONSOLE`.
 +
 [source,console]
 ----
-CONSOLE_LB=$(kubectl -n segment get service console -o jsonpath="{.status.loadBalancer.ingress[0]['address','ip','hostname']}")
-echo $CONSOLE_LB
+CONSOLE=https://$(kubectl -n segment get service console -o jsonpath="{.status.loadBalancer.ingress[0]['address','ip','hostname']}")
+echo $CONSOLE
 ----
 . Update Segment Console to use the external IP address.
 +
@@ -78,31 +78,38 @@ helm upgrade \
        console \
        aporeto/console \
        --reuse-values \
-       --set console.url=https://$CONSOLE_LB \
+       --set console.url=$CONSOLE \
        --description "Updating console endpoints"
 ----
 . Open the Prisma Cloud Compute Console web interface and click
 *Segment* in the left navigation menu.
 . Toggle *Enable micro-segmentation* to *On*.
-. Return to your terminal and issue the following command to bind the
-Segment and Prisma Cloud Compute Consoles, where
-`<pcc-console-ui-url:port>` contains the IP or FQDN and port of the
-Prisma Cloud Compute Console and `<organization-name>` contains the name
-of your organization.
+. Return to your terminal and set a `MY_ORG` environment variable
+containing the name of your organization. In the example below, we set
+it to `acme`.
++
+[source,console]
+----
+export MY_ORG=acme
+echo $MY_ORG
+----
+. Issue the following command to bind the Segment and Prisma Cloud
+Compute Consoles, where `<pcc-console-ui-url:port>` contains the IP or
+FQDN and port of the Prisma Cloud Compute Console.
 * *Syntax*
 +
 [source,console]
 ----
-kubectl -n segment exec console-0 -- pcc-binding <pcc-console-ui-url:port> <organization-name>
+kubectl -n segment exec console-0 -- pcc-binding <pcc-console-ui-url:port> $MY_ORG
 ----
 * *Example*
 +
 [source,console]
 ----
-kubectl -n segment exec console-0 -- pcc-binding https://54.190.67.151:8083 acme
+kubectl -n segment exec console-0 -- pcc-binding https://54.190.67.151:8083 $MY_ORG
 ----
 +
-IMPORTANT: The address of the Prisma Cloud Computer Console must be
+IMPORTANT: The address of the Prisma Cloud Compute Console must be
 reachable from your Segment Console host. If in doubt, conduct a quick
 `ping` from the Segment Console host.
 . The `pcc-binding` script should return two values:
@@ -125,7 +132,7 @@ Cloud Compute Console installed]
 * Target host
 ** Linux
 ** https://docs.docker.com/get-docker/[Docker 18.02 or later]
-** IP address or domain name reachable by users and tthe Prisma Cloud
+** IP address or domain name reachable by users and the Prisma Cloud
 Compute Console
 ** Two ports exposed (for maximum ease of use, we recommend ports `443`
 and `1443`)
@@ -135,21 +142,21 @@ and `1443`)
 ==== Launching Segment Console
 
 [arabic]
-. Set an environment variable containing the routable IP address or
-domain of the Segment Console host. Examples follow.
+. Set an environment variable called `CONSOLE` containing the routable
+IP address or domain of the Segment Console host. Examples follow.
 * *FQDN*
 +
 [source,console]
 ----
-export ADDRESS=https://segment.acme.com
-echo $ADDRESS
+export CONSOLE=https://segment.acme.com
+echo $CONSOLE
 ----
 * *IP address*
 +
 [source,console]
 ----
-export ADDRESS=https://104.196.244.75
-echo $ADDRESS
+export CONSOLE=https://104.196.244.75
+echo $CONSOLE
 ----
 . Create a local directory to store the Segment Console data and logs.
 The following location should work on most Linux distributions.
@@ -165,10 +172,10 @@ ls
 ----
 sudo docker run -d --name=segment-console \
         --restart always \
-        -e APORETO_CONSOLE_URL=$ADDRESS \
+        -e APORETO_CONSOLE_URL=$CONSOLE \
         -p 443:1443 -p 4443:4443 \
         -v /home/$USER/aporeto:/aporeto-data \
-        gcr.io/aporetodev/console:master-staging
+        gcr.io/aporetodev/console:master-staged
 ----
 +
 NOTE: This command assumes that you created the directory that we
@@ -198,25 +205,32 @@ do. It may take a minute or two.
 . Open the Prisma Cloud Compute Console web interface and click
 *Segment* in the left navigation menu.
 . Toggle *Enable micro-segmentation* to *On*.
-. Return to your terminal and issue the following command to bind the
-Segment and Prisma Cloud Compute Consoles, where
-`<pcc-console-ui-url:port>` contains the IP or FQDN and port of the
-Prisma Cloud Compute Console and `<organization-name>` contains the name
-of your organization.
+. Return to your terminal and set a `MY_ORG` environment variable
+containing the name of your organization. In the example below, we set
+it to `acme`.
++
+[source,console]
+----
+export MY_ORG=acme
+echo $MY_ORG
+----
+. Issue the following command to bind the Segment and Prisma Cloud
+Compute Consoles, where `<pcc-console-ui-url:port>` contains the IP or
+FQDN and port of the Prisma Cloud Compute Console.
 * *Syntax*
 +
 [source,console]
 ----
-docker exec -it segment-console pcc-binding <pcc-console-ui-url:port> <organization-name>
+docker exec -it segment-console pcc-binding <pcc-console-ui-url:port> $MY_ORG
 ----
 * *Example*
 +
 [source,console]
 ----
-docker exec -it segment-console pcc-binding https://54.190.67.151:8083 acme
+docker exec -it segment-console pcc-binding https://54.190.67.151:8083 $MY_ORG
 ----
 +
-IMPORTANT: The address of the Prisma Cloud Computer Console must be
+IMPORTANT: The address of the Prisma Cloud Compute Console must be
 reachable from your Segment Console host. If in doubt, conduct a quick
 `ping` from the Segment Console host.
 . The `pcc-binding` script should return two values:
@@ -227,4 +241,4 @@ Console, then click *Save*.
 . Click *Launch Segment Console*.
 
 TIP: Explore additional customization options by running the following
-command: `docker run --rm -ti aporeto/console:master-staging -h`
+command: `docker run --rm -ti aporeto/console:master-staged -h`
