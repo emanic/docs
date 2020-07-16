@@ -41,7 +41,7 @@ if ($?) {$env:PATH+="C:\Program Files\Apoctl;"}
 Open the Segment Console web interface, expand *Authentication sources*,
 and select *App credentials*.
 
-Click the image:/img/screenshots/create.png[Create] button.
+Click the image:create.png[Create] button.
 
 Type `apoctl` in the *Name* field and click *Next*.
 
