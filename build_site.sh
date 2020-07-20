@@ -272,6 +272,7 @@ cd "$work_dir"
 cp -R "$work_dir""/_files/." "$output_dir"
 cp -R "$srcSegmentGuide""/." "$output_dir"
 gsed -i -e '/\-\-\-/{n;n;n;n;N;d}' ${output_dir}/_topic_map.yml &&
+gsed -i -e '/Name: Deploy Defenders/{n;n;n;N;d}' ${output_dir}/_topic_map.yml &&
 gsed -i -e 's/\.png/\.svg/g' ${output_dir}/concepts/namespaces.adoc &&
 gsed -i -e 's/image::oidc-auth-app\.png\[]/\[%interactive]\nimage::oidc-auth-app\.svg\[]/g' ${output_dir}/secure/secure-oidc.adoc &&
 # Fix adoc source files

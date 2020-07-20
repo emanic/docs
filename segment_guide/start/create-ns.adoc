@@ -7,28 +7,29 @@
 
 === About creating namespaces
 
-TIP: Before continuing, review link:../../concepts/#namespaces[basic
-namespace concepts].
+TIP: You may find it helpful to review basic namespace concepts before
+continuing.
 
 Currently, you just have one namespace: your root namespace. It bears
-the name of your organization. In our examples, we call this `/acme`.
+the name of your organization. For example, if we worked for Acme, Inc.,
+our root namespace would be `/acme`.
 
-Before proceeding to deploy your defenders, create children and
-grandchildren namespaces. The defenders should be deployed into
+We need to create children and grandchildren namespaces before we can
+deploy our Defenders. The Defenders should be deployed into
 grandchildren namespaces.
 
-Once a defender has registered in a namespace, you can’t move it to
-another namespace. You have to uninstall and reinstall the defender to
+Once a Defender has registered in a namespace, you can’t move it to
+another namespace. You have to uninstall and reinstall the Defender to
 switch namespaces.
 
 Complete the following steps to create the recommended children and
-grandchildren namespaces before deploying the defenders.
+grandchildren namespaces.
 
 === 1. Create child namespaces
 
 Within your organization, you likely have more than one team or project.
-These teams should not and do not need to view or access each others
-resources.
+For security and ease-of-use, these teams should not have access to each
+others’ resources.
 
 Create environment variables containing the names of these teams or
 projects. In our example, we use `team-a` and `team-b`.
@@ -71,11 +72,12 @@ to as ``workspaces.''
 
 === 2. Create grandchild namespaces
 
-The grandchildren namespaces are where the developers will work and
-where the enforcers will be deployed. In the following examples, we
-create grandchildren according to the security zones of the resources.
-We’ll call these `dev` and `prod`. Create environment variables as
-follows.
+The grandchild namespaces contain your hosts and clusters. You’ll deploy
+your enforcers here.
+
+In the following examples, we create grandchildren according to the
+security zones of the resources. We’ll call these `dev` and `prod`.
+Create environment variables as follows.
 
 [source,console]
 ----
@@ -83,7 +85,8 @@ export GRANDCHILD1=dev
 export GRANDCHILD2=prod
 ----
 
-Use the following command to create a `dev` namespace under `team-a`.
+Use the following command to create the first grandchild namespace under
+`team-a`.
 
 [source,console]
 ----
@@ -92,7 +95,7 @@ name: $GRANDCHILD1
 EOF
 ----
 
-Next, create a `prod` namespace under `team-a`
+Next, create the second grandchild namespace under `team-a`.
 
 [source,console]
 ----
@@ -108,7 +111,7 @@ Confirm the creation.
 apoctl api list namespace -n $CHILD1 --output yaml
 ----
 
-Now create a `dev` namespace under `team-b`.
+Now create the first grandchild namespace under `team-b`.
 
 [source,console]
 ----
@@ -117,7 +120,7 @@ name: $GRANDCHILD1
 EOF
 ----
 
-Create a `prod` namespace under `team-b`.
+Create the second grandchild namespace under `team-b`.
 
 [source,console]
 ----
@@ -133,6 +136,7 @@ Confirm the creation.
 apoctl api list namespace -n $CHILD2 --output yaml
 ----
 
-Repeat these steps to add other grandchildren, as desired. You should
-now have a very basic namespace structure and can proceed to deploy
-defenders.
+Repeat these steps to add other grandchildren, as desired.
+
+You should now have a very basic namespace structure and can proceed to
+deploy Defenders.

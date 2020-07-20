@@ -38,6 +38,15 @@ Topics:
   File: install-apoctl
 - Name: Create namespaces
   File: create-ns
+- Name: Deploy Defenders
+  Dir: defender
+  Topics:
+  - Name: Deploy defenders
+    File: defender
+  - Name: System requirements
+    File: defender-reqs
+  - Name: Linux or Windows host
+    File: defender-host
 ---
 Name: Configure
 Dir: configure
