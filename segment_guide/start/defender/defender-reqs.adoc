@@ -55,9 +55,9 @@ The Defender depends upon the following libraries:
 
 pass:[*] _You must disable_ `firewalld`.
 
-† _Check the kernel version. If 3.13 or earlier,
+† Check the kernel version. If 3.13 or earlier,
 link:#kernel-version-and-dependencies[upgrade your kernel for full
-functionality]_.
+functionality].
 
 ==== Container
 

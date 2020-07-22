@@ -128,12 +128,12 @@ key-value pair. Refer to the table below for some common examples.
 |`@auth:organization=<ORGANIZATION>` |`@auth:organization=acme`
 |===
 +
-pass:[*] _You can find your AWS account ID under *My security credentials* in
+pass:[*] _You can find your AWS account ID under_ *My security credentials* _in
 the AWS Management Console._
 +
-† _To learn how to find your tenant ID, refer to the
+† _To learn how to find your tenant ID, refer to the_
 https://techcommunity.microsoft.com/t5/Office-365/How-do-you-find-the-tenant-ID/td-p/89018[Microsoft
-documentation]_.
+documentation].
 . On your local host equipped with `apoctl`, set an `ID_TAG` environment
 variable. If the target host is on AWS, also set a `ROLE_TAG`
 environment variable.
