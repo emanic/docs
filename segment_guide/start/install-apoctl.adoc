@@ -14,7 +14,7 @@ Download the executable appropriate to your platform.
 [source,console]
 ----
 sudo curl -o /usr/local/bin/apoctl \
-      http://download.aporeto.us/releases/release-4.0.1-rc3/apoctl/darwin/apoctl && \
+      http://download.aporeto.us/releases/release-4.0.1-rc7/apoctl/darwin/apoctl && \
 sudo chmod 755 /usr/local/bin/apoctl
 ----
 
@@ -23,7 +23,7 @@ sudo chmod 755 /usr/local/bin/apoctl
 [source,console]
 ----
 sudo curl -o /usr/local/bin/apoctl \
-      http://download.aporeto.us/releases/release-4.0.1-rc3/apoctl/linux/apoctl && \
+      http://download.aporeto.us/releases/release-4.0.1-rc7/apoctl/linux/apoctl && \
 sudo chmod 755 /usr/local/bin/apoctl
 ----
 
@@ -31,15 +31,15 @@ sudo chmod 755 /usr/local/bin/apoctl
 
 [source,powershell]
 ----
-curl http://download.aporeto.us/releases/release-4.0.1-rc3/apoctl/windows/apoctl.msi -o apoctl.msi; `
+curl http://download.aporeto.us/releases/release-4.0.1-rc7/apoctl/windows/apoctl.msi -o apoctl.msi; `
 if ($?) {. .\apoctl.msi /quiet}
 if ($?) {$env:PATH+="C:\Program Files\Apoctl;"}
 ----
 
 === 2. Create an app credential
 
-Open the Segment Console web interface, expand *Authentication sources*,
-and select *App credentials*.
+Open the Segment Console web interface, expand *Manage* and select
+*Authentication sources*.
 
 Click the *Create* image:create.png[Create] button.
 

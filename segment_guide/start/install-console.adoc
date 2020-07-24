@@ -59,7 +59,7 @@ your current context to use this user account.
 +
 [source,console]
 ----
-helm repo add aporeto http://helm.aporeto.us/releases/release-4.0.1-rc3/svcs
+helm repo add aporeto http://helm.aporeto.us/releases/release-4.0.1-rc7/svcs
 ----
 . Create a namespace for Segment Console.
 +
@@ -106,14 +106,6 @@ helm upgrade \
        --set console.url=$CONSOLE \
        --description "Updating console endpoints"
 ----
-. Open the Segment Console web interface by pasting the external IP into
-your browser.
-+
-[source,console]
-----
-echo $CONSOLE
-----
-. Click through the warnings to accept the certificate.
 . Open the PCC Console web interface and click *Segment* in the left
 navigation menu.
 . Toggle *Enable Segment* to *On*.
@@ -132,10 +124,6 @@ a `ping` from the Segment Console host.
 . Copy these values and paste them into the PCC Console, then click
 *Save*.
 . Click *Launch Segment Console*.
-. Inside the Segment Console web interface, click *Platform*.
-. In the top right corner, toggle *Discover mode* to on.
-. Click *Next*, toggle *Propagate to child namesapces* to on, click
-*Next*, then click *Apply*.
 
 TIP: To learn about advanced networking, storage, backup, and custom
 certificate options, issue the following command
@@ -184,6 +172,10 @@ The following location should work on most Linux distributions.
 sudo mkdir ~/aporeto
 ls
 ----
++
+NOTE: This storage method won’t persist across container restarts. If
+you wish to have persistent storage, you must
+https://docs.docker.com/storage/[set up a volume].
 . Use the following command to launch the Segment Console container.
 +
 [source,console]
@@ -238,10 +230,6 @@ a `ping` from the Segment Console host.
 . Copy these values and paste them into the PCC Console, then click
 *Save*.
 . Click *Launch Segment Console*.
-. Click *Platform*.
-. In the top right corner, toggle *Discover mode* to on.
-. Click *Next*, toggle *Propagate to child namesapces* to on, click
-*Next*, then click *Apply*.
 
 TIP: Explore additional customization options by running the following
 command: `docker run --rm -ti aporeto/console:master-staged -h`

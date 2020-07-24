@@ -3,21 +3,22 @@
 // YOU MUST SUBMIT A PR AGAINST THE UPSTREAM REPO.
 // THE UPSTREAM REPO IS CURRENTLY PRIVATE.
 
-== Linux or Windows host
+== Linux host
 
-=== About installing Defenders on Linux or Windows hosts
+=== About installing Defenders on Linux hosts
 
-To install the Defender on a Linux or Windows host, you must retrieve
-and execute our shell script from the target host. We provide three
-options for deploying the Defender.
+Before you begin, ensure that you meet the link:../reqs[system
+requirements].
+
+To install the Defender on a Linux host, you must retrieve and execute
+our shell script from the target host. We provide three options.
 
 * link:#quick-deployment[Quick deployment]: use the web interface to
 obtain the command, then execute it from the target host. Prisma Cloud
 Compute (PCC) Console creates and passes an app credential to the
 Defender. The Defender uses the app credential to communicate with the
-Segment Console API. We recommend this method for demos and
-proof-of-concepts. It is also suitable for on-premise production hosts.
-* link:#production-cloud-deployment[Production cloud deployment]:
+Segment Console API.
+* link:#advanced-cloud-deployment[Advanced cloud deployment]:
 recommended for production AWS, GCP, and Azure hosts. The Defender uses
 short-lived tokens from the cloud provider to authenticate to Segment
 Console. We provide a command-line based procedure to facilitate
@@ -42,9 +43,6 @@ control and monitor all host communications
 * *Container Defender - Linux*: deploys the Defender as a container and
 creates processing units for all containers on the host, allowing you to
 control and monitor all container communications
-* *Host Defender - Windows*: deploys the Defender as a Windows service
-and creates a processing unit that represents the host, allowing you to
-control and monitor all host communications
 . Leave the *Listener type* set to *None*.
 +
 IMPORTANT: Segment does not support the
@@ -54,7 +52,8 @@ connections in an unpredictable manner.
 . Ensure that *Segment* is toggled *On*.
 . Under *registration type*, select *App credentials*.
 . In the *namespace* field, type the namespace that you want to deploy
-the Defender to. Example: `/acme/team-a/dev`
+the Defender to. This should be a great grandchild namespace. Example:
+`/acme/team-a/dev/vm1`
 +
 IMPORTANT: Ensure that you type the namespace correctly and that you
 have permissions to deploy the Defender there. The PCC Console performs
@@ -82,12 +81,14 @@ sudo docker ps
 and select *Manage*.
 . You should see the Defender you just deployed with a status of
 *Connected*.
-. In the Segment Console web interface, expand *Manage*, select
-*Defenders*, and toggle *Recursive* to on.
+. In the Segment Console web interface, expand *Manage* and select
+*Defenders*.
+. Either navigate to the namespace of the Defender or toggle *Recursive*
+to on.
 . The Defender you just deployed should be listed with a status of
 *Connected*.
 
-=== Production cloud deployment
+=== Advanced cloud deployment
 
 NOTE: You can use either
 https://docs.paloaltonetworks.com/prisma/prisma-cloud/20-08/prisma-cloud-compute-edition-admin/api/access_api.html[basic
@@ -163,16 +164,16 @@ export ID_TAG="@auth:projectid=acme-dev"
 export ID_TAG="@auth:tenantid=cd629cb5-2826-4126-82fd-3f2df5f5bc7"
 ----
 . Set a `TARGET_NS` environment variable containing the Segment
-namespace for this Defender. This should be a grandchild namespace. An
-example follows.
+namespace for this Defender. This should be a great grandchild
+namespace. An example follows.
 +
 [source,console]
 ----
-export TARGET_NS=/acme/team-a/dev
+export TARGET_NS=/acme/team-a/dev/vm1
 ----
 . Create an API authorization that allows the Defender to access the
-Segment Console. For the command, select the tab that corresponds to the
-cloud provider of the target host.
+Segment Console. Use the command that corresponds to the cloud provider
+of the target host.
 * *AWS*
 +
 [source,console]
@@ -327,8 +328,10 @@ sudo docker ps
 and select *Manage*.
 . You should see the Defender you just deployed with a status of
 *Connected*.
-. In the Segment Console web interface, expand *Manage*, select
-*Defenders*, and toggle *Recursive* to on.
+. In the Segment Console web interface, expand *Manage* and select
+*Defenders*.
+. Either navigate to the namespace of the Defender or toggle *Recursive*
+to on.
 . The Defender you just deployed should be listed with a status of
 *Connected*.
 
@@ -404,12 +407,12 @@ export PCC_CONSOLE=pcc.acme.com
 ping $PCC_CONSOLE
 ----
 . Set a `TARGET_NS` environment variable containing the Segment
-namespace for this Defender. This should be a grandchild namespace. An
-example follows.
+namespace for this Defender. This should be a great grandchild
+namespace. An example follows.
 +
 [source,console]
 ----
-export TARGET_NS=/acme/team-a/dev
+export TARGET_NS=/acme/team-a/dev/vm1
 ----
 . Save your PCC console user name and password under the following
 environment variables.
@@ -481,8 +484,10 @@ sudo docker ps
 and select *Manage*.
 . Confirm that the Defender you just deployed is listed with a status of
 *Connected*.
-. In the Segment Console web interface, expand *Manage*, select
-*Defenders*, and toggle *Recursive* to on.
+. In the Segment Console web interface, expand *Manage* and select
+*Defenders*.
+. Either navigate to the namespace of the Defender or toggle *Recursive*
+to on.
 . Confirm that the Defender you just deployed is listed with a status of
 *Connected*.
 
@@ -503,80 +508,33 @@ the PCC and Segment Consoles as processing units, allowing their
 communications to be monitored and controlled. By default, the Segment
 Defender ignores them.
 
-|`--activate-kube-system-pus` |Pass this flag if you wish to recognize
-containers in the `kube-system` namespace as processing units, allowing
-their communications to be monitored and controlled. By default, the
-Segment Defender ignores them.
+|`--application-proxy-port` |Start of the port range for ports used by
+Segment Defender application proxy. You may adjust this if you
+experience conflicts.
 
-|`--activate-openshift-pus` |
+|`--cloud-probe-timeout` |Segment Defender can determine if it is
+running in a cloud environment, such as AWS, GCP, or Azure. This is the
+maximum amount of time to wait for these internal probes to complete.
+Default is two seconds.
 
-|`--application-proxy-port` |
+|`--disable-dns-proxy` |Segment Defender DNS proxy allows policies to be
+written based on FQDN, in cases where an exact IP address may be
+unpredictable. This is on by default.
 
-|`--cloud-probe-timeout` |
+|`--dns-server-address` |DNS server address or CIDR that is observed by
+Segment Defender DNS proxy. The default is `0.0.0.0/0`.
 
-|`--disable-dns-proxy` |
-
-|`--disable-ebpf` |
-
-|`--dns-server-address` |
-
-|`--docker-socket-address` |
-
-|`--enable-containers` |Start Docker monitor
-
-|`--enable-host-mode` |Defenders deployed as services automatically
-protect all communications on the host. Defenders deployed as containers
-ignore host communications. You can include this flag for Defenders
-deployed as containers to protect host communications.
+|`--enable-ebpf` |(*Beta*) Pass this flag to gain performance
+improvements by using extended Berkeley Packet Filter (eBPF) on systems
+that support it.
 
 |`--enable-ipv6` |(*Beta*) The Segment defender ignores IPv6
 communications by default. If you have IPv6 enabled and wish to monitor
 and control these connections, pass this flag.
 
-|`--enable-kubernetes` |
+|`--log-level` |Minimum logging level, which is `info` by default. Other
+options include `debug`, `trace`, and `warn`.
 
-|`--enforcer-socket-address` |
-
-|`--flow-reporting-interval` |
-
-|`--grpc-server-address` |The Segment Defender runs as a process and
-uses a gRPC server to communicate with the Twistlock Defender. You can
-use this flag to specify the Unix socket or named pipe of the gRPC
-server. Example: `/var/run/aporeto-grpc.sock`
-
-|`--ignore-stopped-containers` |
-
-|`--kubeconfig` |
-
-|`--kubenode` |
-
-|`--log-format` |The Defender generates logs in JSON format by default.
-If you wish to use a different format, you can use this flag to specify
-it.
-
-|`--log-level` |`default`, `warning`, or `info`
-
-|`--log-to-console` |Set to `off` by default.
-
-|`--policies-sync-interval` |
-
-|`--pus-failure-retry-interval` |
-
-|`--pus-sync-interval` |
-
-|`--receiver-queue-count` |
-
-|`--receiver-queue-size` |
-
-|`--receiver-queue` |
-
-|`--simulated-data-plane-plan` |
-
-|`--transmitter-queue-count` |
-
-|`--transmitter-queue-size` |
-
-|`--transmitter-queue` |
-
-|`--working-dir` |A persistent w/r/e working directory
+|`--working-dir` |A persistent w/r/e working directory. Files such as
+logs are stored here.
 |===

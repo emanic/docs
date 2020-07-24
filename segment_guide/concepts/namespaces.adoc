@@ -5,12 +5,12 @@
 
 == Namespaces
 
-=== About namespaces
+=== About Segment namespaces
 
-Namespaces define logical groups of resources. You should group your
-resources according to their users, which may be inside or outside of
-your organization. An optimal namespace scheme will make it easier to
-provide a good user experience and control access. Some goals,
+Segment namespaces define logical groups of resources. You should group
+your resources according to their users, which may be inside or outside
+of your organization. An optimal Segment namespace scheme will make it
+easier to provide a good user experience and control access. Some goals,
 recommendations, and considerations follow.
 
 * *Operator namespaces*—namespaces have hierarchical relationships, like
@@ -35,11 +35,12 @@ prevents unauthorized modifications, and allows you to follow the
 https://csrc.nist.gov/glossary/term/least_privilege[principle of least
 privilege].
 
-=== Recommended namespace scheme
+=== Recommended Segment namespace scheme
 
-The following diagram illustrates our recommended namespace scheme. It
-provides multi-tenancy, isolates developers from operators, and
-separates the development environment from the production environment.
+The following diagram illustrates our recommended Segment namespace
+scheme. It provides multi-tenancy, isolates developers from operators,
+and separates the development environment from the production
+environment.
 
 Beneath the root namespace `/acme`, we have two tenants: `team-a` and
 `team-b`.
@@ -58,8 +59,8 @@ image::ns-multi-tenant.png[]
 
 In a Kubernetes/OpenShift context, the `/acme/team-a/dev`,
 `/acme/team-a/prod`, `/acme/team-b/prod`, and `/acme/team-b/dev`
-namespaces represent clusters. They will have as children the
+namespaces represent clusters. Their children are the
 Kubernetes/OpenShift namespaces, mapped and synchronized by Segment.
 
-In non-orchestrated environments, you may wish to add children
-namespaces beneath `dev` and `prod` to contain applications.
+In non-orchestrated environments, you should add children namespaces
+beneath `dev` and `prod` to contain virtual machine hosts.

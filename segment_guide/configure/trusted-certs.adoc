@@ -71,6 +71,12 @@ echo $ADDRESS
 export ADDRESS=https://104.196.244.75
 echo $ADDRESS
 ----
+. Kill the existing Segment Console container.
++
+[source,console]
+----
+sudo docker kill segment-console
+----
 . Use the following command to relaunch the Segment Console container.
 +
 [source,console]

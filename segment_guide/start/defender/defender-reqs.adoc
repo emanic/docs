@@ -14,10 +14,15 @@ Defenders with Segment enabled.
 
 === Compatibility
 
-Segment is not compatible with
+* Segment is not compatible with
 https://docs.paloaltonetworks.com/prisma/prisma-cloud/20-08/prisma-cloud-compute-edition-admin/firewalls.html[CNAF]
 at this time. If you have enabled CNAF on the target host, disable it
 before deploying Defenders with Segment enabled.
+* Segment does not support
+https://kubernetes.io/docs/tasks/configure-pod-container/assign-cpu-resource/#specify-a-cpu-request-and-a-cpu-limit[Kubernetes
+CPU limits]. Refer to our
+https://medium.com/engineering-at-palo-alto-networks/kubernetes-scheduling-and-timescales-e98d8e31d304[blog
+post] for more details.
 
 === Orchestrators
 
@@ -26,22 +31,17 @@ before deploying Defenders with Segment enabled.
 
 === Linux
 
-==== Kernel version and dependencies
+==== Service
 
-[cols="<,<",options="header",]
-|===
-|Kernel version |Features supported
-|3.14 and later |All
-|3.13 and earlier |Host protection and host services only
-|===
-
-The Defender depends upon the following libraries:
+When deployed as a Linux service, such as to protect a host, the
+Defender with Segment enabled requires a Linux 3.14 or later kernel. +
+It depends upon the following libraries:
 
 * `elfutils-libelf`
 * `conntrack-tools`
 * `ipset`
 
-==== Validated distributions
+We have certified the Defender on the following distributions.
 
 [cols="<,<",options="header",]
 |===
@@ -55,13 +55,14 @@ The Defender depends upon the following libraries:
 
 pass:[*] _You must disable_ `firewalld`.
 
-† Check the kernel version. If 3.13 or earlier,
-link:#kernel-version-and-dependencies[upgrade your kernel for full
-functionality].
+† _Check the kernel version. If 3.13 or earlier, you must upgrade your
+kernel_.
 
 ==== Container
 
-Installing the Defender as a standalone container requires:
+We provide the Defender with Segment enabled as a standalone container
+to allow integration with orchestrators other than Kubernetes. The
+target host must have:
 
 * Docker 18.02 or later
 * Docker
@@ -79,8 +80,6 @@ proxy disabled: `"userland-proxy": false`]
 
 ==== Kernel capabilities
 
-* `CAP_KILL`: to kill the remote Defender if it cannot be stopped
-cleanly.
 * `CAP_SYS_PTRACE`: to access the `/proc` file system. Example:
 `/proc/<pid>/root`
 * `CAP_NET_ADMIN`: to program `iptables`.
@@ -128,5 +127,5 @@ table +
 
 === Windows
 
-* Windows Server 2016
-* Windows Server 2019
+* Windows Server 2016 or 2019
+* PowerShell (64-bit)

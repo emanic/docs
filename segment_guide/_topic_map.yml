@@ -45,8 +45,14 @@ Topics:
     File: defender
   - Name: System requirements
     File: defender-reqs
-  - Name: Linux or Windows host
-    File: defender-host
+  - Name: Linux host
+    File: defender-linux
+  - Name: Windows host
+    File: defender-windows
+  - Name: Kubernetes
+    File: defender-k8s
+  - Name: OpenShift
+    File: defender-openshift
 ---
 Name: Configure
 Dir: configure

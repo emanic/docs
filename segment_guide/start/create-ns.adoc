@@ -5,25 +5,25 @@
 
 == Create namespaces
 
-=== About creating namespaces
+=== About creating Segment namespaces
 
-TIP: You may find it helpful to review basic namespace concepts before
+TIP: You may find it helpful to review
+link:../../concepts/namespaces/[basic Segment namespace concepts] before
 continuing.
 
-Currently, you just have one namespace: your root namespace. It bears
-the name of your organization. For example, if we worked for Acme, Inc.,
-our root namespace would be `/acme`.
+Currently, you just have one Segment namespace: your root namespace. It
+bears the name of your organization. For example, if we worked for Acme,
+Inc., our root namespace would be `/acme`.
 
-We need to create children and grandchildren namespaces before we can
-deploy our Defenders. The Defenders should be deployed into
-grandchildren namespaces.
+You should deploy Kubernetes Defenders to grandchildren namespaces and
+host Defenders to great grandchildren namespaces. We need to create
+children, grandchildren, and great grandchildren namespaces before we
+can deploy our Defenders. Once a Defender has registered in a namespace,
+you can’t move it to another namespace. You have to uninstall and
+reinstall the Defender to switch namespaces.
 
-Once a Defender has registered in a namespace, you can’t move it to
-another namespace. You have to uninstall and reinstall the Defender to
-switch namespaces.
-
-Complete the following steps to create the recommended children and
-grandchildren namespaces.
+Complete the following steps to create the recommended children,
+grandchildren, and great grandchildren namespaces.
 
 === 1. Create child namespaces
 
@@ -71,9 +71,6 @@ NOTE: The children namespaces are for operators and sometimes referred
 to as ``workspaces.''
 
 === 2. Create grandchild namespaces
-
-The grandchild namespaces contain your hosts and clusters. You’ll deploy
-your enforcers here.
 
 In the following examples, we create grandchildren according to the
 security zones of the resources. We’ll call these `dev` and `prod`.
@@ -137,6 +134,49 @@ apoctl api list namespace -n $CHILD2 --output yaml
 ----
 
 Repeat these steps to add other grandchildren, as desired.
+
+=== 3. Create great grandchild namespaces
+
+If you just use Kubernetes or OpenShift, you can skip this step. If you
+plan to deploy Defenders to virtual machines, you need to create a great
+grandchild namespace for each host. In the following examples, we refer
+to them as `vm1` and `vm2`. You should use names that describe your
+hosts.
+
+[source,console]
+----
+export GREATGRANDCHILD1=vm1
+export GREATGRANDCHILD2=vm2
+----
+
+Use the following command to create the first great grandchild
+namespace.
+
+[source,console]
+----
+cat <<EOF | apoctl api create namespace -n $CHILD1/$GRANDCHILD1 -f -
+name: $GREATGRANDCHILD1
+EOF
+----
+
+Next, create the second great grandchild namespace.
+
+[source,console]
+----
+cat <<EOF | apoctl api create namespace -n $CHILD1/$GRANDCHILD1 -f -
+name: $GREATGRANDCHILD2
+EOF
+----
+
+Confirm the creation.
+
+[source,console]
+----
+apoctl api list namespace -n $CHILD1/$GRANDCHILD1 --output yaml
+----
+
+Repeat these steps to add other great grandchildren, until you have one
+for each of your VMs.
 
 You should now have a very basic namespace structure and can proceed to
 deploy Defenders.
